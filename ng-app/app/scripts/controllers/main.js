@@ -8,8 +8,9 @@
  * Controller of the ngRailsTemplateApp
  */
 angular.module('App')
-  .controller('MainCtrl', ['$scope', 'ModalService', function ($scope, ModalService) {
+  .controller('MainCtrl', ['$scope', 'ModalService', '$auth', function ($scope, ModalService, $auth) {
     $scope.rotateBar = true;
+    $scope.loggedIn = false;
 
     $scope.showLogin = function(){
       ModalService.showModal({
@@ -22,4 +23,9 @@ angular.module('App')
         });
       })
     };
+
+    if ($auth) {
+      $scope.loggedIn = true;
+    }
+
   }]);

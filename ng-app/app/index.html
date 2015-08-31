@@ -37,49 +37,14 @@
               <span class="glyphicon glyphicon-off icon" style="font-size: 18px" >
               </span>
             </button>
+            <button href="" class="login visible-xs" ng-if="loggedIn">
+              <span class="glyphicon glyphicon-shopping-cart icon" style="font-size: 18px" >
+              </span>
+            </button>
+            
           </div>
           
-          <!-- login modal -->
-          <script type="text/ng-template" id="modal.html" ng-controller="UserSessionsCtrl">
-            <div class="modal fade">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Login</h4>
-                  </div>
-                  <div class="modal-body">
-                    <form ng-controller="UserSessionsCtrl" ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email"
-                               name="email"
-                               id="email"
-                               ng-model="loginForm.email"
-                               required="required"
-                               class="form-control">
-                      </div>
-
-                      <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password"
-                               name="password"
-                               id="password"
-                               ng-model="loginForm.password"
-                               required="required"
-                               class="form-control">
-                      </div>  
-                      <button type="submit" class="btn btn-primary btn-lg" >Sign in</button>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No</button>
-                   
-                  </div>
-                </div>
-              </div>
-            </div>
-          </script>
+<div ng-include src="'/views/partials/login_modal.html'"></div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -146,8 +111,8 @@
         <script src="scripts/controllers/form.js"></script>
         <script src="scripts/controllers/contact.js"></script>
         <script src="scripts/controllers/groups.js"></script>
-        <script src="scripts/controllers/user_sessions.js"></script>
-        <script src="scripts/controllers/user_registrations.js"></script>
+        <script src="scripts/controllers/userSessions.js"></script>
+        <script src="scripts/controllers/userRegistrations.js"></script>
         <script src="scripts/api/ListService.js"></script>
 
         <!-- endbuild -->

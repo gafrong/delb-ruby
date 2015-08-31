@@ -1,44 +1,7 @@
-<!doctype html> <html class="no-js"> <head> <meta charset="utf-8"> <title>Delb</title> <meta name="description" content="star chef food delivery"> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/main.3263fdac.css">  <body ng-app="App"> <div class="header"> <nav class="navbar navbar-default" ng-controller="MainCtrl"> <div class="container-fluid"> <!-- Brand and toggle get grouped for better mobile display --> <div class="navbar-header center"> <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" ng-click="rotateBar = !rotateBar"> <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar'"></span> <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar'"></span> <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar'"></span> </button> <a class="brand" href="#/"> <img src="/images/delb.08be45d3.png" alt="logo" class="logo"> </a> <button href="" class="login visible-xs" ng-click="showLogin()" ng-if="!loggedIn && !user.id"> <span class="glyphicon glyphicon-off icon" style="font-size: 18px"> </span> </button> </div> <!-- login modal --> <script type="text/ng-template" id="modal.html" ng-controller="UserSessionsCtrl"><div class="modal fade">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Login</h4>
-                  </div>
-                  <div class="modal-body">
-                    <form ng-controller="UserSessionsCtrl" ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email"
-                               name="email"
-                               id="email"
-                               ng-model="loginForm.email"
-                               required="required"
-                               class="form-control">
-                      </div>
-
-                      <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password"
-                               name="password"
-                               id="password"
-                               ng-model="loginForm.password"
-                               required="required"
-                               class="form-control">
-                      </div>  
-                      <button type="submit" class="btn btn-primary btn-lg" >Sign in</button>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No</button>
-                   
-                  </div>
-                </div>
-              </div>
-            </div></script> <!-- Collect the nav links, forms, and other content for toggling --> <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> <ul class="nav navbar-nav"> <li ng-class="{ active: isActive('/') }"><a ng-href="#/">Home</a></li> <li ng-class="{ active: isActive('/groups') }" ng-show="user.id"><a ng-href="#/groups">Groups</a></li> <li><a ng-href="#/about">About</a></li> <li><a ng-href="#/list">List</a></li> <li><a ng-href="#/contact">Contact</a></li> <li ng-class="{ active: isActive('/sign_in') }" ng-if="!user.id"><a ng-href="#/signin">Login</a></li> <li ng-if="user.id"><a ng-click="signOut()">Logout</a></li> <li ng-class="{ active: isActive('/sign_up') }" ng-if="!user.id"><a ng-href="#/signup">Sign Up</a></li> <li><a href ng-click="showLogin()">Show a Modal</a></li> </ul> </div><!-- /.navbar-collapse --> </div><!-- /.container-fluid --> </nav> </div> <div ng-view=""></div> <div class="footer"> <div class="container"> <p>All rights reserved 2015</p> </div> </div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+<!doctype html> <html class="no-js"> <head> <meta charset="utf-8"> <title>Delb</title> <meta name="description" content="star chef food delivery"> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/main.3263fdac.css">  <body ng-app="App"> <div class="header"> <nav class="navbar navbar-default" ng-controller="MainCtrl"> <div class="container-fluid"> <!-- Brand and toggle get grouped for better mobile display --> <div class="navbar-header center"> <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" ng-click="rotateBar = !rotateBar"> <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar'"></span> <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar'"></span> <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar'"></span> </button> <a class="brand" href="#/"> <img src="/images/delb.08be45d3.png" alt="logo" class="logo"> </a> <button href="" class="login visible-xs" ng-click="showLogin()" ng-if="!loggedIn && !user.id"> <span class="glyphicon glyphicon-off icon" style="font-size: 18px"> </span> </button> <button href="" class="login visible-xs" ng-if="loggedIn"> <span class="glyphicon glyphicon-shopping-cart icon" style="font-size: 18px"> </span> </button> </div> <div ng-include src="'/views/partials/login_modal.html'"></div> <!-- Collect the nav links, forms, and other content for toggling --> <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> <ul class="nav navbar-nav"> <li ng-class="{ active: isActive('/') }"><a ng-href="#/">Home</a></li> <li ng-class="{ active: isActive('/groups') }" ng-show="user.id"><a ng-href="#/groups">Groups</a></li> <li><a ng-href="#/about">About</a></li> <li><a ng-href="#/list">List</a></li> <li><a ng-href="#/contact">Contact</a></li> <li ng-class="{ active: isActive('/sign_in') }" ng-if="!user.id"><a ng-href="#/signin">Login</a></li> <li ng-if="user.id"><a ng-click="signOut()">Logout</a></li> <li ng-class="{ active: isActive('/sign_up') }" ng-if="!user.id"><a ng-href="#/signup">Sign Up</a></li> <li><a href ng-click="showLogin()">Show a Modal</a></li> </ul> </div><!-- /.navbar-collapse --> </div><!-- /.container-fluid --> </nav> </div> <div ng-view=""></div> <div class="footer"> <div class="container"> <p>All rights reserved 2015</p> </div> </div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
        }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
        ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');</script> <script src="scripts/vendor.25d21957.js"></script> <script src="scripts/scripts.57fdffa7.js"></script>  
+       ga('send', 'pageview');</script> <script src="scripts/vendor.25d21957.js"></script> <script src="scripts/scripts.91d95372.js"></script>  

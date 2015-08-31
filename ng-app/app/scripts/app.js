@@ -47,7 +47,12 @@ angular
       })
       .when('/list', {
         templateUrl: 'views/list.html',
-        controller: 'ListCtrl'
+        controller: 'ListCtrl',
+        resolve: {
+          auth: ['$auth', function($auth){
+            return $auth.validateUser();
+          }]
+        }
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',

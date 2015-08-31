@@ -8,7 +8,18 @@
  * Controller of the ngRailsTemplateApp
  */
 angular.module('App')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', ['$scope', 'ModalService', function ($scope, ModalService) {
     $scope.rotateBar = true;
 
-  });
+    $scope.showLogin = function(){
+      ModalService.showModal({
+        templateUrl: "modal.html",
+        controller: "UserSessionsCtrl"
+      }).then(function(modal){
+        modal.element.modal();
+        modal.close.then(function(result){
+          alert('!!!');
+        });
+      })
+    };
+  }]);

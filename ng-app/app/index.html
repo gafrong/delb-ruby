@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Delb</title>
     <meta name="description" content="star chef food delivery">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles/variables.css">
     <!-- endbuild -->
   </head>
+
   <body ng-app="App">
     <div class="header">
       <nav class="navbar navbar-default" ng-controller="MainCtrl">
@@ -32,53 +33,53 @@
               <img src="/images/delb.png" alt="logo" class="logo">
             </a>
 
-            <button href="" class="login visible-xs" data-toggle="modal" data-target="#loginModal" ng-if="!loggedIn">
+            <button href="" class="login visible-xs" ng-click="showLogin()" ng-if="!loggedIn && !user.id">
               <span class="glyphicon glyphicon-off icon" style="font-size: 18px" >
-            </span></button>
+              </span>
+            </button>
           </div>
-          <!-- Login Modal -->
-          <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog center" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Login</h4>
-                </div>
-                <div class="modal-body">
-                
-                <!-- login form -->
-                <form ng-controller="UserSessionsCtrl" ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email"
-                           name="email"
-                           id="email"
-                           ng-model="loginForm.email"
-                           required="required"
-                           class="form-control">
+          
+          <!-- login modal -->
+          <script type="text/ng-template" id="modal.html" ng-controller="UserSessionsCtrl">
+            <div class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Login</h4>
                   </div>
+                  <div class="modal-body">
+                    <form ng-controller="UserSessionsCtrl" ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email"
+                               name="email"
+                               id="email"
+                               ng-model="loginForm.email"
+                               required="required"
+                               class="form-control">
+                      </div>
 
-                  <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password"
-                           name="password"
-                           id="password"
-                           ng-model="loginForm.password"
-                           required="required"
-                           class="form-control">
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password"
+                               name="password"
+                               id="password"
+                               ng-model="loginForm.password"
+                               required="required"
+                               class="form-control">
+                      </div>  
+                      <button type="submit" class="btn btn-primary btn-lg" >Sign in</button>
+                    </form>
                   </div>
-
-                  
-                </form>
-
-                </div>
-                <div class="modal-footer center">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Login</button>
+                  <div class="modal-footer">
+                    <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No</button>
+                   
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </script>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -89,15 +90,14 @@
               <li><a ng-href="#/list">List</a></li>
               <li><a ng-href="#/contact">Contact</a></li>
               <li ng-class="{ active: isActive('/sign_in') }" ng-if="!user.id"><a ng-href="#/signin">Login</a></li> 
-              <li ng-if="user.id"><a ng-click='signOut()'>Sign out</a></li>
+              <li ng-if="user.id"><a ng-click='signOut()'>Logout</a></li>
               <li ng-class="{ active: isActive('/sign_up') }" ng-if="!user.id"><a ng-href="#/signup">Sign Up</a></li>
+              <li><a href ng-click="showLogin()">Show a Modal</a></li> 
             </ul>
-
 
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
-
     </div>
 
 
@@ -105,7 +105,7 @@
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> All rights reserved 2015</p>
+        <p>All rights reserved 2015</p>
       </div>
     </div>
 
@@ -127,6 +127,7 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -150,5 +151,5 @@
         <script src="scripts/api/ListService.js"></script>
 
         <!-- endbuild -->
-</body>
+  </body>
 </html>

@@ -14,4 +14,9 @@ angular.module('App')
       $scope.error = "something wrong";
 
     });
+
+    // $scope.$on('event:auth-loginConfirmed', function(event, data){
+    //   $rootScope.isLoggedin = true;
+    //   console.log(data);
+    // })
   }]);

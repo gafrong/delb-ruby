@@ -18,3 +18,6 @@ gem 'puma'
 gem 'omniauth', '~> 1.2.2'
 gem 'devise_token_auth', git: 'https://github.com/jasonswett/devise_token_auth.git'
 gem 'responders', '~> 2.0'
+
+gem 'angularjs-rails'
+gem 'angular-ui-bootstrap-rails'

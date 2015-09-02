@@ -122,7 +122,7 @@
         <li ng-class="{ active: isActive('/') }"><a ng-href="#/">Home</a></li>
         <li ng-show="user.id"><a ng-href="#/groups">Groups</a></li>
         <li><a ng-href="#/about">About</a></li>
-        <li><a ng-href="#/list">List</a></li>
+        <li ng-if="user.id"><a ng-href="#/list">List</a></li>
         <li><a ng-href="#/contact">Contact</a></li>
         <li ng-if="user.id"><a ng-click='signOut()'>Logout</a></li>
         <li ng-if="!user.id"><a href ng-click="showLogin()">Login</a></li> 

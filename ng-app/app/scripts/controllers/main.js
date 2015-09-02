@@ -11,7 +11,8 @@ angular.module('App')
   .controller('MainCtrl', ['$scope', 'ModalService', '$auth', function ($scope, ModalService, $auth) {
     $scope.rotateBar = true;
     $scope.loggedIn = false;
-    $scope.logo = "images/delb.png"
+    $scope.logo = "images/delb.png";
+    $scope.isCollapsed = true;
 
     $scope.showLogin = function(){
       ModalService.showModal({

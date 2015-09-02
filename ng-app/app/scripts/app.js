@@ -9,7 +9,9 @@ angular
     'ngSanitize',
     'ngTouch',
     'ng-token-auth',
-    'angularModalService'
+    'angularModalService',
+    'ui.bootstrap',
+    'ui.bootstrap.collapse'
   ])
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function(userInfo) {

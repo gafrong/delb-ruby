@@ -4,6 +4,9 @@
 body {
   background-color: $main-bg-color;
 }
+.dropdown-backdrop{
+  position: static;
+}
 .center {
   text-align: center;
   margin: 0 auto;

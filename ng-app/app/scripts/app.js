@@ -15,7 +15,7 @@ angular
   ])
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function(userInfo) {
-      console.log(userInfo);
+      // console.log(userInfo);
       $location.path('/');
     });
   }])

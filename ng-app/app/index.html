@@ -19,60 +19,69 @@
   </head>
 
   <body ng-app="App">
-    <div class="header">
-      <div ng-include="'/views/partials/nav_menu.html'"></div>
-    </div>
-
-
-    <div ng-view=""></div>
-
-    <div class="footer">
-      <div class="container">
-        <p>All rights reserved 2015</p>
+    <div class="global" ng-controller="ApplicationCtrl">
+      <div class="header">
+        <div ng-include="'/views/partials/nav_menu.html'"></div>
       </div>
-    </div>
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      <div ng-view=""></div>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-    <script src="bower_components/angular-cookie/angular-cookie.js"></script>
-    <script src="bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+      <div class="footer">
+        <div class="container">
+          <p>All rights reserved 2015</p>
+        </div>
+      </div>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/list.js"></script>
-        <script src="scripts/controllers/form.js"></script>
-        <script src="scripts/controllers/contact.js"></script>
-        <script src="scripts/controllers/groups.js"></script>
-        <script src="scripts/controllers/userSessions.js"></script>
-        <script src="scripts/controllers/userRegistrations.js"></script>
-        <script src="scripts/api/ListService.js"></script>
 
-        <!-- endbuild -->
-  </body>
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+       <script>
+         !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+         (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+         r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+         }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+         ga('create', 'UA-XXXXX-X');
+         ga('send', 'pageview');
+      </script>
+      <!-- build:js(.) scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-touch/angular-touch.js"></script>
+      <script src="bower_components/AngularDevise/lib/devise.js"></script>
+      <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+      <script src="bower_components/angular-cookie/angular-cookie.js"></script>
+      <script src="bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+
+          <!-- build:js({.tmp,app}) scripts/scripts.js -->
+          <script src="scripts/app.js"></script>
+          <script src="scripts/constants/authEvents.js"></script>
+          <script src="scripts/constants/userRoles.js"></script>
+          <script src="scripts/controllers/application.js"></script>
+          <script src="scripts/controllers/main.js"></script>
+          <script src="scripts/controllers/about.js"></script>
+          <script src="scripts/controllers/list.js"></script>
+          <script src="scripts/controllers/form.js"></script>
+          <script src="scripts/controllers/contact.js"></script>
+          <script src="scripts/controllers/groups.js"></script>
+          <script src="scripts/controllers/userSessions.js"></script>
+          <script src="scripts/controllers/userRegistrations.js"></script>
+          <script src="scripts/services/session.js"></script>
+          <script src="scripts/services/authenticationSvc.js"></script>
+          <script src="scripts/services/authService.js"></script>
+          <script src="scripts/api/ListService.js"></script>
+
+          <!-- endbuild -->
+      </div>    
+    </body>
 </html>

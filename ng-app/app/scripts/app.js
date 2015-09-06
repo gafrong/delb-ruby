@@ -11,23 +11,55 @@ angular
     'ng-token-auth',
     'angularModalService',
     'ui.bootstrap',
-    'ui.bootstrap.collapse'
+    'ui.bootstrap.collapse',
+    'Devise'
   ])
-  .run(['$rootScope', '$location', function($rootScope, $location) {
+  .run(['$rootScope', '$location', function($rootScope, $location, $window) {
     $rootScope.$on('auth:login-success', function(userInfo) {
       console.log(userInfo);
+      $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
       $location.path('/');
     });
+    $rootScope.$on("$routeChangeSuccess", function(userInfo) {
+      console.log(userInfo);
+    });
   }])
+  // .config(function($authProvider){
+  //   $authProvider.configure({
+  //     apiUrl: '/api'
+  //   })
+  // })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        resolve: {
+          auth: ["$q", "authenticationSvc", function($q, authenticationSvc) {
+            var userInfo = authenticationSvc.getUserInfo;
+console.log(authenticationSvc.user);
+            if (userInfo) {
+              return $q.when(userInfo);
+            } else {
+              return $q.reject({ authenticated: false });
+            }
+          }]
+        }
       })
       .when('/signin', {
         templateUrl: 'views/user_sessions/new.html',
-        controller: 'UserSessionsCtrl'
+        controller: 'UserSessionsCtrl',
+        resolve: {
+          auth: ["$q", "authenticationSvc", function($q, authenticationSvc) {
+            var userInfo = authenticationSvc.getUserInfo;
+console.log(authenticationSvc.user);
+            if (userInfo) {
+              return $q.when(userInfo);
+            } else {
+              return $q.reject({ authenticated: false });
+            }
+          }]
+        }
       })
       .when('/signup', {
         templateUrl: 'views/user_registrations/new.html',
@@ -64,3 +96,4 @@ angular
         redirectTo: '/'
       });
   });
+

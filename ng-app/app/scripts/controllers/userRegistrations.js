@@ -10,7 +10,7 @@
 angular.module('App')
   .controller('UserRegistrationsCtrl', ['$scope', '$location', '$auth', function ($scope, $location, $auth) {
     $scope.$on('auth:registration-email-error', function(ev, reason) {
-      $scope.error = reason.errors[0];
+      $scope.error = "reason.errors[0]";
     });
     $scope.handleRegBtnClick = function($rootScope) {
       $auth.submitRegistration($scope.registrationForm)
@@ -18,11 +18,6 @@ angular.module('App')
           $auth.submitLogin({
             email: $scope.registrationForm.email,
             password: $scope.registrationForm.password
-          });
-          $auth.currentUser().then(function(user){
-            $scope.isAuthenticated = true;
-          }, function(error){
-            console.log('error');
           });
         });
     };

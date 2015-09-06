@@ -11,55 +11,22 @@ angular
     'ng-token-auth',
     'angularModalService',
     'ui.bootstrap',
-    'ui.bootstrap.collapse',
-    'Devise'
+    'ui.bootstrap.collapse'
   ])
-  .run(['$rootScope', '$location', function($rootScope, $location, $window) {
+  .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function(userInfo) {
-      console.log(userInfo);
-      $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
       $location.path('/');
     });
-    $rootScope.$on("$routeChangeSuccess", function(userInfo) {
-      console.log(userInfo);
-    });
   }])
-  // .config(function($authProvider){
-  //   $authProvider.configure({
-  //     apiUrl: '/api'
-  //   })
-  // })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        resolve: {
-          auth: ["$q", "authenticationSvc", function($q, authenticationSvc) {
-            var userInfo = authenticationSvc.getUserInfo;
-console.log(authenticationSvc.user);
-            if (userInfo) {
-              return $q.when(userInfo);
-            } else {
-              return $q.reject({ authenticated: false });
-            }
-          }]
-        }
+        controller: 'MainCtrl'
       })
       .when('/signin', {
         templateUrl: 'views/user_sessions/new.html',
-        controller: 'UserSessionsCtrl',
-        resolve: {
-          auth: ["$q", "authenticationSvc", function($q, authenticationSvc) {
-            var userInfo = authenticationSvc.getUserInfo;
-console.log(authenticationSvc.user);
-            if (userInfo) {
-              return $q.when(userInfo);
-            } else {
-              return $q.reject({ authenticated: false });
-            }
-          }]
-        }
+        controller: 'UserSessionsCtrl'
       })
       .when('/signup', {
         templateUrl: 'views/user_registrations/new.html',

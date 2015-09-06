@@ -21,3 +21,5 @@ gem 'responders', '~> 2.0'
 
 gem 'angularjs-rails'
 gem 'angular-ui-bootstrap-rails'
+
+gem 'tiddle'

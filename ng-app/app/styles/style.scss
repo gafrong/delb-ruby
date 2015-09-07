@@ -70,6 +70,7 @@ body {
   }
   .navbar-toggle {
     margin-left: 15px;
+    margin-top: 10px;
     float: left;
   }
   .logo {
@@ -103,7 +104,7 @@ body {
     margin-top: 115px;
     max-width: 500px;
     .form-control {
-      height: 50px;
+      height: 45px;
     }
   }
 
@@ -172,22 +173,30 @@ body {
         background-color: $black;
       }
     }
-    button.navbar-toggle:hover, button.navbar-toggle:focus {
+    button.navbar-toggle:hover {
       border: none;
       background-color: $black;
       .icon-bar {
         transition-duration: 1s;
         background-color: $orange;
+        &.horizontal-bar, &.vertical-bar, &.vertical-bar-bottom {
+          background-color: $orange;
+        }
       }
+    }
+     button.navbar-toggle:focus {
+      border: none;
+      background-color: $black;
     }
     button.navbar-toggle {
       .icon-bar.vertical-bar {
-          transition-duration: 0.8s;
+          transition-duration: 0.5s;
           transform: rotate(45deg);
           -ms-transform: rotate(45deg);
           -webkit-transform: rotate(45deg);
           position: fixed;
           margin-top: 10px;
+          background-color: $white;
         }
       .icon-bar.vertical-bar-top {
           transition-duration: 1s;
@@ -205,13 +214,14 @@ body {
           -webkit-transform: rotate(135deg);
           margin-top: 10px;
           margin-bottom: 10px;
+          background-color: $white;
       }
       .icon-bar.horizontal-bar {
           transition-duration: 0.5s;
           transform: rotate(0deg);
           -ms-transform: rotate(0deg);
           -webkit-transform: rotate(0deg);
-          
+          background-color: $white;
         }
       
     }

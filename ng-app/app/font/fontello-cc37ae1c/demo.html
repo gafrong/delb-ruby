@@ -23,7 +23,7 @@
     }
      
      
-.demo-icon
+    .demo-icon
     {
       font-family: "fontello";
       font-style: normal;
@@ -60,12 +60,24 @@
     }
      </style>
     <link rel="stylesheet" href="css/animation.css"><!--[if IE 7]><link rel="stylesheet" href="css/fontello-ie7.css"><![endif]-->
-
+    <script>
+      function toggleCodes(on) {
+        var obj = document.getElementById('icons');
+        
+        if (on) {
+          obj.className += ' codesOn';
+        } else {
+          obj.className = obj.className.replace(' codesOn', '');
+        }
+      }
+      
+    </script>
   </head>
   <body>
 
-<i class="demo-icon icon-delb">&#xe800;</i>
+
+       <i class="demo-icon icon-delb">&#xe800;</i>
 
 
-  </body>
-</html>
+
+ 

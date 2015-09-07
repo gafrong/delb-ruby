@@ -39,8 +39,12 @@ body {
   margin: 0;
   padding: 0; 
   border-bottom: none;
+  a.brand.white {
+    text-decoration: none;
+  }
   .navbar-header.center > a:hover {
     color: $orange;
+
   }
   .navbar-header.center > a:focus {
     color: $orange;

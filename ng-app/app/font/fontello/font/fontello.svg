@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="delb" unicode="&#xe800;" d="m823 387c-4 6-11 10-19 10h-258v233c0 25-21 45-46 45-25 0-45-20-45-45v-233h-259c-8 0-15-4-19-10-5-6-6-14-4-21l98-324c3-10 12-17 22-17h414c10 0 19 7 22 17l98 324c2 7 1 15-4 21z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

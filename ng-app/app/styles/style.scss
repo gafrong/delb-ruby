@@ -181,19 +181,37 @@ body {
       }
     }
     button.navbar-toggle {
-
       .icon-bar.vertical-bar {
-          transition-duration: 0.5s;
-          transform: rotate(90deg);
-          -ms-transform: rotate(90deg);
-          -webkit-transform: rotate(90deg);
+          transition-duration: 0.8s;
+          transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          position: fixed;
+          margin-top: 10px;
         }
+      .icon-bar.vertical-bar-top {
+          transition-duration: 1s;
+          transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          position: fixed;
+          margin-top: 10px;
+          display: none;
+      }
+      .icon-bar.vertical-bar-bottom {
+          transition-duration: 0.5s;
+          transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+          margin-top: 10px;
+          margin-bottom: 10px;
+      }
       .icon-bar.horizontal-bar {
           transition-duration: 0.5s;
           transform: rotate(0deg);
           -ms-transform: rotate(0deg);
           -webkit-transform: rotate(0deg);
-
+          
         }
       
     }

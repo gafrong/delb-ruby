@@ -1,5 +1,5 @@
 @import "variables.scss";
-
+@import "fonts.scss";
 
 body {
   background-color: $main-bg-color;
@@ -34,10 +34,17 @@ body {
 .top100 {
   margin-top: 100px;
 }
+
 .header {
   margin: 0;
   padding: 0; 
   border-bottom: none;
+  .navbar-header.center > a:hover {
+    color: $orange;
+  }
+  .navbar-header.center > a:focus {
+    color: $orange;
+  }
   .navbar {
     margin: 0;
     min-height: 50px;
@@ -74,6 +81,8 @@ body {
     float: left;
   }
   .logo {
+    transition-duration: 0.5s;
+    font-size: 45px;
     max-width: 34px;
     margin-top: 15px;
   }
@@ -153,6 +162,8 @@ body {
       border-top: 1px solid $grey-dark;
     }
     .logo {
+      transition-duration: 0.5s;
+      font-size: 37px;
       max-width: 28px;
       margin-top: 11px;
     }

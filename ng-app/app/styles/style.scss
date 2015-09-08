@@ -56,11 +56,14 @@ body {
     background-color: $grey-dark;
     border: none;
     border-radius: 0;
+    .menu-item {
+      height: 52px;
+      padding: 14px 10px 10px 32px;
+    }
   }
   .navbar-inverse {
     background: none;
     border: none;
-    padding: 10px;
   }
   .navbar-nav {
     padding: 10px;
@@ -173,7 +176,7 @@ body {
     }
     .logo {
       position: absolute;
-      margin-left: -10px;
+      margin-left: -15px;
       transition-duration: 0.5s;
       font-size: 38px;
       max-width: 28px;

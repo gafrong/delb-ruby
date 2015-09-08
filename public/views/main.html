@@ -1,19 +1,12 @@
-<div class="components"> <div class="container-fluid padding-none"> <div class="row"> <div class="col-xs-6"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eligendi harum, possimus sed eos voluptatum, ratione praesentium, eum aspernatur, nam nisi sit quas debitis aliquam aut accusamus voluptatibus non optio. </div> <div class="col-xs-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis temporibus at obcaecati est, modi, voluptate debitis earum, harum unde et delectus optio, facilis ad dolores error nemo quas dicta omnis. </div> <!-- <div ng-controller="CarouselCtrl" class="col-sm-8 padding-none">
-        <div style="min-height: 200px">
-          <carousel interval="myInterval" no-wrap="noWrapSlidess">
-            <slide ng-repeat="slide in slides" active="slide.active">
-              <img ng-src="{{slide.image}}">
-              <div class="carousel-caption">
-                <h4>Slide {{$index}}</h4>
-                <p>{{slide.text}}</p>
-              </div>
-            </slide>
-          </carousel>
-        </div>
-      </div>
-      <div class="col-sm-3 padding-none orange-bg">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi commodi dicta officiis voluptatum nam consequuntur incidunt accusantium sequi aut illum totam voluptas corporis error numquam rem temporibus, laboriosam ducimus ipsa?
-      </div> --> <!--     <h1 class="buffer-top"><span class="orange">d</span>esign <span class="orange">e</span>at <span class="orange">l</span>ove <span class="orange">b</span>alance</h1>
+<div class="homePage"> <div class="container-fluid padding-none"> <div class="row"> <div class="col-sm-12 col-md-12 col-lg-12 padding-none"> <div ng-controller="CarouselCtrl" class="padding-none"> <div style="min-height: 100px"> <carousel interval="myInterval" no-wrap="noWrapSlidess"> <slide ng-repeat="slide in slides" active="slide.active"> <img ng-src="{{slide.image}}"> <div class="carousel-caption"> <!-- <h4>Slide {{$index}}</h4> --> <p>{{slide.text}}</p> </div> </slide> </carousel> </div> </div> </div> <div class="padding-none"> <ul ng-repeat="item in subItems" class="no-decor"> <a href="" class="sub-item-link"> <li class="sub-item col-xs-4 col-sm-4 col-md-4 col-lg-4"> <h4>{{item.title}}</h4> <p>{{item.detail}}</p> </li> </a> </ul> </div> <!-- Customize carousel template --> <script id="template/carousel/carousel.html" type="text/ng-template"><div class="carousel" ng-mouseenter="pause()" ng-mouseleave="play()" 
+    ng-swipe-right="prev()" ng-swipe-left="next()">
+      <ol class="carousel-indicators" ng-show="slides.length > 1">
+          <li ng-repeat="slide in slides | orderBy:'index' track by $index" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li>
+      </ol>
+      <div class="carousel-inner" ng-transclude></div>
+      <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1 && !isActive(slides[0])"></a>
+      <a class="right carousel-control" ng-click="next()" ng-show="slides.length > 1  && !isActive(slides[slides.length - 1])"></a>
+  </div></script> <!--     <h1 class="buffer-top"><span class="orange">d</span>esign <span class="orange">e</span>at <span class="orange">l</span>ove <span class="orange">b</span>alance</h1>
         <h5>Market place for amazing products</h5>
         <br>
        

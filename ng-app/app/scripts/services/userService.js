@@ -1,7 +1,9 @@
+'use strict';
+
 angular.module('App')
   .service('UserService', function(){
-    return {
-      isLogged: false;
-      username: null;
-    }
+    // return {
+    //   isLogged: false;
+    //   username: null;
+    // }
   })

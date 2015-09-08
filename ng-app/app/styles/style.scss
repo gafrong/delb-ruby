@@ -3,6 +3,7 @@
 @import "fonts";
 @import "global.scss";
 @import "home-page.scss";
+@import "main.scss";
 
 body {
   background-color: $main-bg-color;
@@ -10,25 +11,7 @@ body {
 .dropdown-backdrop{
   position: static;
 }
-.center {
-  text-align: center;
-  margin: 0 auto;
-}
-.right {
-  text-align: right;
-}
-.left {
-  text-align: left;
-}
-.orange {
-  color: $orange;
-}
-.white {
-  color: $white;
-}
-.float-right {
-  float: right;
-}
+
 .main-image {
   .buffer-top {
     padding-top: 100px;
@@ -65,7 +48,7 @@ body {
     border: none;
   }
   .navbar-nav {
-    padding: 10px;
+    margin-top: 4px;
     li {
       a {
         color: $white;
@@ -81,11 +64,16 @@ body {
   }
   .brand {
     padding-left: 40px;
+    
+    
   }
   .brand:hover, .brand:focus {
     .icon-delb {
       color: $orange;
     }
+  }
+  .navbar-collapse.bs-js-navbar-collapse.collapse {
+    margin-left: 64px;
   }
   .navbar-toggle {
     margin-left: 15px;
@@ -94,9 +82,10 @@ body {
   }
   .logo {
     transition-duration: 0.5s;
-    font-size: 48px;
-    max-width: 34px;
-    margin-top: 7px;
+    font-size: 38px;
+    max-width: 28px;
+    margin-top: 4px;
+    position: absolute;
   }
   .hamburger {
     margin-top: 5px;
@@ -130,10 +119,7 @@ body {
   }
 
 }
-.jumbotron {
-  padding: 0;
-  margin: 0;
-}
+
 
 // Media Queries
 

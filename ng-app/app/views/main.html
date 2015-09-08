@@ -30,8 +30,7 @@
 
 <!-- Customize carousel template -->
 <script id="template/carousel/carousel.html" type="text/ng-template">
-  <div class="carousel" ng-mouseenter="pause()" ng-mouseleave="play()" 
-    ng-swipe-right="prev()" ng-swipe-left="next()">
+  <div class="carousel" ng-swipe-right="prev()" ng-swipe-left="next()">
       <ol class="carousel-indicators" ng-show="slides.length > 1">
           <li ng-repeat="slide in slides | orderBy:'index' track by $index" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li>
       </ol>
@@ -40,6 +39,8 @@
       <a class="right carousel-control" ng-click="next()" ng-show="slides.length > 1  && !isActive(slides[slides.length - 1])"></a>
   </div>      
 </script>
+   <!-- <div class="carousel" ng-mouseenter="pause()" ng-mouseleave="play()" 
+     ng-swipe-right="prev()" ng-swipe-left="next()">   -->
 
     <!--     <h1 class="buffer-top"><span class="orange">d</span>esign <span class="orange">e</span>at <span class="orange">l</span>ove <span class="orange">b</span>alance</h1>
         <h5>Market place for amazing products</h5>

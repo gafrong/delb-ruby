@@ -1,3 +1,22 @@
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+.orange {
+  color: $orange;
+}
+.white {
+  color: $white;
+}
+.float-right {
+  float: right;
+}
 .mg-top-20 {
   margin-top: 20px;
 }

@@ -1,5 +1,5 @@
 <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation" ng-controller="MainCtrl">
-  <div class="container-fluid">
+  <!-- <div class="container-fluid"> -->
     <div class="navbar-header center">
       <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed; rotateBar = !rotateBar" >
         <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar-top'"></span>
@@ -8,8 +8,6 @@
       </button>
 
       <a class="brand white" href="#/">
-        <!-- <i class="icon-delb logo"></i> -->
-        <!-- <i class="demo-icon icon-delb logo"></i> -->
         <i class="icon-delb logo white"></i>
       </a>
 
@@ -131,6 +129,6 @@
         <li ng-if="!user.id"><a href ng-click="showSignUp()" class="menu-item">SIGN UP</a></li>
       </ul>
     </div><!-- /.nav-collapse -->
-  </div><!-- /.container-fluid -->
+  <!-- </div> --><!-- /.container-fluid -->
 
 </nav>

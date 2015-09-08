@@ -38,4 +38,9 @@ angular.module('App')
       })
     };
 
+    $scope.subItems =[ 
+      { title: "dog", detail: "renee is a dog" },
+      { title: "cat", detail: "joe is a cat" },
+      { title: "bird", detail: "mike is a bird"}
+      ]
   }]);

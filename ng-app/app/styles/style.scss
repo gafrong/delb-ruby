@@ -1,6 +1,8 @@
 @import "variables.scss";
 @import "fonts.scss";
 @import "fonts";
+@import "global.scss";
+@import "home-page.scss";
 
 body {
   background-color: $main-bg-color;
@@ -32,9 +34,6 @@ body {
     padding-top: 100px;
   }
 }
-.top100 {
-  margin-top: 100px;
-}
 
 .header {
   margin: 0;
@@ -57,7 +56,7 @@ body {
     border: none;
     border-radius: 0;
     .menu-item {
-      height: 52px;
+      height: 48px;
       padding: 14px 10px 10px 32px;
     }
   }
@@ -81,7 +80,7 @@ body {
     }
   }
   .brand {
-    padding: 40px;
+    padding-left: 40px;
   }
   .brand:hover, .brand:focus {
     .icon-delb {
@@ -95,7 +94,7 @@ body {
   }
   .logo {
     transition-duration: 0.5s;
-    font-size: 54px;
+    font-size: 48px;
     max-width: 34px;
     margin-top: 7px;
   }
@@ -137,13 +136,16 @@ body {
 }
 
 // Media Queries
+
+// Desktop
+@media (min-width: 992px) {
+
+}
+
+
 // Phablet and above
 @media(min-width: 768px) {
-  .header {
-    .navbar, .navbar-inverse {
-      height: 65px;
-    }
-  }  
+
 
 }
 
@@ -176,7 +178,7 @@ body {
     }
     .logo {
       position: absolute;
-      margin-left: -15px;
+      margin-left: -35px;
       transition-duration: 0.5s;
       font-size: 38px;
       max-width: 28px;

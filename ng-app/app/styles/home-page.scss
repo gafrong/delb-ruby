@@ -1,0 +1,38 @@
+@import 'variables.scss';
+
+.homePage {
+  .row {
+    margin: 0;
+  } 
+  .sub-item {
+    height: 100px;
+    background-color: $grey-lighter;
+    margin-bottom: 0px;
+    text-align: center;
+    padding-top: 15px;
+  }
+  .sub-item:hover {
+    transition-duration: 0.3s;
+    background-color: $grey-light;
+    color: $orange;
+  }
+  .sub-item-link {
+    color: $grey-md;
+    &:hover, &:focus {
+      background-color: $orange;
+    }
+  }
+  .no-decor {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  
+
+.carousel-inner > .item > img {
+    float: left;
+    height: 100%;
+    width:  100%;
+}
+
+}

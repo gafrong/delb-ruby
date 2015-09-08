@@ -5,9 +5,9 @@ angular.module('App')
   $scope.myInterval = 9000;
   $scope.noWrapSlides = false;
   var slides = $scope.slides = [
-    {image: "../../images/delb-img1.png"},
-    {image: "../../images/delb-img2.png"},
-    {image: "../../images/delb-img3.png"}
+    {image: "http://i.imgur.com/rrDG6B5.png"},
+    {image: "http://i.imgur.com/UfVQ26j.png"},
+    {image: "http://i.imgur.com/Sc9vyP2.png"}
   ];
   $scope.addSlide = function() {
     var newWidth = 600 + slides.length + 1;

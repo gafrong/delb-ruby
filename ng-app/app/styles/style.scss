@@ -80,6 +80,11 @@ body {
   .brand {
     padding: 40px;
   }
+  .brand:hover, .brand:focus {
+    .icon-delb {
+      color: $orange;
+    }
+  }
   .navbar-toggle {
     margin-left: 15px;
     margin-top: 10px;
@@ -87,7 +92,7 @@ body {
   }
   .logo {
     transition-duration: 0.5s;
-    font-size: 45px;
+    font-size: 54px;
     max-width: 34px;
     margin-top: 7px;
   }
@@ -172,7 +177,7 @@ body {
       transition-duration: 0.5s;
       font-size: 38px;
       max-width: 28px;
-      margin-top: 0px;
+      margin-top: 4px;
     }
     .login {
       float: right;

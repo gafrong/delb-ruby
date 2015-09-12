@@ -1,4 +1,15 @@
+<!-- offcanvas right inner menu items -->
+<nav id="offcanvasRight" class="navmenu navmenu-inverse navmenu-fixed-right offcanvas" role="navigation">
+  <ul class="nav navmenu-nav">
+    <li class="active"><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+  </ul>
+</nav>
+
 <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation" ng-controller="MainCtrl">
+
   <!-- <div class="container-fluid"> -->
     <div class="navbar-header center">
       <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed; rotateBar = !rotateBar" >
@@ -15,10 +26,13 @@
         <span class="glyphicon glyphicon-off icon font18" aria-hidden="true">
         </span>
       </button>
-      <button href="" class="login visible-xs" ng-show="user.signedIn">
+
+      <!-- offcanvasRight menu trigger -->
+      <button href="" class="login visible-xs" ng-show="user.signedIn" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body">
         <span class="glyphicon glyphicon-user icon font18" aria-hidden="true">
         </span>
-      </button>       
+      </button>
+     
     </div>
 
     <!-- Login Modal -->

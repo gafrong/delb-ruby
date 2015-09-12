@@ -8,7 +8,7 @@
  * Controller of the ngRailsTemplateApp
  */
 angular.module('App')
-  .controller('MainCtrl', ['$scope', 'ModalService', '$auth', function ($scope, ModalService, $auth) {
+  .controller('MainCtrl', ['$scope', 'ModalService', function ($scope, ModalService) {
     $scope.rotateBar = true;
     $scope.loggedIn = false;
     $scope.logo = "images/delb.png";
@@ -22,7 +22,7 @@ angular.module('App')
       {title: "Tech"},
       {title: "Kids"},
       {title: "Other"}
-    ]
+    ];
 
     $scope.showLogin = function(){
       ModalService.showModal({
@@ -45,13 +45,13 @@ angular.module('App')
         modal.close.then(function(result){
           console.log('registration modal');
         });
-      })
+      });
     };
 
     $scope.subItems =[ 
-      { title: "Design", detail: "innovation" },
-      { title: "Entertainment", detail: "pleasure" },
-      { title: "Living", detail: "happiness"},
-      { title: "Balance", detail: "peace"}
-      ]
+      { title: 'Design', detail: 'innovation' },
+      { title: 'Entertainment', detail: 'pleasure' },
+      { title: 'Living', detail: 'happiness'},
+      { title: 'Balance', detail: 'peace'}
+      ];
   }]);

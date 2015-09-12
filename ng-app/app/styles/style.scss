@@ -25,6 +25,23 @@ body {
   a.brand.white {
     text-decoration: none;
   }
+  .join-tag {
+    transition-duration: 0.3s;
+    text-decoration: none;
+    background-color: $orange;
+    z-index: 999;
+    position: absolute;
+    right: 0;
+    padding: 12px 15px;
+    color: $white;
+    top: 77px;
+    margin-right: 27px;
+    &:hover {
+      transition-duration: 0.3s;
+      background-color: $grey-light;
+      color: $orange;
+    }
+  }
   .navbar-header.center > a:hover {
     color: $orange;
 
@@ -40,7 +57,7 @@ body {
     border-radius: 0;
     .menu-item {
       height: 48px;
-      padding: 14px 10px 10px 32px;
+      // padding: 14px 10px 10px 40px;
     }
   }
   .navbar-inverse {
@@ -73,7 +90,7 @@ body {
     }
   }
   .navbar-collapse.bs-js-navbar-collapse.collapse {
-    margin-left: 64px;
+    // margin-left: 64px;
   }
   .navbar-toggle {
     margin-left: 15px;
@@ -83,8 +100,8 @@ body {
   .logo {
     transition-duration: 0.5s;
     font-size: 38px;
-    max-width: 28px;
-    margin-top: 4px;
+    margin-top: -4px;
+    margin-left: -20px;
     position: absolute;
   }
   .hamburger {
@@ -163,12 +180,12 @@ body {
       border-top: 1px solid $grey-dark;
     }
     .logo {
-      position: absolute;
-      margin-left: -35px;
+      margin-left: -48px;
       transition-duration: 0.5s;
       font-size: 38px;
-      max-width: 28px;
+      // max-width: 28px;
       margin-top: 4px;
+      position: absolute;
     }
     .login {
       float: right;
@@ -182,6 +199,7 @@ body {
       border: none;
       .icon-bar {
         background-color: $white;
+        height: 1px;
       }
       &:hover, &:focus, &:active{
         background-color: $black;
@@ -240,7 +258,9 @@ body {
       
     }
     button.navbar-toggle {
+      padding-top: 12px;
       .icon-bar {
+        height: 1px;
         transition-duration: 1s;
       }
     }

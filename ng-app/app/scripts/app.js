@@ -60,6 +60,10 @@ angular
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl'
       })
+      .when('/favorites', {
+        templateUrl: 'views/favorites.html',
+        controller: 'FavoritesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

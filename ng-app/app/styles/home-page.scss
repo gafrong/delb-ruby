@@ -5,11 +5,11 @@
     margin: 0;
   } 
   .sub-item {
-    height: 100px;
+    height: 50px;
     background-color: $grey-lighter;
     margin-bottom: 0px;
     text-align: center;
-    padding-top: 15px;
+    padding: 5px;
   }
   .sub-item:hover {
     transition-duration: 0.3s;
@@ -28,11 +28,14 @@
     margin-bottom: 0;
   }
   
-
-.carousel-inner > .item > img {
-    float: left;
-    height: 100%;
-    width:  100%;
-}
-
+  //carousel
+  .carousel-inner > .item > img {
+      height: 100%;
+      width:  100%;
+  }
+  .delb-menu {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+  }
 }

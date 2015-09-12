@@ -14,6 +14,16 @@ angular.module('App')
     $scope.logo = "images/delb.png";
     $scope.isCollapsed = true;
 
+    $scope.category = [
+      {title: "Home & Living"},
+      {title: "Arts & Craft"},
+      {title: "Fashion"},
+      {title: "Sports"},
+      {title: "Tech"},
+      {title: "Kids"},
+      {title: "Other"}
+    ]
+
     $scope.showLogin = function(){
       ModalService.showModal({
         templateUrl: "login.html",
@@ -39,8 +49,9 @@ angular.module('App')
     };
 
     $scope.subItems =[ 
-      { title: "dog", detail: "renee is a dog" },
-      { title: "cat", detail: "joe is a cat" },
-      { title: "bird", detail: "mike is a bird"}
+      { title: "Design", detail: "innovation" },
+      { title: "Entertainment", detail: "pleasure" },
+      { title: "Living", detail: "happiness"},
+      { title: "Balance", detail: "peace"}
       ]
   }]);

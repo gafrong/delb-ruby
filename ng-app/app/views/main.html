@@ -9,7 +9,8 @@
               <slide ng-repeat="slide in slides" active="slide.active">
                 <img ng-src="{{slide.image}}">
                 <div class="carousel-caption">
-                  <!-- <h4>Slide {{$index}}</h4> -->
+                  <button class="btn btn-default">Visit{{$index}}</button>
+                  <h4>(edit product description) {{$index}}</h4>
                   <p>{{slide.text}}</p>
                 </div>
               </slide>
@@ -17,16 +18,22 @@
           </div>
         </div>
       </div>
-      <div class="padding-none">
+
+      <!-- <div class="padding-none delb-menu">
         <ul ng-repeat="item in subItems" class="no-decor">
           <a href="" class="sub-item-link">
-            <li class="sub-item col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <li class="sub-item col-xs-3 col-sm-1 col-md-1 col-lg-1">
               <h4>{{item.title}}</h4>
-              <p>{{item.detail}}</p>
             </li>
           </a>
         </ul>
-      </div>
+        <ul class="col-sm-8" style="background-color: #999;">
+          <li class="col-xs-3">test</li>
+          <li class="col-xs-3">test2</li>
+          <li class="col-xs-3">test</li>
+          <li class="col-xs-3">test2</li>
+        </ul>
+      </div> -->
 
 <!-- Customize carousel template -->
 <script id="template/carousel/carousel.html" type="text/ng-template">

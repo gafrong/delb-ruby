@@ -57,12 +57,10 @@ angular.module('App')
       { title: 'Balance', detail: 'peace'}
       ];
 
-
-    $('#offcanvasRight').on('show.bs.offcanvas', function(){
-      $(document).on('click', function(element){
+    $('#offcanvasRight').on('hide.bs.offcanvas', function(){
         $scope.rotateUserBar = true;
         $scope.rotateUser = true;
-      })
+        $scope.$apply();
     });
 
   }]);

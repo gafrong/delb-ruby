@@ -4,7 +4,7 @@
     <li class="active"><a href="#">Link</a></li>
     <li><a href="#">Link</a></li>
     <li><a href="#">Link</a></li>
-    <li><a href="#">Link</a></li>
+    <li ng-if="user.id"><a href ng-click='signOut()'>LOGOUT</a></li>
   </ul>
 </nav>
 

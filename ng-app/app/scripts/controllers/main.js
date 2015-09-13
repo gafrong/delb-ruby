@@ -61,7 +61,6 @@ angular.module('App')
         $scope.rotateUserBar = true;
         $scope.rotateUser = true;
         $scope.$apply();
-        console.log('!!!');
     });
 
   }]);

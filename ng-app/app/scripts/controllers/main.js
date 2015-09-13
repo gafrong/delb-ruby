@@ -13,6 +13,8 @@ angular.module('App')
     $scope.loggedIn = false;
     $scope.logo = "images/delb.png";
     $scope.isCollapsed = true;
+    $scope.rotateUser = true;
+    $scope.rotateUserBar = true;
 
     $scope.category = [
       {title: "Home & Living"},
@@ -54,4 +56,13 @@ angular.module('App')
       { title: 'Living', detail: 'happiness'},
       { title: 'Balance', detail: 'peace'}
       ];
+
+
+    $('#offcanvasRight').on('show.bs.offcanvas', function(){
+      $(document).on('click', function(element){
+        $scope.rotateUserBar = true;
+        $scope.rotateUser = true;
+      })
+    });
+
   }]);

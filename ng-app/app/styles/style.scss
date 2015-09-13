@@ -61,7 +61,7 @@ body {
     border-radius: 0;
     .menu-item {
       height: 48px;
-      // padding: 14px 10px 10px 40px;
+      padding-left: 70px;
     }
   }
   .navbar-inverse {
@@ -70,6 +70,7 @@ body {
   }
   .navbar-nav {
     margin-top: 4px;
+    position: center;
     li {
       a {
         color: $white;
@@ -160,6 +161,52 @@ body {
 @media (max-width: 767px) {
   .header{
     .navbar-header {
+      button.login {
+        height: 42px;
+        .bar-close.bar-none {
+          position: absolute;
+          float: right;
+          height: 1px;
+          visibility: hidden;
+          transition-duration: 0.2s;
+          transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+        }
+        .bar-close.bar-open {
+          background-color: $white;
+          margin-top: 10px;
+          margin-right: 12px;
+          display: block;
+          width: 22px;
+          height: 1px;
+          float: right;
+          opacity: 1;
+          transition-duration: 0.7s;
+          transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+        }
+        .bar-close.bar-open1 {
+          background-color: $white;
+          margin-top: 10px;
+          margin-right: -21px;
+          display: block;
+          width: 22px;
+          height: 1px;
+          float: right;
+          opacity: 1;
+          transition-duration: 0.7s;
+          transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+        }
+      }
+      button.login:hover {
+        .bar-close.bar-open, .bar-close.bar-open1 {
+          background-color: $orange;
+        }
+      }
       button.login, button.login:hover, button.login:focus {
         background-color: $grey-dark;
         color: $orange;
@@ -170,9 +217,32 @@ body {
           transition-duration: 0.5s;
           color: $orange;
         }
+        .icon.user-normal {
+          float: right;
+          margin-left: -32px;
+          -webkit-transition: opacity 0.3s ease-in-out;
+          -moz-transition: opacity 0.3s ease-in-out;
+          -ms-transition: opacity 0.3s ease-in-out;
+          -o-transition: opacity 0.3s ease-in-out;
+          opacity: 1;
+        }
+        .icon.user-close {
+          transition-duration: 0.3s;
+          transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -webkit-transform: rotate(180deg);
+          visibility: none;
+          position: absolute;
+          opacity: 0;
+          -webkit-transition: opacity 0.1s ease-in-out;
+          -moz-transition: opacity 0.1s ease-in-out;
+          -ms-transition: opacity 0.1s ease-in-out;
+          -o-transition: opacity 0.1s ease-in-out;
+        }
       }
     }
     .navbar-nav{
+      position: left;
       display: block;
       padding: 0;
       margin: 0 -15px;
@@ -197,7 +267,7 @@ body {
     .login {
       float: right;
       .icon {
-        padding: 15px 25px;
+        padding: 12px 25px;
         transition-duration: 0.5s;
         color: $white;
       }

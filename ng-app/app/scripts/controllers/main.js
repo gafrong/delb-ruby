@@ -55,7 +55,7 @@ angular.module('App')
       { title: 'Entertainment', detail: 'pleasure' },
       { title: 'Living', detail: 'happiness'},
       { title: 'Balance', detail: 'peace'}
-      ];
+    ];
 
     $('#offcanvasRight').on('hide.bs.offcanvas', function(){
         $scope.rotateUserBar = true;

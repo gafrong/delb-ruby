@@ -6,7 +6,7 @@
     <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-heart mg-right-10"></span> Favorite</a></li>
     <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-list-alt mg-right-10"></span> History</a></li>
     <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-cog mg-right-10"></span> Account</a></li>
-    <li ng-if="1user.id"><a href ng-click='signOut()' class="menu-right-list"><span class="glyphicon glyphicon-minus mg-right-10"></span> Logout</a></li>
+    <li ng-if="!user.id"><a href ng-click='signOut()' class="menu-right-list"><span class="glyphicon glyphicon-minus mg-right-10"></span> Logout</a></li>
   </ul>
 </nav>
 

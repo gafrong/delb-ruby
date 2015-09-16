@@ -9,12 +9,15 @@
  */
 angular.module('App')
   .controller('MainCtrl', ['$scope', 'ModalService', function ($scope, ModalService) {
-    $scope.rotateBar = true;
-    $scope.loggedIn = false;
-    $scope.logo = "images/delb.png";
-    $scope.isCollapsed = true;
-    $scope.rotateUser = true;
-    $scope.rotateUserBar = true;
+
+    $scope.initialize = function (){
+      $scope.rotateBar = true;
+      $scope.loggedIn = false;
+      $scope.logo = "images/delb.png";
+      $scope.isCollapsed = true;
+      $scope.rotateUser = true;
+      $scope.rotateUserBar = true;
+    };  
 
     $scope.category = [
       {title: "Home & Living"},
@@ -63,4 +66,10 @@ angular.module('App')
         $scope.$apply();
     });
 
+    $scope.change = function (){
+      console.log('change');
+    };
+
+
+    $scope.initialize();
   }]);

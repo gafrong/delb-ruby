@@ -270,7 +270,7 @@ body {
     .login {
       float: right;
       .icon {
-        padding: 12px 25px;
+        padding: 14px 25px;
         transition-duration: 0.5s;
         color: $white;
       }
@@ -338,8 +338,9 @@ body {
       
     }
     button.navbar-toggle {
-      padding-top: 12px;
+      padding-top: 8px;
       .icon-bar {
+        margin-top: 3px;
         height: 1px;
         transition-duration: 1s;
       }

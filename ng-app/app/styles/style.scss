@@ -44,11 +44,7 @@ body {
     }
   }
   .navbar-header.center > a:hover {
-    color: $orange;
-
-  }
-  .navbar-header.center > a:focus {
-    color: $orange;
+    color: $white;
   }
   .navbar-nav {
     text-align: center;
@@ -61,7 +57,13 @@ body {
     border-radius: 0;
     .menu-item {
       height: 48px;
-      // padding-left: 70px;
+      &:hover {
+        color: $white;
+      }
+      &:focus {
+        color: $orange;
+        background-color: $grey-dark;
+      }
     }
   }
   .navbar-inverse {
@@ -69,14 +71,38 @@ body {
     border: none;
   }
   .menu-right-list {
-    padding: 15px;
+    padding: 15px 15px 15px 20px;
+    height: 52px;
+    background-color: $grey-dark3;
+    border-bottom: 1px solid $grey-dark4;
+    &:hover {
+      color: $white;
+    }
+    &:focus {
+      background-color: $grey-dark;
+      color: $orange;
+    }
+  }
+  .navmenu, .navbar-offcanvas {
+    border: none;
+    background-color: $grey-dark3;
+  } 
+  .navmenu-inverse .navmenu-nav > li > a:hover,
+  .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a:hover{
+    color: $white;
+    background-color: $grey-dark2;
+  }
+  .navmenu-inverse .navmenu-nav > li > a:focus,
+  .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a:focus {
+    color: $orange;
+    background-color: $grey-dark;
   }
   .navbar-nav {
     margin-top: 4px;
     position: center;
     li {
       a {
-        color: $white;
+        color: $grey-light;
         &:hover {
           color: $grey-md;
           background-color: $grey-dark2;
@@ -87,17 +113,12 @@ body {
       }
     }
   }
-  .brand {
-    // padding-left: 40px;  
-  }
   .brand:hover, .brand:focus {
     .icon-delb {
       color: $orange;
     }
   }
-  .navbar-collapse.bs-js-navbar-collapse.collapse {
-    // margin-left: 64px;
-  }
+
   .navbar-toggle {
     margin-left: 15px;
     margin-top: 10px;
@@ -260,13 +281,15 @@ body {
     .navbar {
       .menu-item {
         padding-left: 60px;
+        padding-top: 15px;
+        background-color: $grey-dark3;
+        border-bottom: 1px solid $grey-dark4;
       }
     }
     .logo {
       margin-left: -48px;
       transition-duration: 0.5s;
       font-size: 38px;
-      // max-width: 28px;
       margin-top: 4px;
       position: absolute;
     }

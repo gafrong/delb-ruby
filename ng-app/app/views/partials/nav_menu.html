@@ -1,12 +1,12 @@
 <!-- offcanvas right inner menu items -->
 <nav id="offcanvasRight" class="navmenu navmenu-inverse navmenu-fixed-right offcanvas" role="navigation">
   <ul class="nav navmenu-nav">
-    <li class="active"><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-home mg-right-10"></span> My STORE</a></li>
-    <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-envelope mg-right-10"></span> Message</a></li>
-    <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-heart mg-right-10"></span> Favorite</a></li>
-    <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-list-alt mg-right-10"></span> History</a></li>
-    <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-cog mg-right-10"></span> Account</a></li>
-    <li ng-if="user.id"><a href ng-click='signOut()' class="menu-right-list"><span class="glyphicon glyphicon-minus mg-right-10"></span> Logout</a></li>
+    <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-home mg-right-12"></span> My STORE</a></li>
+    <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-envelope mg-right-12"></span> Message</a></li>
+    <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-heart mg-right-12"></span> Favorite</a></li>
+    <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-list-alt mg-right-12"></span> History</a></li>
+    <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-cog mg-right-12"></span> Account</a></li>
+    <li ng-if="user.id"><a href ng-click='signOut()' class="menu-right-list"><span class="glyphicon glyphicon-minus mg-right-12"></span> Logout</a></li>
   </ul>
 </nav>
 
@@ -20,7 +20,6 @@
       </button>
 
       <a class="brand white col-md-2 col-lg-2 visible-xs" href="#/"><i class="icon-delb logo white"></i></a>
-<!-- ng-click="rotateUser=!rotateUser; rotateUserBar=!rotateUserBar" -->
 
       <!-- offcanvasRight menu trigger -->
       <button href="" class="login visible-xs" data-toggle="offcanvas" data-target="#offcanvasRight" ng-show="user.signedIn" data-canvas="body">
@@ -139,14 +138,6 @@
       <nav>     
         <ul class="nav navbar-nav col-sm-12">
           <li class="col-xs-12 col-sm-2 padding-none"><a ng-href="#/" class="menu-item hidden-xs width100"><i class="icon-delb logo white"></i></a></li>
-<!--           <li class="col-xs-12 col-sm-2 col-lg-2">
-            <form action="#" id="search" method="post" class="menu-item width100">
-              <div id="label">
-                <label for="search-terms" id="search-label" class="glyphicon glyphicon-search white font18"></label>
-              </div>
-              <div id="input"><input type="text" name="search-terms" id="search-terms" placeholder="Enter search terms..."></div>
-            </form>
-          </li> -->
           <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a href class="menu-item width100"><span class="glyphicon glyphicon-search font18" aria-hidden="true" ></span></a></li>
           <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/favorites" class="menu-item width100"><span class="glyphicon glyphicon-heart font18" aria-hidden="true"></a></li>
           <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/shoppingcart" class="menu-item width100"><span class="glyphicon glyphicon-shopping-cart font18" aria-hidden="true" ></span></a></li>

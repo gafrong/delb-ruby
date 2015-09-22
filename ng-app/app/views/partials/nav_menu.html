@@ -148,9 +148,9 @@
             </form>
           </li> -->
           <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a href class="menu-item width100"><span class="glyphicon glyphicon-search font18" aria-hidden="true" ></span></a></li>
-          <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/about" class="menu-item width100"><span class="glyphicon glyphicon-heart font18" aria-hidden="true"></a></li>
-          <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/favorites" class="menu-item width100"><span class="glyphicon glyphicon-shopping-cart font18" aria-hidden="true" ></span></a></li>
-          <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/list" class="menu-item width100">MySTORE</a></li>        
+          <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/favorites" class="menu-item width100"><span class="glyphicon glyphicon-heart font18" aria-hidden="true"></a></li>
+          <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/shoppingcart" class="menu-item width100"><span class="glyphicon glyphicon-shopping-cart font18" aria-hidden="true" ></span></a></li>
+          <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/mystore" class="menu-item width100">MySTORE</a></li>        
           <li class="col-xs-12 col-sm-2 col-lg-2 hidden-xs padding-none" ng-if="user.id"><a href class="menu-item width100 hiddden-xs"><span class="glyphicon glyphicon-user font18" aria-hidden="true"></span></a></li>
           <li class="col-xs-12 col-sm-2 col-lg-2 hidden-xs padding-none" ng-if="!user.id"><a href ng-click="showLogin()" class="menu-item width100"><span class="glyphicon glyphicon-off icon font18" aria-hidden="true"></span></a></li> 
           <li class="col-xs-12 col-sm-2 col-lg-2 visible-xs padding-none" ng-if="user.id"><a ng-click='signOut()' class="menu-item width100">LOGOUT</a></li>

@@ -43,6 +43,10 @@ angular
           }]
         }
       })
+      .when('/shoppingcart', {
+        templateUrl: 'views/shoppingcart.html',
+        controller: 'CartCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
@@ -50,6 +54,15 @@ angular
       .when('/list', {
         templateUrl: 'views/list.html',
         controller: 'ListCtrl',
+        resolve: {
+          auth: ['$auth', function($auth){
+            return $auth.validateUser();
+          }]
+        }
+      })
+      .when('/mystore', {
+        templateUrl: 'views/mystore.html',
+        controller: 'MystoreCtrl',
         resolve: {
           auth: ['$auth', function($auth){
             return $auth.validateUser();

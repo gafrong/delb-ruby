@@ -5,9 +5,6 @@
 @import "home-page.scss";
 @import "main.scss";
 
-// body {
-//   padding-left: 300px;
-// }
 
 body {
   background-color: $main-bg-color;
@@ -53,6 +50,9 @@ body {
   .navbar-header.center > a:focus {
     color: $orange;
   }
+  .navbar-nav {
+    text-align: center;
+  }
   .navbar {
     margin: 0;
     min-height: 50px;
@@ -61,7 +61,7 @@ body {
     border-radius: 0;
     .menu-item {
       height: 48px;
-      padding-left: 70px;
+      // padding-left: 70px;
     }
   }
   .navbar-inverse {
@@ -88,9 +88,7 @@ body {
     }
   }
   .brand {
-    padding-left: 40px;
-    
-    
+    // padding-left: 40px;  
   }
   .brand:hover, .brand:focus {
     .icon-delb {
@@ -142,7 +140,6 @@ body {
       height: 45px;
     }
   }
-
 }
 
 
@@ -245,6 +242,7 @@ body {
       }
     }
     .navbar-nav{
+      text-align: left;
       position: left;
       display: block;
       padding: 0;
@@ -258,6 +256,11 @@ body {
     }
     .navbar-collapse {
       border-top: 1px solid $grey-dark;
+    }
+    .navbar {
+      .menu-item {
+        padding-left: 60px;
+      }
     }
     .logo {
       margin-left: -48px;

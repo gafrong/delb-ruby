@@ -35,6 +35,56 @@ body, header {
   }
 }
 
+/* Navbar Search transition*/
+// #label {
+//   position: relative;
+//   z-index: 20;
+// }
+// #label .glyphicon-search {
+//   cursor: pointer;
+// }
+// #search-label {
+//   margin-top: 16px;
+// }
+// #input {
+//   position: absolute;
+//   top: 0;
+//   left: 50px;
+//   width: 190px;
+//   height: 47px;
+//   z-index: 5;
+//   overflow: hidden;
+//   margin-top: 50px;
+//   margin-left: 20px;
+// }
+// #input input {
+//   display: block;
+//   position: absolute;
+//   top: 0;
+//   left: -190px;
+//   width: 190px;
+//   height: 100%;
+//   margin:0;
+//   padding: 0 10px;
+//   border: none;
+//   background-color: $grey-md;
+//   color: #fff;
+//   backface-visibility: none;
+//   border-radius: 0;
+//   transition: left 0;
+// }
+// #input input:focus {
+//     outline: none;
+// }
+// #input.focus {
+//     z-index: 20;
+// }
+// #input.focus input {
+//     left: 0;
+//     transition: left 0.3s;
+// }
+
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;

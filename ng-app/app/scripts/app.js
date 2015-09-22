@@ -64,8 +64,16 @@ angular
         templateUrl: 'views/mystore.html',
         controller: 'MystoreCtrl',
         resolve: {
-          auth: ['$auth', function($auth){
-            return $auth.validateUser();
+       
+          auth: ['$auth', '$location', function($auth, $location){
+            if ($auth.user.id){
+              console.log('user is logged in');
+              return $auth.validateUser();
+            } else {
+              console.log('express error msg!!!');
+              $location.path("/pleaselogin");
+            }
+            
           }]
         }
       })
@@ -77,8 +85,28 @@ angular
         templateUrl: 'views/favorites.html',
         controller: 'FavoritesCtrl'
       })
+      .when('/pleaselogin', {
+        template: "<h4 class='container center mg-top-20'>Please Log In or Sign Up to access the page.</h4>"
+      })
       .otherwise({
         redirectTo: '/'
       });
   });
 
+// var checkRouting= function ($q, $rootScope, $location, $http) {
+//     if ($rootScope.userProfile) {
+//         return true;
+//     } else {
+//         var deferred = $q.defer();
+//         $http.post("/loadUserProfile", { userToken: "blah" })
+//             .success(function (response) {
+//                 $rootScope.userProfile = response.userProfile;
+//                 deferred.resolve(true);
+//             })
+//             .error(function () {
+//                 deferred.reject();
+//                 $location.path("/");
+//              });
+//         return deferred.promise;
+//     }
+// };

@@ -16,8 +16,17 @@
 .white {
   color: $white;
 }
+.grey-dark {
+  color: $grey-dark;
+}
 .float-right {
   float: right;
+}
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
 }
 .mg-top-20 {
   margin-top: 20px;
@@ -45,6 +54,13 @@
 }
 .padding-none {
   padding: 0;
+}
+.orange-bg {
+  background-color: $orange;
+  border: none;
+  &:hover {
+    background-color: $orange-dark;
+  }
 }
 
 

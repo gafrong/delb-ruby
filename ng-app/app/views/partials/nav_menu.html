@@ -30,103 +30,125 @@
       </button>
      
       <!-- mobile login button -->
-      <button href="" class="login visible-xs" ng-click="showLogin()" ng-if="!loggedIn && !user.id">
+      <button class="login visible-xs" ng-click="showLogin()" ng-if="!loggedIn && !user.id">
         <span class="glyphicon glyphicon-off icon font18" aria-hidden="true">
         </span>
       </button>
-
     </div>
 
     <!-- Login Modal -->
-    <script type="text/ng-template" id="login.html" ng-controller="UserSessionsCtrl">
+    <script type="text/ng-template" id="login.html">
       <div class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Login</h4>
+              <h4 class="modal-title center">Log In</h4>
             </div>
-            <div class="modal-body">
-              <form ng-controller="UserSessionsCtrl" ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
+
+            <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}" class="form-horizontal">
+              
+              <div class="modal-body grey-dark">
                 <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email"
-                         name="email"
-                         id="email"
-                         ng-model="loginForm.email"
-                         required="required"
-                         class="form-control">
+                  <label for="email" class="col-xs-3 control-label right">Email</label>
+                  <div class="col-xs-9">
+                    <input type="email"
+                           name="email"
+                           id="email"
+                           ng-model="loginForm.email"
+                           required="required"
+                           class="form-control">
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password"
+                  <label for="password" class="col-xs-3 control-label right">Password</label>
+                  <div class="col-xs-9">
+                    <input type="password"
                          name="password"
                          id="password"
                          ng-model="loginForm.password"
                          required="required"
                          class="form-control">
+                  </div>
                 </div>  
-                <button type="submit" class="btn btn-primary1" ng-click="submitLogin(loginForm)" data-dismiss="modal">Sign in</button>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" ng-click="close()" class="btn btn-default" data-dismiss="modal">No</button>
-             
-            </div>
-          </div>
-        </div>
-      </div>
+                <div class="form-group">
+                  <div class="col-xs-offset-3 col-xs-9">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Remember me
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer center">
+                <button type="submit" class="btn btn-primary btn-lg center orange-bg" ng-click="submitLogin(loginForm)" data-dismiss="modal">Log In</button>
+                <button type="button" ng-click="close()" class="btn btn-lg btn-default" data-dismiss="modal">Close</button> 
+              </div>
+            </form>
+
+          </div> <!-- modal content -->
+        </div> <!-- modal dialog -->
+      </div> <!-- modal fade -->
     </script>
 
     <!-- Sign Up Modal -->
-    <script type="text/ng-template" id="signup.html" ng-controller="UserSessionsCtrl">
+    <script type="text/ng-template" id="signup.html">
       <div class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Sign Up</h4>
+              <h4 class="modal-title center">Sign Up</h4>
             </div>
-            <div class="modal-body">
-                <form ng-submit="handleRegBtnClick()" role="form" ng-init="registrationForm = {}">
+            <form ng-submit="handleRegBtnClick()" role="form" ng-init="registrationForm = {}" class="form-horizontal">
+              <div class="modal-body grey-dark">
                   <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email"
-                           name="email"
-                           id="email"
-                           ng-model="registrationForm.email"
-                           required="required"
-                           class="form-control">
+                    <label for="email" class="col-xs-3 control-label right">Email</label>
+                    <div class="col-xs-9">
+                      <input type="email"
+                             name="email"
+                             id="email"
+                             ng-model="registrationForm.email"
+                             required="required"
+                             class="form-control">
+                    </div>         
                   </div>
 
                   <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password"
-                           name="password"
-                           id="password"
-                           ng-model="registrationForm.password"
-                           required="required"
-                           class="form-control">
+                    <label for="password" class="col-xs-3 control-label right">Password</label>
+                    <div class="col-xs-9">
+                      <input type="password"
+                             name="password"
+                             id="password"
+                             ng-model="registrationForm.password"
+                             required="required"
+                             class="form-control">
+                    </div>         
                   </div>
 
                   <div class="form-group">
-                    <label for="password_confirmation">Password confirmation</label>
-                    <input type="password"
-                           name="password_confirmation"
-                           id="password_confirmation"
-                           ng-model="registrationForm.password_confirmation"
-                           required="required"
-                           class="form-control">
+                    <label for="password_confirmation" class="col-xs-3 control-label right">Password confirmation</label>
+                    <div class="col-xs-9">
+                      <input type="password"
+                             name="password_confirmation"
+                             id="password_confirmation"
+                             ng-model="registrationForm.password_confirmation"
+                             required="required"
+                             class="form-control">
+                    </div>         
                   </div>
 
-                  <button type="submit" class="btn btn-primary btn-lg" ng-click="handleRegBtnClick(registrationForm)" data-dismiss="modal">Register</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" ng-click="close()" class="btn btn-default" data-dismiss="modal">No</button>
-             
-            </div>
+              </div> <!-- modal body -->
+
+              <div class="modal-footer center">
+                <button type="submit" class="btn btn-primary btn-lg center orange-bg" ng-click="handleRegBtnClick(registrationForm)" data-dismiss="modal">Sign Up</button>
+                <button type="button" ng-click="close()" class="btn btn-lg btn-default" data-dismiss="modal">Close</button>
+              </div> 
+
+            </form>
           </div>
         </div>
       </div>
@@ -145,7 +167,7 @@
           <!-- User desktop menu -->  
           <li class="col-xs-12 col-sm-2 col-lg-2 hidden-xs padding-none" ng-if="user.id"><a href class="menu-item width100 hiddden-xs" data-toggle="offcanvas" data-target="#offcanvasRight"><span class="glyphicon glyphicon-user font18" aria-hidden="true"></span></a></li>
 
-          <li class="col-xs-12 col-sm-2 col-lg-2 hidden-xs padding-none" ng-if="!user.id"><a href ng-click="showLogin()" class="menu-item width100"><span class="glyphicon glyphicon-off icon font18" aria-hidden="true"></span></a></li> 
+          <li class="col-xs-12 col-sm-2 col-lg-2 hidden-xs padding-none" ng-if="!user.id"><a ng-click="showLogin()" class="menu-item width100"><span class="glyphicon glyphicon-off icon font18" aria-hidden="true"></span></a></li> 
           <li class="col-xs-12 col-sm-2 col-lg-2 visible-xs padding-none" ng-if="user.id"><a ng-click='signOut()' class="menu-item width100">LOGOUT</a></li>
         </ul>
       </nav>  

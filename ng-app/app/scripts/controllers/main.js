@@ -17,7 +17,6 @@ angular.module('App')
     $scope.rotateUser = true;
     $scope.rotateUserBar = true;
 
-
     $scope.category = [
       {title: "Home & Living"},
       {title: "Arts & Craft"},
@@ -65,10 +64,7 @@ angular.module('App')
         $scope.$apply();
     });
 
-    // $scope.change = function (){
-    //   console.log('change');
-    //   $scope.rotateUser=!$scope.rotateUser; 
-    //   $scope.rotateUserBar=!$scope.rotateUserBar;
-    // };
-
+    $('#offcanvasRight > ul > li > a').click(function() {
+      $('.navmenu').offcanvas('hide');
+    });
   }]);

@@ -6,7 +6,7 @@
     <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-heart mg-right-12"></span> Favorite</a></li>
     <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-list-alt mg-right-12"></span> History</a></li>
     <li><a href="#" class="menu-right-list"><span class="glyphicon glyphicon-cog mg-right-12"></span> Account</a></li>
-    <li ng-if="user.id"><a href ng-click='signOut()' class="menu-right-list"><span class="glyphicon glyphicon-minus mg-right-12"></span> Logout</a></li>
+    <li ng-if="user.id"><a href class="menu-right-list ng-click='signOut()'"><span class="glyphicon glyphicon-minus mg-right-12"></span> Logout</a></li>
   </ul>
 </nav>
 
@@ -85,7 +85,7 @@
 
               <div class="modal-footer center">
                 <button type="submit" class="btn btn-primary btn-lg center orange-bg" ng-click="submitLogin(loginForm)" data-dismiss="modal">Log In</button>
-                <button type="button" ng-click="close()" class="btn btn-lg btn-default" data-dismiss="modal">Close</button> 
+                <button type="button" ng-click="close('Cancel')" class="btn btn-lg btn-default" data-dismiss="modal">Close</button> 
               </div>
             </form>
 

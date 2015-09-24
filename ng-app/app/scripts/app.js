@@ -93,20 +93,3 @@ angular
       });
   });
 
-// var checkRouting= function ($q, $rootScope, $location, $http) {
-//     if ($rootScope.userProfile) {
-//         return true;
-//     } else {
-//         var deferred = $q.defer();
-//         $http.post("/loadUserProfile", { userToken: "blah" })
-//             .success(function (response) {
-//                 $rootScope.userProfile = response.userProfile;
-//                 deferred.resolve(true);
-//             })
-//             .error(function () {
-//                 deferred.reject();
-//                 $location.path("/");
-//              });
-//         return deferred.promise;
-//     }
-// };

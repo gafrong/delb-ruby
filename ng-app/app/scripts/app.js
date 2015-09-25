@@ -85,6 +85,18 @@ angular
         templateUrl: 'views/favorites.html',
         controller: 'FavoritesCtrl'
       })
+      .when('/message', {
+        templateUrl: 'views/message.html',
+        controller: 'MessageCtrl'
+      })
+      .when('/account', {
+        templateUrl: 'views/account.html',
+        controller: 'AccountCtrl'
+      })
+      .when('/history', {
+        templateUrl: 'views/history.html',
+        controller: 'HistoryCtrl'
+      })
       .when('/pleaselogin', {
         template: "<h4 class='container center mg-top-20'>Please Log In or Sign Up to access the page.</h4>"
       })

@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('App')
-  .controller('MystoreCtrl', function ($scope, user) {
-    console.log(user.name);
-    $scope.user = user;
-    if(user.name){
-      $scope.name = user.name;
+  .controller('MystoreCtrl', function ($scope, $rootScope) {
+    console.log($rootScope.user.name);
+    $scope.user = $rootScope.user;
+    if($rootScope.user.name){
+      $scope.name = $rootScope.user.name;
+      $scope.email = $rootScope.user.email;
     } else {
       $scope.name = "Your Store";
     }

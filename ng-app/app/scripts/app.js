@@ -98,7 +98,7 @@ angular
         controller: 'HistoryCtrl'
       })
       .when('/pleaselogin', {
-        template: "<h4 class='container center mg-top-20'>Please Log In or Sign Up to access the page.</h4>"
+        template: "<h3 class='container center mg-top-100 height-min600'>You must Log In or Sign Up to access the page.</h3>"
       })
       .otherwise({
         redirectTo: '/'

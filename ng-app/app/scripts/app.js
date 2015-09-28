@@ -65,28 +65,28 @@ angular
       .when('/list', {
         templateUrl: 'views/list.html',
         controller: 'ListCtrl',
-        resolve: {
-          auth: ['$auth', function($auth){
-            return $auth.validateUser();
-          }]
-        }
+        // resolve: {
+        //   auth: ['$auth', function($auth){
+        //     return $auth.validateUser();
+        //   }]
+        // }
       })
       .when('/mystore', {
         templateUrl: 'views/mystore.html',
         controller: 'MystoreCtrl',
-        resolve: {
+        // resolve: {
        
-          auth: ['$auth', '$location', function($auth, $location){
-            if ($auth.user.id){
-              console.log('user is logged in');
-              return $auth.validateUser();
-            } else {
-              console.log('express error msg!!!');
-              $location.path("/pleaselogin");
-            }
+        //   auth: ['$auth', '$location', function($auth, $location){
+        //     if ($auth.user.id){
+        //       console.log('user is logged in');
+        //       return $auth.validateUser();
+        //     } else {
+        //       console.log('express error msg!!!');
+        //       $location.path("/pleaselogin");
+        //     }
             
-          }]
-        }
+        //   }]
+        // }
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
@@ -95,47 +95,47 @@ angular
       .when('/favorites', {
         templateUrl: 'views/favorites.html',
         controller: 'FavoritesCtrl',
-        resolve: {      
-          auth: ['$auth', '$location', function($auth, $location){
-            if ($auth.user.id){
-              console.log('user is logged in');
-              return $auth.validateUser();
-            } else {
-              console.log('express error msg!!!');
-              $location.path("/pleaselogin");
-            }
-          }]
-        }
+        // resolve: {      
+        //   auth: ['$auth', '$location', function($auth, $location){
+        //     if ($auth.user.id){
+        //       console.log('user is logged in');
+        //       return $auth.validateUser();
+        //     } else {
+        //       console.log('express error msg!!!');
+        //       $location.path("/pleaselogin");
+        //     }
+        //   }]
+        // }
       })
       .when('/message', {
         templateUrl: 'views/message.html',
         controller: 'MessageCtrl',
-        resolve: {      
-          auth: ['$auth', '$location', function($auth, $location){
-            if ($auth.user.id){
-              console.log('user is logged in');
-              return $auth.validateUser();
-            } else {
-              console.log('express error msg!!!');
-              $location.path("/pleaselogin");
-            }
-          }]
-        }
+        // resolve: {      
+        //   auth: ['$auth', '$location', function($auth, $location){
+        //     if ($auth.user.id){
+        //       console.log('user is logged in');
+        //       return $auth.validateUser();
+        //     } else {
+        //       console.log('express error msg!!!');
+        //       $location.path("/pleaselogin");
+        //     }
+        //   }]
+        // }
       })
       .when('/account', {
         templateUrl: 'views/account.html',
         controller: 'AccountCtrl',
-        resolve: {      
-          auth: ['$auth', '$location', function($auth, $location){
-            if ($auth.user.id){
-              console.log('user is logged in');
-              return $auth.validateUser();
-            } else {
-              console.log('express error msg!!!');
-              $location.path("/pleaselogin");
-            }
-          }]
-        }
+        // resolve: {      
+        //   auth: ['$auth', '$location', function($auth, $location){
+        //     if ($auth.user.id){
+        //       console.log('user is logged in');
+        //       return $auth.validateUser();
+        //     } else {
+        //       console.log('express error msg!!!');
+        //       $location.path("/pleaselogin");
+        //     }
+        //   }]
+        // }
       })
       .when('/history', {
         templateUrl: 'views/history.html',

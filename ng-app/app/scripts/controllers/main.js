@@ -16,14 +16,14 @@ angular.module('App')
     $scope.isCollapsed = true;
     $scope.rotateUser = true;
     $scope.rotateUserBar = true;
+    $scope.currentTabIndex = 0;
 
-    $scope.category = [
-      {title: "Home & Living"},
-      {title: "Arts & Craft"},
-      {title: "Fashion"},
-      {title: "Sports"},
+    $scope.categories = [
+      {title: "Featured"},
+      {title: "Top Sellers"},
+      {title: "Sale"},
+      {title: "New"},
       {title: "Tech"},
-      {title: "Kids"},
       {title: "Other"}
     ];
 
@@ -57,6 +57,10 @@ angular.module('App')
       { title: 'Living', detail: 'happiness'},
       { title: 'Balance', detail: 'peace'}
     ];
+
+    $scope.showTab = function(tabIndex) {
+      $scope.currentTabIndex = tabIndex;
+    };
 
     $('#offcanvasRight').on('hide.bs.offcanvas', function(){
         $scope.rotateUserBar = true;

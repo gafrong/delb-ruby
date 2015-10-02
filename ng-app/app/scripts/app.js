@@ -11,7 +11,8 @@ angular
     'ng-token-auth',
     'angularModalService',
     'ui.bootstrap',
-    'ui.bootstrap.collapse'
+    'ui.bootstrap.collapse',
+    'ngFileUpload'
   ])
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function(userInfo) {

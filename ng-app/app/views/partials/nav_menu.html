@@ -21,7 +21,7 @@
       <a class="brand white col-md-2 col-lg-2 visible-xs" href="#/"><i class="icon-delb logo white"></i></a>
 
       <!-- offcanvasRight menu trigger -->
-      <button href class="login visible-xs" data-toggle="offcanvas" data-target="#offcanvasRight" ng-show="user.signedIn" data-canvas="body" data-autohide="true">
+      <button href class="login visible-xs" data-toggle="offcanvas" data-target="#offcanvasRight" ng-show="!user.signedIn" data-canvas="body" data-autohide="true">
         <span class="glyphicon glyphicon-user icon font18" aria-hidden="true" ng-class="rotateUser ? 'user-normal':'user-close'">
         </span>
         <span class="bar-close" ng-class="rotateUserBar ? 'bar-none' : 'bar-open'"></span>
@@ -40,8 +40,24 @@
       <nav>     
         <ul class="nav navbar-nav col-sm-12">
           <li class="col-xs-12 col-sm-2 padding-none"><a ng-href="#/" class="menu-item hidden-xs width100"><i class="icon-delb logo white"></i></a></li>
-          <li class="col-xs-12 col-sm-8 col-lg-8 padding-none">
-            <a href class=""><span class="glyphicon glyphicon-search font18" aria-hidden="true" ></span>
+          <li class="col-sm-1"></li>
+          <li class="col-xs-10 col-sm-6 col-lg-6 center search-li">
+            <div class="row">
+              <span class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <span ng-repeat="item in categories">        
+                      <a href="" class="category"><li class="width100 category-li">{{item.title}}</li></a>
+                    </span>
+                  </ul>
+                </div><!-- /btn-group -->
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+              </span><!-- /input-group -->
+            </div>
             <!-- <input type="text"
               ng-model="search"
               > -->
@@ -51,6 +67,7 @@
                 <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
               </span></a> -->
           </li>
+          <li class="col-sm-1"></li>
          <!--  <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/favorites" class="menu-item width100"><span class="glyphicon glyphicon-heart font18" aria-hidden="true"></a></li>
           <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/shoppingcart" class="menu-item width100"><span class="glyphicon glyphicon-shopping-cart font18" aria-hidden="true" ></span></a></li>
           <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a ng-href="#/mystore" class="menu-item width100">MySTORE</a></li> -->

@@ -56,6 +56,7 @@ body {
     border: none;
     border-radius: 0;
     .menu-item {
+      padding-top: 12px;
       height: 48px;
       &:hover {
         color: $white;
@@ -118,7 +119,60 @@ body {
       color: $orange;
     }
   }
-
+  .navbar-collapse {
+    .search-li {
+      padding-top: 5px;
+      color: $orange;
+      .row {
+        .input-group {
+          .input-group-btn {
+            background-color: $grey-dark3;
+            border-color: $grey-dark3;
+            .btn {
+              border-color: $grey-dark3;
+              background-color: $black;
+              color: $grey-light;
+              &:hover, &:focus {
+                color: $white;
+                border-color: $grey-light8;
+                z-index: 99;
+                background-color: $grey-dark4;
+              }
+            }
+            .dropdown-menu {
+              background-color: $grey-dark2;
+              padding: 0;
+            }
+          }
+          .category-li {
+            background-color: $grey-dark;
+            height: 44px;
+            padding: 13px;
+            border-bottom: 1px solid $grey-dark5;
+            list-style-type: none;
+            text-decoration: none;
+            &:hover, &:focus {
+              background-color: $grey-dark3;
+              list-style-type: none;
+            }
+          }
+        ::-webkit-input-placeholder {
+          color: $grey-light8;
+        }
+        .form-control {
+          border-color: $grey-dark2;
+          background-color: $grey-dark4;
+          color: $grey-light8; 
+          &:hover, &:focus {
+            transition-duration: 0.3s;
+            background-color: $white;
+            color: $grey-md;
+          }
+        }
+      }
+      }
+    }
+  }
   .navbar-toggle {
     margin-left: 15px;
     margin-top: 10px;

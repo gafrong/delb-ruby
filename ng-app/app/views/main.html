@@ -1,4 +1,4 @@
-<div class="homePage">
+<div class="homePage height-min600">
   <div class="container-fluid padding-none">
     <div class="row">
 
@@ -19,44 +19,36 @@
         </div>
       </div>
 
-      <!-- <div class="padding-none delb-menu">
-        <ul ng-repeat="item in subItems" class="no-decor">
-          <a href="" class="sub-item-link">
-            <li class="sub-item col-xs-3 col-sm-1 col-md-1 col-lg-1">
-              <h4>{{item.title}}</h4>
-            </li>
-          </a>
-        </ul>
-        <ul class="col-sm-8" style="background-color: #999;">
-          <li class="col-xs-3">test</li>
-          <li class="col-xs-3">test2</li>
-          <li class="col-xs-3">test</li>
-          <li class="col-xs-3">test2</li>
-        </ul>
-      </div> -->
+      <!-- Customize carousel template -->
+      <script id="template/carousel/carousel.html" type="text/ng-template">
+        <div class="carousel" ng-swipe-right="prev()" ng-swipe-left="next()">
+            <ol class="carousel-indicators" ng-show="slides.length > 1">
+                <li ng-repeat="slide in slides | orderBy:'index' track by $index" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li>
+            </ol>
+            <div class="carousel-inner" ng-transclude></div>
+            <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1 && !isActive(slides[0])"></a>
+            <a class="right carousel-control" ng-click="next()" ng-show="slides.length > 1  && !isActive(slides[slides.length - 1])"></a>
+        </div>      
+      </script>
 
-<!-- Customize carousel template -->
-<script id="template/carousel/carousel.html" type="text/ng-template">
-  <div class="carousel" ng-swipe-right="prev()" ng-swipe-left="next()">
-      <ol class="carousel-indicators" ng-show="slides.length > 1">
-          <li ng-repeat="slide in slides | orderBy:'index' track by $index" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li>
-      </ol>
-      <div class="carousel-inner" ng-transclude></div>
-      <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1 && !isActive(slides[0])"></a>
-      <a class="right carousel-control" ng-click="next()" ng-show="slides.length > 1  && !isActive(slides[slides.length - 1])"></a>
-  </div>      
-</script>
-   <!-- <div class="carousel" ng-mouseenter="pause()" ng-mouseleave="play()" 
-     ng-swipe-right="prev()" ng-swipe-left="next()">   -->
+      <div >
+        <ul ng-repeat="category in categories" class="category-menu">
+          <li ng-click="showTab($index)" class="col-xs-2 category"><a >{{category.title}}</a></li>
+        </ul>
+      </div>
 
-    <!--     <h1 class="buffer-top"><span class="orange">d</span>esign <span class="orange">e</span>at <span class="orange">l</span>ove <span class="orange">b</span>alance</h1>
-        <h5>Market place for amazing products</h5>
-        <br>
-       
-        <div class="input-group col-lg-12 search-area center">
-          <input type="text" class="form-control text-area" placeholder="address" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">Submit</span>
-        </div> -->
+      <div class="page-tab center" ng-repeat="category in categories">        
+          <h4 ng-if="currentTabIndex === $index">{{category.title}}</h4>
+      </div>
+
+      <ul ng-repeat="list in lists" >
+        <li>
+          <img src="{{list.image}}" alt="" style="width: 150px; height: 150px;">
+          <h5>{{list.title}}</h5>
+          <p>{{list.price}}</p>
+          <p>{{list.description}}</p>
+        </li>
+      </ul>
 
     </div>
   </div>

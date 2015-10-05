@@ -18,7 +18,11 @@ angular.module('App')
           title: title, 
           category: category, 
           price: price, 
-          description: description
+          description: description, 
+          image: image,
+          discount: discount,
+          location: location,
+          sex: sex,
         });
       }
     };

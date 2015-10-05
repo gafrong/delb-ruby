@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :authentication_tokens
+  has_many :list
+  
   before_save -> do
     self.uid = SecureRandom.uuid
     skip_confirmation!
@@ -12,6 +15,5 @@ class User < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
 
-  has_many :authentication_tokens
 
 end

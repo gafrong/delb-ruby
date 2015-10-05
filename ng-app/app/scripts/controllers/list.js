@@ -8,6 +8,7 @@ angular.module('App')
       $scope.successMsg = "";
       $scope.errorMsg = ""; 
       $scope.currentTabIndex = 1;
+      $scope.selectedCategory = "Select Category";
       
     $scope.getList = function(){
       ListService.getListItems()
@@ -16,6 +17,12 @@ angular.module('App')
       }).error(function (){
         $scope.errorMsg = "can't get the list"
       });
+    };
+
+    $scope.selectedCategory;
+    $scope.dropdownCategorySelect = function(item){
+      $scope.selectedCategory = item;
+      $scope.category = item;
     };
 
     $scope.addList = function(){
@@ -29,6 +36,7 @@ angular.module('App')
       $scope.category = "";
       $scope.price = "";
       $scope.description = "";
+      $scope.selectedCategory = "Select a category";
       $scope.getList();
     };
 
@@ -45,6 +53,10 @@ angular.module('App')
     $scope.showTab = function(tabIndex) {
       $scope.currentTabIndex = tabIndex;
     };
+
+    $scope.items = [
+      'Accessories', 'Arts & Craft', 'Bags', 'Beauty', 'Clothing', 'Craft', 'Electronics', 'Home', 'Jewerly', 'Kids', 'Party', 'Pets', 'Shoes', 'Toys', 'Weddings'
+    ];
 
     $scope.getList();
   }]);

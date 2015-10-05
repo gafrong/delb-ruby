@@ -8,7 +8,7 @@
  * Controller of the ngRailsTemplateApp
  */
 angular.module('App')
-  .controller('MainCtrl', ['$scope', 'ModalService', function ($scope, ModalService) {
+  .controller('MainCtrl', ['$scope', 'ModalService', 'ListService', function ($scope, ModalService, ListService) {
 
     $scope.rotateBar = true;
     $scope.loggedIn = false;
@@ -16,14 +16,15 @@ angular.module('App')
     $scope.isCollapsed = true;
     $scope.rotateUser = true;
     $scope.rotateUserBar = true;
+    $scope.currentTabIndex = 0;
+    $scope.lists = [];
 
-    $scope.category = [
-      {title: "Home & Living"},
-      {title: "Arts & Craft"},
-      {title: "Fashion"},
-      {title: "Sports"},
+    $scope.categories = [
+      {title: "Featured"},
+      {title: "Top Sellers"},
+      {title: "Sale"},
+      {title: "New"},
       {title: "Tech"},
-      {title: "Kids"},
       {title: "Other"}
     ];
 
@@ -58,6 +59,10 @@ angular.module('App')
       { title: 'Balance', detail: 'peace'}
     ];
 
+    $scope.showTab = function(tabIndex) {
+      $scope.currentTabIndex = tabIndex;
+    };
+
     $('#offcanvasRight').on('hide.bs.offcanvas', function(){
         $scope.rotateUserBar = true;
         $scope.rotateUser = true;
@@ -67,4 +72,16 @@ angular.module('App')
     $('#offcanvasRight > ul > li > a').click(function() {
       $('.navmenu').offcanvas('hide');
     });
+
+    $scope.getList = function(){
+      ListService.getListItems()
+      .success(function (returnData){
+        console.log(returnData);
+        $scope.lists = returnData;
+      }).error(function (){
+        $scope.errorMsg = "can't get the list"
+      });
+    }; 
+
+    $scope.getList();   
   }]);

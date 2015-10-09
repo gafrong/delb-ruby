@@ -28,3 +28,4 @@ gem 'angularjs-rails'
 gem 'angular-ui-bootstrap-rails'
 
 gem 'tiddle'
+gem 'rack-cors'

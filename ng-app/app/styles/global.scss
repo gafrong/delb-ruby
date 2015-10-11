@@ -71,24 +71,4 @@
 .height-min600 {
   min-height: 600px;
 }
-.thumbnail-main {
-  border: 1px solid $white;
-  padding: 0px;
-  margin: 5px;
-  &:hover {
-    border: 1px solid $grey-light;
-    box-shadow: 0px 0px 7px $grey-lighter;
-    -webkit-box-shadow: 0px 0px 7px $grey-lighter;
-    -moz-box-shadow: 0px 0px 7px $grey-lighter;
-    cursor: pointer;
-  }
-}
-.img-thumbnail-custom {
-  padding: 4px;
-  line-height: 1.428571429;
-  background-color: #fff;
-  transition: all 0.2s ease-in-out;
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
-}
+

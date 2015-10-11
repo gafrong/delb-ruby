@@ -31,14 +31,14 @@
     padding: 0;
     margin: 0;
     text-align: center;
-    color: $grey-md;
+    color: $white;
   }
   .category {
     list-style-type: none;
     height: 40px;
     border: 1px solid $grey-light;
     background-color: $grey-lightest;
-    color: $grey-light9;
+    color: $grey-lighter;
     padding: 10px 10px 10px 10px;
     cursor: pointer;
     &:hover {
@@ -52,7 +52,28 @@
     color: $white;
     background-color: $grey-light-bg;
   }
-
+  // thumbnail
+  .thumbnail-main {
+    border: 1px solid $grey-lightest;
+    padding: 0px;
+    margin: 5px;
+    &:hover {
+      border: 1px solid $grey-light;
+      box-shadow: 0px 0px 7px $grey-lighter;
+      -webkit-box-shadow: 0px 0px 7px $grey-lighter;
+      -moz-box-shadow: 0px 0px 7px $grey-lighter;
+    }
+  }
+  .img-thumbnail-custom {
+    // padding: 4px;
+    line-height: 1.428571429;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: 345px;
+    height: auto;
+  }
   
   //carousel
   .carousel-inner > .item > img {

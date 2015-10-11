@@ -18,15 +18,17 @@ angular.module('App')
     $scope.rotateUserBar = true;
     $scope.currentTabIndex = 0;
     $scope.lists = [];
-    $scope.selected = 0;   
+    $scope.selected = 0;  
+    $scope.filters = { }; 
+
 
     $scope.categories = [
       {title: "Featured", icon:"glyphicon-th-large"},
-      {title: "Top Sellers", icon:"glyphicon-thumbs-up"},
+      {title: "Top Seller", icon:"glyphicon-thumbs-up"},
       {title: "Sale", icon:"glyphicon-tag"},
       {title: "New", icon:"glyphicon-star"},
-      {title: "Tech", icon:"glyphicon-star"},
-      {title: "Other", icon:"glyphicon-cog"}
+      {title: "Other", icon:"glyphicon-cog"},
+      {title: "Tech", icon:"glyphicon-cog"}
     ];
 
     $scope.showLogin = function(){
@@ -88,10 +90,15 @@ angular.module('App')
     // $scope.getList();   
 
     $scope.lists = [
-      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png'},
-      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png'},
-      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png'},
-      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png'},
-      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png'}
+      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.funnycatpix.com/_pics/Nice_Shirt_Kitty.jpg', subCategory: 'featured'},
+      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.funnycatpix.com/_pics/Nice_Shirt_Kitty.jpg', subCategory: 'top seller'},
+      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png', subCategory: 'sale'},
+      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.funnycatpix.com/_pics/Oh_Hai129.jpg', subCategory: 'new'},
+      {title: 'product 2', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png', subCategory: 'new'},
+      {title: 'product 5', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.funnycatpix.com/_pics/Nice_Shirt_Kitty.jpg', subCategory: 'new'},
+      {title: 'product 6', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.funnycatpix.com/_pics/Oh_Hai129.jpg', subCategory: 'new'},
+      {title: 'product 8', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png', subCategory: 'featured'},
+      {title: 'product 8', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png', subCategory: 'featured'},
+      {title: 'product 8', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.funnycatpix.com/_pics/Oh_Hai129.jpg', subCategory: 'featured'}
     ]
   }]);

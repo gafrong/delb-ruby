@@ -21,12 +21,12 @@ angular.module('App')
     $scope.selected = 0;   
 
     $scope.categories = [
-      {title: "Featured"},
-      {title: "Top Sellers"},
-      {title: "Sale"},
-      {title: "New"},
-      {title: "Tech"},
-      {title: "Other"}
+      {title: "Featured", icon:"glyphicon-th-large"},
+      {title: "Top Sellers", icon:"glyphicon-thumbs-up"},
+      {title: "Sale", icon:"glyphicon-tag"},
+      {title: "New", icon:"glyphicon-star"},
+      {title: "Tech", icon:"glyphicon-star"},
+      {title: "Other", icon:"glyphicon-cog"}
     ];
 
     $scope.showLogin = function(){

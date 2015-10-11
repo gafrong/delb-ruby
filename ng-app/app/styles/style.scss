@@ -217,7 +217,26 @@ body {
     }
   }
 }
-
+.upload-menu {
+  font-size: 22px;
+  padding-top: 16px;
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  background-color: $orange;
+  z-index: 999;
+  border-radius: 50%;
+  bottom: 25px;
+  right: 25px;
+  text-align: center;
+  color: $white;
+  box-shadow: 0 0 18px $grey-dark;
+  &:hover {
+    box-shadow: 0 0 0 $grey-dark;
+    border: 2px solid $white;
+    cursor: pointer;
+  }
+}
 
 // Media Queries
 

@@ -31,23 +31,30 @@
     padding: 0;
     margin: 0;
     text-align: center;
+    color: $grey-md;
   }
   .category {
     list-style-type: none;
     height: 40px;
     border: 1px solid $grey-light;
-    background-color: $white;
-    color: $orange;
+    background-color: $grey-lightest;
+    color: $grey-light9;
     padding: 10px 10px 10px 10px;
+    cursor: pointer;
     &:hover {
-      background-color: $grey-lighter;
-      color: $orange;
+      // background-color: $grey-light-bg;
+      // color: $orange;
+      border-bottom: 2px solid $orange;
     }
-    > a {
-      color: $grey-md;
-      text-decoration: none;
+    &:focus, &:active {
+      background-color: $grey-light-bg;
     }
   }
+  .active {
+    color: $white;
+    background-color: $grey-light-bg;
+  }
+
   
   //carousel
   .carousel-inner > .item > img {

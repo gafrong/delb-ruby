@@ -31,25 +31,28 @@
         </div>      
       </script>
 
-      <div >
-        <ul ng-repeat="category in categories" class="category-menu">
-          <li ng-click="showTab($index)" class="col-xs-2 category"><a >{{category.title}}</a></li>
-        </ul>
-      </div>
+      <!-- sub-categories -->
+      <ul ng-repeat="category in categories" class="category-menu">
+        <a href="#/"><li ng-click="showTab($index)" ng-class="{active: $index == selected}" class="col-xs-2 category">{{category.title}}</li></a>
+      </ul>
+      
 
-      <div class="page-tab center" ng-repeat="category in categories">        
+      <div class="page-tab center" ng-repeat="category in categories"> 
           <h4 ng-if="currentTabIndex === $index">{{category.title}}</h4>
       </div>
       
       <div class="row">
         <div ng-repeat="list in lists">
-          <div class="col-xs-3 col-md-3">
-            <a href="#" class="thumbnail">
+          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <div href="#" class="thumbnail">
               <img src="{{list.image}}" alt="" class="img-thumbnail">
-            </a>
-            <h5>{{list.title}}</h5>
-            <p>{{list.price}}</p>
-            <p>{{list.description}}</p>
+            
+              <div class="caption">
+                <h3>{{list.title}}</h3>
+                <p>{{list.price}}</p>
+                <p>{{list.description}}</p>
+              </div> 
+            </div> 
           </div>
         </div>
       </div>

@@ -18,6 +18,7 @@ angular.module('App')
     $scope.rotateUserBar = true;
     $scope.currentTabIndex = 0;
     $scope.lists = [];
+    $scope.selected = 0;   
 
     $scope.categories = [
       {title: "Featured"},
@@ -61,6 +62,7 @@ angular.module('App')
 
     $scope.showTab = function(tabIndex) {
       $scope.currentTabIndex = tabIndex;
+      $scope.selected = tabIndex;
     };
 
     $('#offcanvasRight').on('hide.bs.offcanvas', function(){
@@ -73,15 +75,23 @@ angular.module('App')
       $('.navmenu').offcanvas('hide');
     });
 
-    $scope.getList = function(){
-      ListService.getListItems()
-      .success(function (returnData){
-        console.log(returnData);
-        $scope.lists = returnData;
-      }).error(function (){
-        $scope.errorMsg = "can't get the list"
-      });
-    }; 
+    // $scope.getList = function(){
+    //   ListService.getListItems()
+    //   .success(function (returnData){
+    //     console.log(returnData);
+    //     $scope.lists = returnData;
+    //   }).error(function (){
+    //     $scope.errorMsg = "can't get the list"
+    //   });
+    // }; 
 
-    $scope.getList();   
+    // $scope.getList();   
+
+    $scope.lists = [
+      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png'},
+      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png'},
+      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png'},
+      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png'},
+      {title: 'product 1', price: 23.22, description: 'sdjfkla sjdkfaljskdf', image: 'http://www.maplecityrubber.com/wp-content/uploads/2012/11/standard-05-orange.png'}
+    ]
   }]);

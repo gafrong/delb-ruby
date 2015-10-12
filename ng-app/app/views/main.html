@@ -42,16 +42,14 @@
           
           <!-- <h4>{{category.title}}</h4> -->
           <div ng-repeat="list in lists | filter:filters">
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin-none padding-none">
+            <div class="col-xs-12 col-sm-4 col-lg-3 margin-none padding-none">
               <div href="#" class="thumbnail-main">
                 <div style="background: url({{list.image}}) no-repeat center center; background-size: cover;" class="img-thumbnail-custom"></div>
                 <div class="caption">
-                  <p class="price">${{list.price}}</p>
-                  <div class="section">
-                    <h5 class="title">{{list.title}}</h5>
-                    <p class="sub-category">{{list.subCategory}}</p>
-                  </div>  
+                  <a href=""><p class="price">${{list.price}}</p></a>
+                  <div class="section"></div> 
                   <div class="store">test</div>
+                  <h5 class="title">{{list.title | limitTo: 28}}{{list.title.length > 28 ? '...' : ''}}</h5>
                   <p class="description">{{list.description}}</p>
                 </div> 
               </div> 

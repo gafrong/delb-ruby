@@ -31,6 +31,17 @@ angular.module('App')
       {title: "Other", icon:"glyphicon-cog"}
     ];
 
+    $scope.menuTabs = [
+      {title: 'menu1'},
+      {title: 'menu1'},
+      {title: 'menu1'},
+      {title: 'menu1'},
+      {title: 'menu1'},
+      {title: 'menu1'},
+      {title: 'menu1'},
+      {title: 'menu1'}
+    ];
+
     $scope.showLogin = function(){
       ModalService.showModal({
         templateUrl: "login.html",

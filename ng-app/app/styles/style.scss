@@ -232,9 +232,12 @@ body {
   color: $white;
   box-shadow: 0 0 18px $grey-dark;
   &:hover {
+    transition: 0.3s;
     box-shadow: 0 0 0 $grey-dark;
-    border: 2px solid $white;
+    border: 1px solid $white;
     cursor: pointer;
+    background-color: $grey-light;
+    color: $orange;
   }
 }
 

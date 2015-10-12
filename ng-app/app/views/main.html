@@ -38,18 +38,18 @@
       
 
       <div class="page-tab center row " ng-repeat="category in categories"> 
-        <div ng-if="currentTabIndex === $index">
+        <div ng-if="currentTabIndex === $index" class="container">
           
           <!-- <h4>{{category.title}}</h4> -->
           <div ng-repeat="list in lists | filter:filters">
-            <div class="col-xs-12 col-sm-4 col-lg-3 margin-none padding-none">
+            <div class="col-xs-12 col-sm-6 col-lg-4 col-lg-3 margin-none padding-none thumbnail-cover">
               <div href="#" class="thumbnail-main">
                 <div style="background: url({{list.image}}) no-repeat center center; background-size: cover;" class="img-thumbnail-custom"></div>
                 <div class="caption">
                   <a href=""><p class="price">${{list.price}}</p></a>
                   <div class="section"></div> 
                   <div class="store">test</div>
-                  <h5 class="title">{{list.title | limitTo: 28}}{{list.title.length > 28 ? '...' : ''}}</h5>
+                  <h5 class="title">{{list.title | limitTo: 20}}{{list.title.length > 20 ? '...' : ''}}</h5>
                   <p class="description">{{list.description}}</p>
                 </div> 
               </div> 

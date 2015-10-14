@@ -52,7 +52,7 @@
                     </span>
                   </ul>
                 </div><!-- /btn-group -->
-                <input type="text" class="form-control" placeholder="Search for...">
+                <input type="text" class="form-control" placeholder="Search for..." ng-model="query">
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
                 </span>
@@ -82,9 +82,9 @@
   <a href ng-if="!user.id" ng-click="showSignUp()" class="join-tag center col-xs-2">Join <span class="hidden-xs font18">FREE</span> </a>
 </nav>
 
-<div class="upload-menu">
+<a class="upload-menu" ng-href="#/sellmyproduct">
   <span class="glyphicon glyphicon">SELL</span>
-</div>
+</a>
 
 <!-- MODAL FOR LOGIN & SIGNUP -->
 <!-- Login Modal -->

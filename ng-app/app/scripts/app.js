@@ -26,6 +26,21 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/sellmyproduct', {
+        templateUrl: 'views/sellmyproduct.html',
+        controller: 'SellProductCtrl',
+        resolve: {      
+          auth: ['$auth', '$location', function($auth, $location){
+            if ($auth.user.id){
+              console.log('user is logged in');
+              return $auth.validateUser();
+            } else {
+              console.log('express error msg!!!');
+              $location.path("/pleaselogin");
+            }
+          }]
+        }
+      })
       .when('/signin', {
         templateUrl: 'views/user_sessions/new.html',
         controller: 'UserSessionsCtrl'
@@ -71,6 +86,18 @@ angular
         //     return $auth.validateUser();
         //   }]
         // }
+      })
+      .when('/list/:product', {
+        templateUrl: 'partials/product.html',
+        controller: 'StoreCtrl'
+      })
+      .when('/products', {
+        templateUrl: 'views/products.html',
+        controller: 'ProductCtrl'
+      })
+      .when('/products/:id', {
+        templateUrl: 'views/partials/product.html',
+        controller: 'ProductCtrl'
       })
       .when('/mystore', {
         templateUrl: 'views/mystore.html',

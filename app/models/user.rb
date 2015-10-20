@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :authentication_tokens
   has_many :list
+  has_many :item
   
   before_save -> do
     self.uid = SecureRandom.uuid

@@ -1,0 +1,60 @@
+'use strict';
+
+angular.module('App')
+  .controller('ItemListCtrl', ['$scope', 'Item',
+    function ($scope, Item){
+      $scope.items = Item.query();
+      $scope.orderProp = '';
+  }])
+  .controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item',
+    function ($scope, $routeParams, Item){
+      Item.query({id: $routeParams.id})
+      .$promise.then(function(item){
+        console.log(item[$routeParams.id].title);
+        $scope.item = item[$routeParams.id];
+      }); 
+
+      $scope.setImage = function(imageUrl) {
+        $scope.mainImageUrl = imageUrl;
+      }; 
+  }]);
+      // $scope.getItems = function(){
+      //   Item.getItems()
+      //   .success(function (returnData){
+      //     $scope.items = returnData;
+      //     console.log(returnData);
+      //   }).error(function () {
+      //     $scope.errorMsg = "can't get items";
+      //     console.log('ERR');
+      //   });
+      // };
+
+      // $scope.getItems();
+  //   }])
+  // .controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item', function ($scope, $routeParams, Item){
+  //     Item.getItem({id:$routeParams.id})
+  //     .success(function (returnData){
+  //       $scope.item = returnData;
+  //       console.log(returnData);
+  //     }).error(function(){
+  //       console.log('errrr');
+  //     })
+  //     console.log($scope.items);
+  //     $scope.item = $scope.items[$routeParams.id]
+      // $scope.item = Item.get({id: $routeParams.id}, function (item){
+      //   $scope.mainImageUrl = item.images[0];
+      // });
+      // console.log($routeParams);
+      // console.log($route.current.params.id)
+     
+      // Item.getItem($route.current.params.id)
+      // .success(function (returnData){
+      //   console.log(returnData);
+      //   $scope.item = returnData;
+      // }).error(function (){
+      //   $scope.errorMsg = "no item";
+      //   console.log('no item error');
+      // });
+     
+
+      // $scope.getItem();

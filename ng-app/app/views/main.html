@@ -35,7 +35,10 @@
       <ul ng-repeat="category in categories" class="category-menu">
           <a ng-click="filters.subCategory = '{{category.title}}'"><li ng-click="showTab($index)" ng-class="{active: $index == selected}" class="col-xs-2 category"><span class="visible-xs glyphicon {{category.icon}}" aria-hidden="true"></span><span class="hidden-xs">{{category.title}}</span></li></a>
       </ul>
-
+    <div>
+      <a href="#/phones">PHONE</a>
+      <a href="#/items">ITEM</a>
+    </div>
       <div class="page-tab center row " ng-repeat="category in categories"> 
         <div ng-if="currentTabIndex === $index" class="container">
           <!-- <div class="row">

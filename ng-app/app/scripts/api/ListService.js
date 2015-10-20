@@ -13,6 +13,12 @@ angular.module('App')
         returnData.skip = returnData.skip || 0;
         return $http.get(endpoint.GetListItems);
       },
+      getListItem: function (returnData) {
+        returnData = returnData || {};
+        return $http.get(endpoint.GetListItems, {
+          params: {id: id}
+        });
+      },
       postListItem: function(title, category, price, description){
         return $http.post(endpoint.PostListItem, {
           title: title, 

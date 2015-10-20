@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  availability: 1
+  quantity: 1
+  description: MyText
+  price: 9.99
+  saletype: MyString
+  merchant_id: 1
+  category_id: 1
+  sku: MyString
+  keywords: MyText
+  active: false
+  image_url50: MyText
+  image_url400: MyText
+  merchant_url: MyText
+  brand: MyString
+  color: MyString
+  gender: MyString
+  images: MyText
+
+two:
+  title: MyString
+  availability: 1
+  quantity: 1
+  description: MyText
+  price: 9.99
+  saletype: MyString
+  merchant_id: 1
+  category_id: 1
+  sku: MyString
+  keywords: MyText
+  active: false
+  image_url50: MyText
+  image_url400: MyText
+  merchant_url: MyText
+  brand: MyString
+  color: MyString
+  gender: MyString
+  images: MyText

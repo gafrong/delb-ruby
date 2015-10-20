@@ -16,12 +16,12 @@ angular.module('App')
 
 
     $scope.categories = [
-      {title: "Featured", icon:"glyphicon-th-large", id: 1},
-      {title: "Top Seller", icon:"glyphicon-thumbs-up", id: 2},
-      {title: "Sale", icon:"glyphicon-tag", id: 3},
-      {title: "New", icon:"glyphicon-star", id: 4},
-      {title: "Used", icon:"glyphicon-cog", id: 5},
-      {title: "Other", icon:"glyphicon-cog", id: 6}
+      {title: "Item", icon:"glyphicon-th-large", id: 1, link:'#/items'},
+      {title: "Top Seller", icon:"glyphicon-thumbs-up", id: 2, linke: '#/topseller'},
+      {title: "Sale", icon:"glyphicon-tag", id: 3, link: '#/sale'},
+      {title: "New", icon:"glyphicon-star", id: 4, link: '#/new'},
+      {title: "Used", icon:"glyphicon-cog", id: 5, link: '#/used'},
+      {title: "Other", icon:"glyphicon-cog", id: 6, link: '#/other'}
     ];
 
     $scope.menuTabs = [

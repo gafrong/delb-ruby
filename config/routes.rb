@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'items/index'
+
+  get 'items/new'
+
+  get 'items/create'
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
@@ -11,6 +17,7 @@ Rails.application.routes.draw do
     
     namespace :v1 do
       resources :lists
+      resources :items
     end
   end
 

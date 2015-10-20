@@ -1,0 +1,16 @@
+.products {
+  .thumb-image {
+    width: 240px;
+
+  }
+}
+
+// Mobile Screen
+@media (max-width: 767px) {
+  .products {
+    text-align: center;
+    .thumb-image {
+      margin: 5px auto;
+    }
+  }
+}

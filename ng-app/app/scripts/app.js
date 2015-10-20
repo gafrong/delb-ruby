@@ -97,7 +97,7 @@ angular
       })
       .when('/products/:id', {
         templateUrl: 'views/partials/product.html',
-        controller: 'ProductCtrl'
+        controller: 'ProductListCtrl'
       })
       .when('/mystore', {
         templateUrl: 'views/mystore.html',
@@ -182,6 +182,22 @@ angular
       })
       .when('/pleaselogin', {
         template: "<h3 class='container center mg-top-100 height-min600'>You must Log In or Sign Up to access the page.</h3>"
+      })
+      .when('/phones', {
+        templateUrl: 'views/partials/phone-list.html',
+        controller: 'PhoneListCtrl'
+      })
+      .when('/phones/:phoneId', {
+        templateUrl: 'views/partials/phone-detail.html',
+        controller: 'PhoneDetailCtrl'
+      })
+      .when('/items', {
+        templateUrl: 'views/partials/items.html',
+        controller: 'ItemListCtrl'
+      })
+      .when('/items/:id', {
+        templateUrl: 'views/partials/item-detail.html',
+        controller: 'ItemDetailCtrl'
       })
       .otherwise({
         redirectTo: '/'

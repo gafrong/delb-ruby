@@ -4,7 +4,7 @@
 @import "global.scss";
 @import "home-page.scss";
 @import "main.scss";
-
+@import "product.scss";
 
 body {
   background-color: $white;
@@ -206,7 +206,7 @@ body {
   color: white;
   margin-top: -20px;
   min-height: 450px;
-  background: url("/images/greyback.png") no-repeat center center fixed; 
+  background: url("/img/greyback.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

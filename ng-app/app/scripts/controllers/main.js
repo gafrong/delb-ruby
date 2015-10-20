@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('App')
-  .controller('MainCtrl', ['$scope', 'ModalService', 'ListService', function ($scope, ModalService, ListService) {
+  .controller('MainCtrl', ['$scope', 'ModalService', 'ListService', '$rootScope', function ($scope, ModalService, ListService, $rootScope) {
 
     $scope.rotateBar = true;
     $scope.loggedIn = false;
@@ -14,6 +14,9 @@ angular.module('App')
     $scope.selected = 0;  
     $scope.filters = { }; 
 
+    $rootScope.global = {
+      search: ''
+    };
 
     $scope.categories = [
       {title: "Item", icon:"glyphicon-th-large", id: 1, link:'#/items'},

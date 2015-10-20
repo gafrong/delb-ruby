@@ -4,7 +4,7 @@ angular.module('App')
   .controller('ItemListCtrl', ['$scope', 'Item',
     function ($scope, Item){
       $scope.items = Item.query();
-      $scope.orderProp = '';
+      $scope.orderProp = 'age';
   }])
   .controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item',
     function ($scope, $routeParams, Item){

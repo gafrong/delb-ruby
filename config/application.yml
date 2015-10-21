@@ -10,6 +10,3 @@
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
-aws_access_key_id: 'AKIAI5JODCAAAE6OQU4A' 
-aws_secret_access_key: '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' 
-fog_directory: 'delb'

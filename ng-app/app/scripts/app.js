@@ -202,17 +202,17 @@ angular
       .when('/item/new', {
         templateUrl: 'views/partials/new.html',
         controller: 'ItemAddCtrl',
-        resolve: {      
-          auth: ['$auth', '$location', function($auth, $location){
-            if ($auth.user.id){
-              console.log('user is logged in');
-              return $auth.validateUser();
-            } else {
-              console.log('express error msg!!!');
-              $location.path("/pleaselogin");
-            }
-          }]
-        }
+        // resolve: {      
+        //   auth: ['$auth', '$location', function($auth, $location){
+        //     if ($auth.user.id){
+        //       console.log('user is logged in');
+        //       return $auth.validateUser();
+        //     } else {
+        //       console.log('express error msg!!!');
+        //       $location.path("/pleaselogin");
+        //     }
+        //   }]
+        // }
       })
       .when('/item/:id/edit', {
         templateUrl: 'views/partials/edit.html',

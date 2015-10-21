@@ -18,7 +18,7 @@ angular.module('App')
         $scope.mainImageUrl = imageUrl;
       }; 
   }])
-  .controller('ItemAddCtrl', ['$scope', '$resource', '$location', function($scope, $resource, $location){
+  .controller('ItemAddCtrl', ['$scope', '$resource', '$location', 'Upload', function($scope, $resource, $location, Upload){
     var items = $resource('/api/v1/item/:id', {id:'@id'});
     $scope.saveItem = function (){
       items.save($scope.item);

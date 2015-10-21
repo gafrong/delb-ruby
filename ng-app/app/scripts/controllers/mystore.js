@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('App')
-.controller('MystoreCtrl', function ($scope, $rootScope, Upload, $timeout) {
+.controller('MystoreCtrl',['$scope', '$rootScope', 'Upload', '$timeout', function ($scope, $rootScope, Upload, $timeout) {
   console.log($rootScope.user.name);
   $scope.user = $rootScope.user;
   if($rootScope.user.name){
@@ -9,7 +9,7 @@ angular.module('App')
     $scope.email = $rootScope.user.email;
   } else {
     $scope.name = "Your Store";
-  }
+  };
 
     $scope.$watch('files', function () {
         $scope.upload($scope.files);
@@ -47,4 +47,4 @@ angular.module('App')
     };
 
 
-});
+}]);

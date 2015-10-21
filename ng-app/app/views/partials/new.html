@@ -1,0 +1,12 @@
+<div class="container">
+  <form ng-submit="save()" name="itemForm">
+    <h3>Add New Product</h3>
+    <div class="form-group">
+      <input type="text" ng-model="item.title" placeholder="title"/>
+      <input type="text" ng-model="item.price" placeholder="price"/>
+      <input type="text" ng-model="item.description" placeholder="description"/>
+      <button class="btn btn-default" ng-click="saveItem()">Save</button>
+    </div>
+  </form>
+
+</div>  

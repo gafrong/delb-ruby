@@ -1,11 +1,22 @@
 'use strict';
 
 angular.module('App')
-  .factory('Item', ['$resource', 
+  .factory('Items', ['$resource', 
     function($resource){
-      return $resource('/api/v1/item.json/#' + ':id', {}, {
+      return $resource('/api/v1/item.json', {}, {
+        query: { method: 'GET', isArray: true},
+        create: { method: 'POST'}
       });
     }]);
+
+angular.module('App')
+  .factory('Item', ['$resource', function($resource){
+    return $resource('/api/v1/item.json/#' + ':id', {}, {
+      show: { method: 'GET' },
+      update: { method: 'PUT', params: {id: '@id'}},
+      delete: { method: 'DELETE', params: {id: '@id'}}
+    })
+  }]);  
     // var endpoint = {
     //   GetItems: '/api/v1/item.json',
     //   GetItem: '/api/v1/item/'

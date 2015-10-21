@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('App')
-  .controller('ItemListCtrl', ['$scope', 'Item',
-    function ($scope, Item){
-      $scope.items = Item.query();
+  .controller('ItemListCtrl', ['$scope', 'Items',
+    function ($scope, Items){
+      $scope.items = Items.query();
       $scope.orderProp = 'age';
   }])
   .controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item',
@@ -17,6 +17,26 @@ angular.module('App')
       $scope.setImage = function(imageUrl) {
         $scope.mainImageUrl = imageUrl;
       }; 
+  }])
+  .controller('ItemAddCtrl', ['$scope', '$resource', '$location', function($scope, $resource, $location){
+    var items = $resource('/api/v1/item/:id', {id:'@id'});
+    $scope.saveItem = function (){
+      items.save($scope.item);
+      $scope.item ='';
+      $location.path('/mystore')
+    };
+  }])
+  .controller('ItemUpdateCtrl', ['$scope', '$resource', 'Item', '$location', '$routeParams', function($scope, $resource, Item, $location, $routeParams){
+      $scope.item = User.get({id: $routeParams.id})
+      $scope.update = function(){
+        if ($scope.itemForm.$valid){
+          Item.update($scope.item, function(){
+            $location.path('/');
+          }, function(error){
+            console.log(error);
+          });
+        }
+      };
   }]);
       // $scope.getItems = function(){
       //   Item.getItems()

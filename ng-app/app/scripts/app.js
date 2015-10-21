@@ -28,18 +28,18 @@ angular
       })
       .when('/sellmyproduct', {
         templateUrl: 'views/sellmyproduct.html',
-        controller: 'SellProductCtrl',
-        resolve: {      
-          auth: ['$auth', '$location', function($auth, $location){
-            if ($auth.user.id){
-              console.log('user is logged in');
-              return $auth.validateUser();
-            } else {
-              console.log('express error msg!!!');
-              $location.path("/pleaselogin");
-            }
-          }]
-        }
+        controller: 'ItemAddCtrl',
+        // resolve: {      
+        //   auth: ['$auth', '$location', function($auth, $location){
+        //     if ($auth.user.id){
+        //       console.log('user is logged in');
+        //       return $auth.validateUser();
+        //     } else {
+        //       console.log('express error msg!!!');
+        //       $location.path("/pleaselogin");
+        //     }
+        //   }]
+        // }
       })
       .when('/signin', {
         templateUrl: 'views/user_sessions/new.html',
@@ -198,6 +198,36 @@ angular
       .when('/items/:id', {
         templateUrl: 'views/partials/item-detail.html',
         controller: 'ItemDetailCtrl'
+      })
+      .when('/item/new', {
+        templateUrl: 'views/partials/new.html',
+        controller: 'ItemAddCtrl',
+        resolve: {      
+          auth: ['$auth', '$location', function($auth, $location){
+            if ($auth.user.id){
+              console.log('user is logged in');
+              return $auth.validateUser();
+            } else {
+              console.log('express error msg!!!');
+              $location.path("/pleaselogin");
+            }
+          }]
+        }
+      })
+      .when('/item/:id/edit', {
+        templateUrl: 'views/partials/edit.html',
+        controller: 'ItemUpdateCtrl',
+        // resolve: {      
+        //   auth: ['$auth', '$location', function($auth, $location){
+        //     if ($auth.user.id){
+        //       console.log('user is logged in');
+        //       return $auth.validateUser();
+        //     } else {
+        //       console.log('express error msg!!!');
+        //       $location.path("/pleaselogin");
+        //     }
+        //   }]
+        // }
       })
       .otherwise({
         redirectTo: '/'

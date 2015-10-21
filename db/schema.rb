@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016033736) do
+ActiveRecord::Schema.define(version: 20151021083914) do
 
   create_table "authentication_tokens", force: :cascade do |t|
     t.string   "body"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151016033736) do
     t.text     "images"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.string   "image"
   end
 
   create_table "lists", force: :cascade do |t|

@@ -29,3 +29,6 @@ gem 'angular-ui-bootstrap-rails'
 
 gem 'tiddle'
 gem 'rack-cors'
+gem 'carrierwave'
+gem 'fog'
+gem 'figaro'

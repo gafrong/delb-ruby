@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'items/index'
+  # get 'items/index'
 
-  get 'items/new'
+  # get 'items/new'
 
-  get 'items/create'
+  # get 'items/create'
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'

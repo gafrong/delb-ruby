@@ -15,6 +15,7 @@ group :production do
  end
 
 gem 'grape'
+gem 'grape-swagger'
 gem 'puma'
 
 gem 'omniauth', '~> 1.2.2'
@@ -29,6 +30,9 @@ gem 'rack-cors'
 gem 'carrierwave'
 gem 'fog'
 gem 'figaro'
+gem 'rmagick'
 gem 'angularjs-file-upload-rails', '~> 1.1.6'
+gem "paperclip", "~> 4.3"
+gem 'aws-sdk'
 
 

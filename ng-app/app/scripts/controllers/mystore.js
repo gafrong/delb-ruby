@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('App')
-.controller('MystoreCtrl',['$scope', '$rootScope', 'Upload', '$timeout', function ($scope, $rootScope, Upload, $timeout) {
+.controller('MystoreCtrl',['$scope', '$rootScope', '$timeout', 'Item', function ($scope, $rootScope, $timeout, Item) {
   console.log($rootScope.user.name);
   $scope.user = $rootScope.user;
   if($rootScope.user.name){
@@ -11,40 +11,15 @@ angular.module('App')
     $scope.name = "Your Store";
   };
 
-    $scope.$watch('files', function () {
-        $scope.upload($scope.files);
+  $scope.getLists = function(){
+    Item.getItems()
+    .success(function (returnData){
+      console.log(returnData);
+      $scope.items = returnData;
+    }).error(function (){
+      $scope.errorMsg = "there is no data"
     });
-    $scope.$watch('file', function () {
-        if ($scope.file != null) {
-            $scope.upload([$scope.file]);
-        }
-    });
-    $scope.log = '';
+  }
 
-    $scope.upload = function (files) {
-        if (files && files.length) {
-            for (var i = 0; i < files.length; i++) {
-              var file = files[i];
-              if (!file.$error) {
-                Upload.upload({
-                    url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-                    data: {
-                      username: $scope.username,
-                      file: file  
-                    }
-                }).progress(function (evt) {
-                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                    $scope.log = 'progress: ' + progressPercentage + '% ' +
-                                evt.config.file.name + '\n' + $scope.log;
-                }).success(function (data, status, headers, config) {
-                    $timeout(function() {
-                        $scope.log = 'file: ' + config.file.name + ', Response: ' + JSON.stringify(data) + '\n' + $scope.log;
-                    });
-                });
-              }
-            }
-        }
-    };
-
-
+  $scope.getLists();
 }]);

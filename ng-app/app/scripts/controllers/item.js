@@ -18,13 +18,23 @@ angular.module('App')
         $scope.mainImageUrl = imageUrl;
       }; 
   }])
-  .controller('ItemAddCtrl', ['$scope', '$resource', '$location', 'Upload', function($scope, $resource, $location, Upload){
-    var items = $resource('/api/v1/item/:id', {id:'@id'});
+  .controller('ItemAddCtrl', ['$scope', '$location', 'Item', 
+    function ($scope, $location, Item){
+    
     $scope.saveItem = function (){
-      items.save($scope.item);
+      $scope.item.image_url50 = $scope.image.base64;
+      Item.postItem($scope.item.title, $scope.item.image_url50, $scope.item.description, $scope.item.price)
+      .success(function(){
+        console.log('successful');
+      }).error(function(){
+        console.log('wrong!!');
+      });
+      // items.save($scope.item);
       $scope.item ='';
-      $location.path('/mystore')
+      // $scope.upload($scope.files);
+      // $location.path('/mystore')
     };
+
   }])
   .controller('ItemUpdateCtrl', ['$scope', '$resource', 'Item', '$location', '$routeParams', function($scope, $resource, Item, $location, $routeParams){
       $scope.item = User.get({id: $routeParams.id})

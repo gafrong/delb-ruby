@@ -12,7 +12,7 @@ angular
     'angularModalService',
     'ui.bootstrap',
     'ui.bootstrap.collapse',
-    'ngFileUpload'
+    'naif.base64'
   ])
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function(userInfo) {
@@ -233,4 +233,3 @@ angular
         redirectTo: '/'
       });
   });
-

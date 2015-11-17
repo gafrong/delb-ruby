@@ -30,9 +30,9 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
-      'bower_components/ng-file-upload/ng-file-upload.js',
       'bower_components/angular-cookie/angular-cookie.js',
       'bower_components/ng-token-auth/dist/ng-token-auth.js',
+      'bower_components/angular-base64-upload/src/angular-base64-upload.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

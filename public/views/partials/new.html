@@ -1,1 +1,40 @@
-<div class="container"> <form ng-submit="save()" name="itemForm"> <h3 class="center">Add a new product</h3> <div class="form-group col-sm-3"> <div ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'"> Drop images here or click to upload </div> <div class="preview"> <p>preview</p> <img ngf-src="!files[0].$error && files[0]" alt=""> </div> </div> <div class="form-group col-sm-3"> <div ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'"> Drop images here or click to upload </div> <div class="preview"> <p>preview</p> <img ngf-src="!files[0].$error && files[1]" alt=""> </div> </div> <div class="form-group"> <input type="text" ng-model="item.title" placeholder="title" class="form-control"> </div> <div class="form-group"> <input type="text" ng-model="item.price" placeholder="price" class="form-control"> </div> <div class="form-group"> <input type="text" ng-model="item.description" placeholder="description" class="form-control"> </div> <button class="btn btn-default" ng-click="saveItem()">Save</button> </form></div>  
+<div class="container"> <form name="form"> <h3 class="center">Add a new product</h3> <!--     <div class="button" 
+    ngf-select 
+    ng-model="item.image" 
+    name="file" 
+    ngf-pattern="'image/*'"
+    accept="image/*" 
+    ngf-max-size="20MB" 
+    ngf-min-height="100" 
+    ngf-resize="{width: 100, height: 100}">Select</div> --> <h4>Upload on file select</h4> <input type="file" ng-model="image" name="file" accept="image/*" maxsize="5000" base-sixty-four-input> <span ng-show="form.files.$error.maxsize">Files must not exceed 5000 KB</span> <br><br> File: <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}} <span class="progress" ng-show="f.progress >= 0"> <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div> </span> <br> <div class="form-group"> <input type="text" ng-model="item.title" placeholder="title" class="form-control"> </div> <div class="form-group"> <input type="text" ng-model="item.price" placeholder="price" class="form-control"> </div> <div class="form-group"> <input type="text" ng-model="item.description" placeholder="description" class="form-control"> </div> <button type="submit" ng-click="saveItem()">submit</button> </div> </form> </div> <script>$(function() {
+    var upload = upload || {}
+    $('#uploadForm').on('change', '#files', function(evt) {
+      upload.file = evt.target.files;
+      evt.preventDefault();
+      evt.stopImmediatePropagation();
+      console.log(upload.file);
+    })
+    $('#uploadButton').on("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      upload.uploadFile(upload.file);
+    });
+    upload.uploadFile = function(file) {
+      // very important
+      var formData = new FormData(); 
+      formData.append("avatar", file[0]); //because it's an array of files
+      upload.xhr = new XMLHttpRequest();
+      upload.progressNode = $('<p>Progress for ' + files.name + ': <span class="prog"></span>');
+      upload.progressNode.appendTo("#progressContainer");
+      upload.xhr.addEventListener("progress", function(evt){
+        if (evt.lengthComputable) {
+              var sofar = Math.floor((evt.loaded / evt.total) * 100) ;
+              upload.progressNode.append(' ' + sofar + '%');
+            }
+      }, false);
+      var remoteURL = "http://api-with-upload.dev/upload";
+        upload.xhr.open("POST", remoteURL, true);
+     
+        upload.xhr.send(formData); // files are sent using multipart/form-data. 
+    };
+  });</script>

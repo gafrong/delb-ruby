@@ -1,97 +1,44 @@
 module Product
   class Data < Grape::API
     format :json
-    resource :list do 
-      desc "List all Lists"
-      get do 
-        List.all   
-      end
 
-      desc "create a new product list"
-      params do 
-        requires :title, type: String
-        requires :category, type: String
-        requires :price
-      end
-
+    resource :files do 
       post do 
-        List.create!({
-          title:params[:title],
-          category:params[:category],
-          price:params[:price],
-          description:params[:description]
-        })
-      end
+        # params[:file].delete :file
+        asset = Asset.new params[:file]
+        asset.save
 
-      desc "delete a list"
-      params do 
-        requires :id, type: String
-      end
-      delete ':id' do 
-        List.find(params[:id]).destroy!
-      end
-
-      desc "update list"
-      params do 
-        requires :id, type: String
-        requires :cateogry, type: String
-      end
-      put ':id' do 
-        List.find(params[:id]).update({
-          category:params[:category]
-          })
+        asset.inspect
       end
     end
 
-    resource :item do 
-      desc "Item all Items"
-      get do 
-        Item.all   
-      end
+    resource :upload do
+      post do
+          # takes the :avatar value and assigns it to a variable
+          avatar = params[:avatar]
 
-      desc "Return an item"
-      params do 
-        requires :id, type: Integer
-      end
-      route_param :id do 
-        get do 
-          Item.find(params[:id])
-        end
-      end
-      
-      desc "create a new product item"
-      params do 
-        requires :title, type: String
-        # requires :category, type: String
-        requires :price
-      end
+          # the avatar parameter needs to be converted to a
+          # hash that paperclip understands as:
+          attachment = {
+              :filename => avatar[:filename],
+              :type => avatar[:type]
+          }
 
-      post do 
-        Item.create!({
-          title:params[:title],
-          # category:params[:category],
-          price:params[:price],
-          description:params[:description]
-        })
-      end
+          # creates a new User object
+          userx = Userx.new
 
-      desc "delete a item"
-      params do 
-        requires :id, type: String
-      end
-      delete ':id' do 
-        Item.find(params[:id]).destroy!
-      end
+          # This is the kind of File object Grape understands so let's
+          # pass the hash to it
+          userx.avatar = ActionDispatch::Http::UploadedFile.new(attachment)
 
-      desc "update item"
-      params do 
-        requires :id
-        # requires :cateogry, type: String
-      end
-      put ':id' do 
-        Item.find(params[:id]).update({
-          # category:params[:category]
-          })
+          # easy
+          userx.avatar_path = attachment[:filename]
+
+          # even easier
+          userx.name = "dummy name"
+
+          # and...
+          userx.save
       end
     end
   end

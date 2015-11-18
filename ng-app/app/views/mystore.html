@@ -6,12 +6,12 @@
         </div> 
     </div>
 
-    <ul ng-repeat="item in items">
+    <ul ng-repeat="item in items | orderBy: 'created_at': true">
         <li>
             <h4>{{item.title}}</h4>
-            <p>{{item.price}}</p>
+            <p>${{item.price}}</p>
             <p>{{item.description}}</p>
-            <img ng-src="data:image/PNG;base64,{{item.image_url50}}">
+            <img ng-src="data:image/PNG;base64,{{item.image_url50}}" class="width150 height150">
         </li>
     </ul>
 

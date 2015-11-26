@@ -16,7 +16,8 @@
         {{item.title}}, 
         <span> {{item.category}}, </span>
         <span> {{item.description}}, </span>
-        {{item.price | currency}} <input ng-click="deleteList(item.id)" type="checkbox">
+        {{item.price | currency}} 
+        <input ng-click="deleteList(item.id)" type="checkbox">
       </li>
     </ul>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107110619) do
+ActiveRecord::Schema.define(version: 20151126091459) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "title"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20151107110619) do
     t.text     "images"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.integer  "user_id"
   end
 
   create_table "lists", force: :cascade do |t|

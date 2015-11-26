@@ -22,7 +22,7 @@ module Product
       post do 
         # new_file = ActionDispatch::Http::UploadedFile.new(params[:file])
         item = Item.new
-        # item.image = new_file
+        item.user_id = params[:user_id]
         item.image_url50 = params[:image_url50]
         item.title = params[:title]
         item.price = params[:price]

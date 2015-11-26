@@ -18,22 +18,32 @@ angular.module('App')
         $scope.mainImageUrl = imageUrl;
       }; 
   }])
-  .controller('ItemAddCtrl', ['$scope', '$location', 'Item', 
-    function ($scope, $location, Item){
+  .controller('ItemAddCtrl', ['$scope', '$location', 'Item','$rootScope', 
+    function ($scope, $location, Item, $rootScope){
     
     $scope.saveItem = function (){
+      console.log($rootScope.user.id);
+      $scope.item.user_id = $rootScope.user.id;
       $scope.item.image_url50 = $scope.image.base64;
-      Item.postItem($scope.item.title, $scope.item.image_url50, $scope.item.description, $scope.item.price)
+      Item.postItem($scope.item.user_id, $scope.item.title, $scope.item.image_url50, $scope.item.description, $scope.item.price)
       .success(function(){
         console.log('successful');
       }).error(function(){
         console.log('wrong!!');
       });
-      // items.save($scope.item);
-      $scope.item ='';
-      // $scope.upload($scope.files);
-      // $location.path('/mystore')
+ 
+      $scope.item ='';  
+      $location.path('/mystore')
     };
+
+    $scope.deleteItem = function(id){
+      $http.delete('/api/v1/item' + id)
+      .success(function (){
+        console.log('deleted');
+      }).error(function(){
+        console.log('could not delete');
+      })
+    }
 
   }])
   .controller('ItemUpdateCtrl', ['$scope', '$resource', 'Item', '$location', '$routeParams', function($scope, $resource, Item, $location, $routeParams){

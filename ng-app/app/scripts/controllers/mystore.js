@@ -8,16 +8,21 @@ angular.module('App')
     $scope.name = $rootScope.user.name;
     $scope.email = $rootScope.user.email;
   } else {
-    $scope.name = "Your Store";
+    $scope.name = 'Your Store';
   };
 
   $scope.getLists = function(){
     Item.getItems()
     .success(function (returnData){
-      console.log(returnData);
-      $scope.items = returnData;
+      var myItems = [];
+      for (var i = 0; i < returnData.length; i++){
+        if (returnData[i].user_id == $rootScope.user.id) {
+          myItems.push(returnData[i]);
+        }
+      }
+      $scope.items = myItems;
     }).error(function (){
-      $scope.errorMsg = "there is no data"
+      $scope.errorMsg = 'Sorry. You haven\'t added any products to sell.';
     });
   }
 

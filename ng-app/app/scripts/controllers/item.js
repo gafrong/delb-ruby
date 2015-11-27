@@ -36,15 +36,6 @@ angular.module('App')
       $location.path('/mystore')
     };
 
-    $scope.deleteItem = function(id){
-      $http.delete('/api/v1/item' + id)
-      .success(function (){
-        console.log('deleted');
-      }).error(function(){
-        console.log('could not delete');
-      })
-    }
-
   }])
   .controller('ItemUpdateCtrl', ['$scope', '$resource', 'Item', '$location', '$routeParams', function($scope, $resource, Item, $location, $routeParams){
       $scope.item = User.get({id: $routeParams.id})

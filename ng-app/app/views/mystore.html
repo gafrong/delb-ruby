@@ -12,6 +12,7 @@
             <p>${{item.price}}</p>
             <p>{{item.description}}</p>
             <img ng-src="data:image/PNG;base64,{{item.image_url50}}" class="width150 height150">
+            Delete <input type="checkbox" ng-click="deleteItem(item.id)">
         </li>
     </ul>
 

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('App')
-.controller('MystoreCtrl',['$scope', '$rootScope', '$timeout', 'Item', function ($scope, $rootScope, $timeout, Item) {
+.controller('MystoreCtrl',['$scope', '$rootScope', '$timeout', 'Item', '$http', function ($scope, $rootScope, $timeout, Item, $http) {
   console.log($rootScope.user.name);
   $scope.user = $rootScope.user;
   if($rootScope.user.name){
@@ -24,6 +24,17 @@ angular.module('App')
     }).error(function (){
       $scope.errorMsg = 'Sorry. You haven\'t added any products to sell.';
     });
+  }
+
+  $scope.deleteItem = function(id){
+    $http.delete('/api/v1/item/' + id)
+    .success(function (){
+      console.log('deleted');
+    }).error(function(){
+      console.log('could not delete');
+    })
+
+    $scope.getLists();
   }
 
   $scope.getLists();

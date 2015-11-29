@@ -3,10 +3,10 @@
 angular.module('App')
 .controller('MystoreCtrl',['$scope', '$rootScope', '$timeout', 'Item', '$http', function ($scope, $rootScope, $timeout, Item, $http) {
   console.log($rootScope.user.name);
-  $scope.user = $rootScope.user;
-  if($rootScope.user.name){
-    $scope.name = $rootScope.user.name;
-    $scope.email = $rootScope.user.email;
+  if ($rootScope.user.name === null){
+    $scope.user = $rootScope.user.email
+  } else if ($rootScope.user.name !== null) {
+    $scope.user = $rootScope.user.name; 
   } else {
     $scope.name = 'Your Store';
   };

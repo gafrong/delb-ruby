@@ -8,10 +8,15 @@ angular.module('App')
   }])
   .controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item',
     function ($scope, $routeParams, Item){
-      Item.query({id: $routeParams.id})
-      .$promise.then(function(item){
-        console.log(item[$routeParams.id].title);
-        $scope.item = item[$routeParams.id];
+      console.log($routeParams.id);
+      Item.getItem({id: $routeParams.id})
+      .success(function(returnData){
+        console.log(returnData);
+        angular.forEach(returnData, function(item){
+          if (item.id == $routeParams.id)
+            console.log(item);
+          $scope.item = item;
+        });
       }); 
 
       $scope.setImage = function(imageUrl) {

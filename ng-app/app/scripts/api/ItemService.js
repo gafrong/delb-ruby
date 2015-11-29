@@ -24,7 +24,7 @@ angular.module('App')
         return $http.get(endpoint.GetItems);
       },
       getItem: function (id) {
-        return $http.get(endpoint.GetItems, {
+        return $http.get(endpoint.GetItem, {
           params: {id: id},
           withCredentials: true,
           timeout: 80000

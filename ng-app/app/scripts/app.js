@@ -214,6 +214,10 @@ angular
         //   }]
         // }
       })
+      .when('/items/:id', {
+        templateUrl: 'views/partials/item-detail.html', 
+        controller: 'ItemDetailCtrl'
+      })
       .when('/item/:id/edit', {
         templateUrl: 'views/partials/edit.html',
         controller: 'ItemUpdateCtrl',

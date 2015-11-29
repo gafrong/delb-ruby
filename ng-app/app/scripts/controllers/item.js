@@ -17,11 +17,11 @@ angular.module('App')
           if (item.id == $routeParams.id)
             console.log(item);
           $scope.item = item;
-        }).error(function(){
-          $scope.errorMsg = 'Oops, there\'s no item';
-        }).finally(function(){
-          $scope.loading = false;
         });
+      }).error(function(){
+          $scope.errorMsg = 'Oops, there\'s no item';
+      }).finally(function(){
+          $scope.loading = false;
       }); 
 
       $scope.setImage = function(imageUrl) {

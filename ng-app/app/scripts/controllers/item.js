@@ -9,6 +9,7 @@ angular.module('App')
   .controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item',
     function ($scope, $routeParams, Item){
       console.log($routeParams.id);
+      $scope.loading = true;
       Item.getItem({id: $routeParams.id})
       .success(function(returnData){
         console.log(returnData);
@@ -16,6 +17,10 @@ angular.module('App')
           if (item.id == $routeParams.id)
             console.log(item);
           $scope.item = item;
+        }).error(function(){
+          $scope.errorMsg = 'Oops, there\'s no item';
+        }).finally(function(){
+          $scope.loading = false;
         });
       }); 
 

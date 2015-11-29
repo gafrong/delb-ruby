@@ -12,6 +12,7 @@ angular.module('App')
   };
 
   $scope.getLists = function(){
+    $scope.loading = true;
     Item.getItems()
     .success(function (returnData){
       var myItems = [];
@@ -23,6 +24,8 @@ angular.module('App')
       $scope.items = myItems;
     }).error(function (){
       $scope.errorMsg = 'Sorry. You haven\'t added any products to sell.';
+    }).finally(function(){
+      $scope.loading = false;
     });
   }
 

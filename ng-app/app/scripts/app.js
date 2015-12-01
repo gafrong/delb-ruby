@@ -12,7 +12,8 @@ angular
     'angularModalService',
     'ui.bootstrap',
     'ui.bootstrap.collapse',
-    'naif.base64'
+    'naif.base64',
+    'ngFileUpload'
   ])
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function(userInfo) {

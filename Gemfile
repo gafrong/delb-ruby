@@ -7,6 +7,7 @@ gem 'rails-api'
 group :development do
   gem 'sqlite3'
   gem 'spring'
+  gem 'pry-rails'
 end
 
 group :production do

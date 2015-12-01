@@ -12,7 +12,10 @@
         <ul ng-repeat="item in items | orderBy: 'created_at': true">
             <li class="col-md-4 list-style-none">
               <div class="thumbnail center"> 
-                <a href="#/items/{{item.id}}"><img ng-src="data:image/PNG;base64,{{item.image_url50}}" class="width150 height150"></a>
+                <a href="#/items/{{item.id}}">
+                  <img ng-src="{{item.image_url50}}" alt="" class="width150 height150">
+                  <!-- <img ng-src="data:image/PNG;base64,{{item.image_url50}}" class="width150 height150"> -->
+                </a>
                 <div class="caption">
                   <h4>{{item.title}}</h4>
                   <p>${{item.price}}</p>

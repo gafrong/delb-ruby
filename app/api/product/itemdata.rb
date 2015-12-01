@@ -1,3 +1,8 @@
+require 'pry'
+require 'RMagick'
+require 'Paperclip'
+require 'FileUtils'
+
 module Product
   class Itemdata < Grape::API
     format :json
@@ -11,7 +16,7 @@ module Product
       desc "Return an item"
       params do 
         requires :id, type: Integer
-        # requires :file, :type => Rack::Multipart::UploadedFile
+        requires :image, :type => Rack::Multipart::UploadedFile
       end
       route_param :id do 
         get do 
@@ -20,13 +25,40 @@ module Product
       end
       
       post do 
-        # new_file = ActionDispatch::Http::UploadedFile.new(params[:file])
+
+        img = ActionDispatch::Http::UploadedFile.new(params[:image])
+        # binding.pry
+        # FileUtils.mv('/tmp/' + img.tempfile.to_path.to_s, '/public/' + img.tempfile.to_path.to_s)
+        image = params[:image]
+        attachment = {
+          filename: image[:filename],
+          type: image[:type],
+          headers: image[:head],
+          tempfile: image[:tempfile]
+        }
+
         item = Item.new
         item.user_id = params[:user_id]
-        item.image_url50 = params[:image_url50]
+        item.image = ActionDispatch::Http::UploadedFile.new(attachment)
+        item.image_path = attachment[:tempfile].to_path.to_s
+        item.image_content_type = attachment[:type]
+        item.image_file_name = attachment[:filename]
+        # item.image_url50 = img.tempfile.to_path.to_s
+        item.image_url50 = attachment[:tempfile].to_path.to_s
+        # item.image_url50 = params[:image_url50]
         item.title = params[:title]
+        binding.pry
         item.price = params[:price]
         item.description = params[:description]
+        item.availability = params[:availability]
+        item.quantity = params[:quantity]
+        item.saletype = params[:saletype]
+        item.merchant_id = params[:merchant_id]
+        item.category_id = params[:category_id]
+        item.brand = params[:brand]
+        item.color = params[:color]
+        item.gender = params[:gender]
+
         
         item.save
       end

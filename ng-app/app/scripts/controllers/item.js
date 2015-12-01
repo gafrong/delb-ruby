@@ -27,23 +27,48 @@ angular.module('App')
         $scope.mainImageUrl = imageUrl;
       }; 
   }])
-  .controller('ItemAddCtrl', ['$scope', '$location', 'Item','$rootScope', 
-    function ($scope, $location, Item, $rootScope){
-    
-    $scope.saveItem = function (){
+  .controller('ItemAddCtrl', ['$scope', '$location', 'Item','$rootScope', 'Upload', 
+    function ($scope, $location, Item, $rootScope, Upload){
 
-      $scope.item.user_id = $rootScope.user.id;
-      $scope.item.image_url50 = $scope.image.base64;
-      Item.postItem($scope.item.user_id, $scope.item.title, $scope.item.image_url50, $scope.item.description, $scope.item.price)
-      .success(function(){
-        console.log('successful');
-      }).error(function(){
-        console.log('wrong!!');
-      });
+      $scope.submit = function() {
+        $scope.upload($scope.image);      
+      };
+
+      $scope.upload = function(image) {
+        $scope.item.user_id = $rootScope.user.id;
+        Upload.upload({
+          url: '/api/v1/item',
+          data: {
+            image: image, 
+            user_id: $scope.item.user_id, 
+            title: $scope.item.title, 
+            price: $scope.item.price,
+            description: $scope.item.description,
+            availability: $scope.item.availability,
+            quantity: $scope.item.quantity
+          }
+        }).success(function(){
+          console.log('success');
+        }).error(function(){
+          console.log('error');
+        });
+      };
+
+      $scope.item =''; 
+    // $scope.saveItem = function (){
+
+    //   $scope.item.user_id = $rootScope.user.id;
+    //   $scope.item.image_url50 = $scope.image.base64;
+    //   Item.postItem($scope.item.user_id, $scope.item.title, $scope.item.image_url50, $scope.item.description, $scope.item.price)
+    //   .success(function(){
+    //     console.log('successful');
+    //   }).error(function(){
+    //     console.log('wrong!!');
+    //   });
  
-      $scope.item ='';  
-      $location.path('/mystore')
-    };
+    //   $scope.item ='';  
+    //   $location.path('/mystore')
+    // };
 
   }])
   .controller('ItemUpdateCtrl', ['$scope', '$resource', 'Item', '$location', '$routeParams', function($scope, $resource, Item, $location, $routeParams){

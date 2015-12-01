@@ -1,4 +1,3 @@
-require 'pry'
 require 'RMagick'
 
 module Product

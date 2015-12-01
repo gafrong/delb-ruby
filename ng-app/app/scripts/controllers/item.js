@@ -3,8 +3,14 @@
 angular.module('App')
   .controller('ItemListCtrl', ['$scope', 'Items',
     function ($scope, Items){
-      $scope.items = Items.query();
-      $scope.orderProp = 'age';
+
+      $scope.query = function (){
+        $scope.items = Items.query();
+        $scope.orderProp = 'age';
+      };
+
+      $scope.query();
+
   }])
   .controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item',
     function ($scope, $routeParams, Item){
@@ -31,7 +37,9 @@ angular.module('App')
     function ($scope, $location, Item, $rootScope, Upload){
 
       $scope.submit = function() {
-        $scope.upload($scope.image);      
+        $scope.upload($scope.image);  
+        $scope.item ='';  
+        $location.path('/mystore')    
       };
 
       $scope.upload = function(image) {
@@ -54,7 +62,7 @@ angular.module('App')
         });
       };
 
-      $scope.item =''; 
+
     // $scope.saveItem = function (){
 
     //   $scope.item.user_id = $rootScope.user.id;

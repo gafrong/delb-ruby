@@ -1,7 +1,5 @@
 require 'pry'
 require 'RMagick'
-require 'Paperclip'
-require 'FileUtils'
 
 module Product
   class Itemdata < Grape::API
@@ -27,8 +25,7 @@ module Product
       post do 
 
         img = ActionDispatch::Http::UploadedFile.new(params[:image])
-        # binding.pry
-        # FileUtils.mv('/tmp/' + img.tempfile.to_path.to_s, '/public/' + img.tempfile.to_path.to_s)
+
         image = params[:image]
         attachment = {
           filename: image[:filename],
@@ -40,14 +37,11 @@ module Product
         item = Item.new
         item.user_id = params[:user_id]
         item.image = ActionDispatch::Http::UploadedFile.new(attachment)
-        item.image_path = attachment[:tempfile].to_path.to_s
+        item.image_path = attachment[:tempfile]
         item.image_content_type = attachment[:type]
         item.image_file_name = attachment[:filename]
-        # item.image_url50 = img.tempfile.to_path.to_s
-        item.image_url50 = attachment[:tempfile].to_path.to_s
-        # item.image_url50 = params[:image_url50]
+        item.image_url50 = attachment[:tempfile]
         item.title = params[:title]
-        binding.pry
         item.price = params[:price]
         item.description = params[:description]
         item.availability = params[:availability]

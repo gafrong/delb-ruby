@@ -4,9 +4,10 @@
      <img ng-src="{{loaderSource}}"> 
     </div>
   </div>
+  
   <div ng-hide="loading">
     <div class="phone-images">
-      <div style="background-image:url('{{item.image_url50}}');" class="background-cover product-main-img"></div>
+      <div style="background-image:url('../images/uploads/{{item.image_file_name}}');" class="background-cover product-main-img"></div>
       <!-- <div style="background-image:url('data:image/PNG;base64,{{item.image_url50}}');" class="background-cover product-main-img"></div> -->
     </div>
     <h1>{{item.title}}</h1>  

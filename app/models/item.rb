@@ -7,7 +7,8 @@ class Item < ActiveRecord::Base
       access_key_id: ENV["AWS_ACCESS_KEY_ID"], 
       secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
       bucket: "delbfiles"
-      }
+      },
+    path: ":filename"
 # , :path => ":rails_root/public/images/uploads/:filename", default_url => "delb.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 end

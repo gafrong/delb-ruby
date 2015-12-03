@@ -4,10 +4,10 @@ class Item < ActiveRecord::Base
   has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100"},
     storage: :s3,
     s3_credentials: {
-      access_key_id: ENV["AWS_KEY"], 
-      secret_access_key: ENV["AWS_SECRET"]
+      access_key_id: ENV["AWS_ACCESS_KEY_ID"], 
+      secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
       },
-    bucket: "YOUR_BUCKET"
+    bucket: "delbfiles"
 # , :path => ":rails_root/public/images/uploads/:filename", default_url => "delb.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 end

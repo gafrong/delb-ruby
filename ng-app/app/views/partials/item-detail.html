@@ -8,10 +8,18 @@
   <div ng-hide="loading">
     <div class="phone-images">
       <div style="background-image:url('../images/uploads/{{item.image_file_name}}');" class="background-cover product-main-img"></div>
-      <!-- <div style="background-image:url('data:image/PNG;base64,{{item.image_url50}}');" class="background-cover product-main-img"></div> -->
     </div>
     <h1>{{item.title}}</h1>  
     <p>{{item.description}}</p>  
+    <p>{{item.category_id}}</p>
+    <p>{{item.saletype}}</p>
+    <p>{{item.gender}}</p>
+    <p>{{item.color}}</p>
+    <!-- <p>{{item.active}}</p> -->
+    <p>{{item.quantity}}</p>
+    <p>{{item.brand}}</p>
+    <p>{{item.size}}</p>
+
 
     <ul class="phone-thumbs">
       <li ng-repeat="img in item.images">

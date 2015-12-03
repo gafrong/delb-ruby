@@ -23,7 +23,7 @@ module Product
       
       post do 
 
-        img = ActionDispatch::Http::UploadedFile.new(params[:image])
+        # img = ActionDispatch::Http::UploadedFile.new(params[:image])
 
         image = params[:image]
         attachment = {
@@ -51,7 +51,11 @@ module Product
         item.brand = params[:brand]
         item.color = params[:color]
         item.gender = params[:gender]
-
+        item.sku = params[:sku]
+        item.keywords = params[:keywords]
+        item.merchant_url = params[:merchant_url]
+        item.active = params[:active]
+        item.id = params[:id]
         
         item.save
       end

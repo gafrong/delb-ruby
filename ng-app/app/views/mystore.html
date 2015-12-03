@@ -9,7 +9,7 @@
             <img src="images/default.gif" ng-if="loading" style="loading">
         </div>
         
-        <ul ng-repeat="item in items | orderBy: 'created_at': true">
+        <ul ng-repeat="item in items | orderBy: 'age': true">
             <li class="col-md-4 list-style-none">
               <div class="thumbnail center"> 
                 <a href="#/items/{{item.id}}">

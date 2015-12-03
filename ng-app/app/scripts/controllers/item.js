@@ -22,6 +22,7 @@ angular.module('App')
         angular.forEach(returnData, function(item){
           if (item.id == $routeParams.id)
           $scope.item = item;
+        console.log(item);
         });
       }).error(function(){
           $scope.errorMsg = 'Oops, there\'s no item';
@@ -48,12 +49,23 @@ angular.module('App')
           url: '/api/v1/item',
           data: {
             image: image, 
-            user_id: $scope.item.user_id, 
-            title: $scope.item.title, 
-            price: $scope.item.price,
-            description: $scope.item.description,
+            active: $scope.item.active,
             availability: $scope.item.availability,
-            quantity: $scope.item.quantity
+            brand: $scope.item.brand,
+            category_id: $scope.item.category_id,
+            color: $scope.item.color,
+            description: $scope.item.description,
+            gender: $scope.item.gender,
+            id: $scope.item.id,
+            keywords: $scope.item.keywords,
+            merchant_id: $scope.item.merchant_id,
+            merchant_url: $scope.item.merchant_url,
+            price: $scope.item.price,
+            quantity: $scope.item.quantity,
+            saletype: $scope.item.saletype,
+            sku: $scope.item.sku,
+            title: $scope.item.title, 
+            user_id: $scope.item.user_id
           }
         }).success(function(){
           console.log('success');

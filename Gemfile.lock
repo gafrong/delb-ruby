@@ -332,7 +332,7 @@ DEPENDENCIES
   angular-ui-bootstrap-rails
   angularjs-file-upload-rails (~> 1.1.6)
   angularjs-rails
-  aws-sdk
+  aws-sdk (~> 1.6)
   carrierwave
   devise_token_auth!
   figaro

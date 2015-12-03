@@ -34,6 +34,6 @@ gem 'figaro'
 gem 'rmagick'
 gem 'angularjs-file-upload-rails', '~> 1.1.6'
 gem "paperclip", "~> 4.3"
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.6'
 
 

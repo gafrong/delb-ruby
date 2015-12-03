@@ -14,3 +14,5 @@ ACCESS_KEY_ID: "AKIAJVR54FXPNNDMX3GQ"
 SECRET_ACCESS_KEY: "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"
 
 # ie, access_key_id: <%= ENV["ACCESS_KEY_ID"] %>
+
+# delete this

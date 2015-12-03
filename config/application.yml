@@ -10,9 +10,6 @@
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
-ACCESS_KEY_ID: "AKIAJVR54FXPNNDMX3GQ"
-SECRET_ACCESS_KEY: "tb2dkcYN7HUYK8whdzvk7dNhgXRwC2jde2NGh1ip"
-
-# ie, access_key_id: <%= ENV["ACCESS_KEY_ID"] %>
-
-# delete this
+aws_access_key_id: 'YOUR_KEY_ID' 
+aws_secret_access_key: 'YOUR_SECRET_KEY' 
+fog_directory: 'YOUR_BUCKET_NAME'

@@ -12,7 +12,7 @@
         <ul ng-repeat="item in items | orderBy: 'age': true">
             <li class="col-md-4 list-style-none">
               <div class="thumbnail center"> 
-                <a href="#/items/{{item.id}}">
+                <a href="https://s3-ap-southeast-2.amazonaws.com/delbfiles/{{item.id}}">
                   <img ng-src="../images/uploads/{{item.image_file_name}}" alt="">
                 </a>
                 <div class="caption">

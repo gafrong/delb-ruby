@@ -1,4 +1,4 @@
-require 'RMagick'
+require 'rmagick'
 
 module Product
   class Itemdata < Grape::API

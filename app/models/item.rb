@@ -8,6 +8,6 @@ class Item < ActiveRecord::Base
       secret_access_key: ENV["AWS_SECRET"]
       },
     bucket: "YOUR_BUCKET"
-, :path => ":rails_root/public/images/uploads/:filename", default_url => "delb.png"
+# , :path => ":rails_root/public/images/uploads/:filename", default_url => "delb.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 end

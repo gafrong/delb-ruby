@@ -1,3 +1,6 @@
+@import "variables.scss";
+@import "global.scss";
+
 .components {
   .row {
     margin: 0;
@@ -6,4 +9,24 @@
     background-color: orange;
   }
 }
+.scroll{
+  .horizontal-list{
+      padding:0px;
+      // border:dotted 1px;
+      background-color: $grey-lightest;
+      white-space:nowrap;
+      overflow-x:auto;
+      height: 310px;
+      width: 100%;
+      display: inline-flex;
 
+  }
+
+  .horizontal-item{
+      float: left;
+      width:240px;
+      height:200px;
+      margin:0;
+      display:inline-block
+  }
+}

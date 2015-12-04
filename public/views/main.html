@@ -1,6 +1,21 @@
 <div class="homePage height-min600"> <div class="container-fluid padding-none"> <div class="row"> <div class="col-sm-12 col-md-12 col-lg-12 padding-none"> <div ng-controller="CarouselCtrl" class="padding-none"> <div class="headline-imgs"> <carousel interval="myInterval" no-wrap="noWrapSlidess"> <slide ng-repeat="slide in slides" active="slide.active"> <img ng-src="{{slide.image}}"> <div class="carousel-caption"> <button class="btn btn-default">Visit{{$index}}</button> <h4>(edit product description) {{$index}}</h4> <p>{{slide.text}}</p> </div> </slide> </carousel> </div> </div> </div> <!-- sub-categories --> <!--       <ul ng-repeat="category in categories" class="category-menu">
           <a ng-click="filters.subCategory = '{{category.title}}'"><li ng-click="showTab($index)" ng-class="{active: $index == selected}" class="col-xs-2 category"><span class="visible-xs glyphicon {{category.icon}}" aria-hidden="true"></span><span class="hidden-xs">{{category.title}}</span></li></a>
-      </ul> --> <div class="page-tab center row" ng-repeat="category in categories"> <div ng-if="currentTabIndex === $index" class="container"> <div class="visibility-hidden">test</div> <h5 class="header-featured left">Featured Collection</h5> <div ng-repeat="list in lists | filter:filters | filter:query"> <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 margin-none padding-none thumbnail-cover"> <div href="#" class="thumbnail-main"> <a href="#/items/{{list.id}}" style="background: url({{list.image}}) no-repeat center center; background-size: cover" class="img-thumbnail-custom"></a> <div class="caption"> <a href=""><p class="price">${{list.price}}</p></a> <div class="section"></div> <div class="store">test</div> <h5 class="title">{{list.title | limitTo: 20}}{{list.title.length > 20 ? '...' : ''}}</h5> <p class="description">{{list.description}}</p> </div> </div> </div> </div> </div> </div> </div> </div> </div> <!-- Customize carousel template --> <script id="template/carousel/carousel.html" type="text/ng-template"><div class="carousel" ng-swipe-right="prev()" ng-swipe-left="next()">
+      </ul> --> <!--       <div class="visibility-hidden">test</div>
+<div class="container scroll">
+  <div class="horizontal-list">
+    <ul class="list-style-none" ng-repeat="list in lists">
+      <li class="horizontal-item">
+        <img src="{{list.image}}" alt="" style="width:180px; height:180px; margin:5px;">
+      </li>
+    </ul>
+  </div>
+</div> --> <div class="page-tab center row" ng-repeat="category in categories"> <div ng-if="currentTabIndex === $index" class="container scroll"> <div class="visibility-hidden">test</div> <h5 class="header-featured left">Featured Collection</h5> <div class="horizontal-list"> <div ng-repeat="list in lists | filter:filters | filter:query"> <div class="horizontal-item margin-none padding-none thumbnail-cover"> <div href="#" class="thumbnail-main"> <a href="#/items/{{list.id}}" style="background: url({{list.image}}) no-repeat center center; background-size: cover" class="img-thumbnail-custom"></a> <!-- <div class="caption">
+                    <a href=""><p class="price">${{list.price}}</p></a>
+                    <div class="section"></div> 
+                    <div class="store">test</div>
+                    <h5 class="title">{{list.title | limitTo: 20}}{{list.title.length > 20 ? '...' : ''}}</h5>
+                    <p class="description">{{list.description}}</p>
+                  </div>  --> </div> </div> </div> </div> </div> </div> </div> </div> </div> <!-- Customize carousel template --> <script id="template/carousel/carousel.html" type="text/ng-template"><div class="carousel" ng-swipe-right="prev()" ng-swipe-left="next()">
       <ol class="carousel-indicators" ng-show="slides.length > 1">
           <li ng-repeat="slide in slides | orderBy:'index' track by $index" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li>
       </ol>

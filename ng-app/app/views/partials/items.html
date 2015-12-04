@@ -13,7 +13,7 @@
       <ul class="phone">
         <li ng-repeat="item in items | filter:global.search | orderBy:orderProp | orderBy: '$index':true" class="thumbnail phone-listing thumbnail-item">
           <a href="#/items/{{item.id}}" class="thumb">
-            <img ng-src="https://s3-ap-southeast-2.amazonaws.com/delbfiles/{{item.image_file_name}}" style="max-height: 110px;">
+            <img ng-src="https://s3-ap-southeast-2.amazonaws.com/delbfiles/items/{{item.image_file_name}}" style="max-height: 110px;">
           </a>
           <a href="#/items/{{item.id}}">{{item.title}}</a>
           <p>{{item.description}}</p>

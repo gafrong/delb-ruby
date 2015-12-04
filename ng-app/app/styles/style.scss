@@ -35,7 +35,7 @@ body {
     right: 0;
     padding: 12px 15px;
     color: $white;
-    top: 77px;
+    top: 98px;
     margin-right: 27px;
     &:hover {
       transition-duration: 0.3s;
@@ -142,6 +142,7 @@ body {
             .dropdown-menu {
               background-color: $grey-dark6;
               padding: 0;
+              min-width: 97px;
             }
           }
           .category-li {
@@ -222,16 +223,16 @@ body {
   }
 }
 .upload-menu {
-  font-size: 24px;
-  padding-top: 22px;
+  font-size: 18px;
+  padding-top: 18px;
   position: fixed;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background-color: $orange;
   z-index: 999;
   border-radius: 50%;
-  bottom: 25px;
-  right: 25px;
+  bottom: 15px;
+  right: 15px;
   text-align: center;
   color: $white;
   box-shadow: 0 0 18px $grey-dark;
@@ -358,6 +359,20 @@ body {
     }
     .navbar-collapse {
       border-top: 1px solid $grey-dark;
+      .search-li {
+        .row {
+          .input-group {
+            margin-left: 62px;
+            .input-group-btn {
+              background-color: $black;
+            }
+            .category-search-btn {
+              vertical-align: top;
+              background-color: $grey-dark4;
+            }
+          }
+        }
+      }
     }
     .navbar {
       .menu-item {

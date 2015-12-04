@@ -21,12 +21,13 @@
 
 
       <!-- sub-categories -->
-      <ul ng-repeat="category in categories" class="category-menu">
+<!--       <ul ng-repeat="category in categories" class="category-menu">
           <a ng-click="filters.subCategory = '{{category.title}}'"><li ng-click="showTab($index)" ng-class="{active: $index == selected}" class="col-xs-2 category"><span class="visible-xs glyphicon {{category.icon}}" aria-hidden="true"></span><span class="hidden-xs">{{category.title}}</span></li></a>
-      </ul>
-
+      </ul> -->
       <div class="page-tab center row " ng-repeat="category in categories"> 
         <div ng-if="currentTabIndex === $index" class="container">
+        <div class="visibility-hidden">test</div>
+        <h5 class="header-featured left">Featured Collection</h5>
 
           <div ng-repeat="list in lists | filter:filters | filter:query">
             <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 margin-none padding-none thumbnail-cover">

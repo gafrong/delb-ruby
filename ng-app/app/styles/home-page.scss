@@ -77,6 +77,10 @@
     padding: 0px;
     margin: 15px 8px;
     height: 280px;
+    .thumbnail-image {
+      width: 180px;
+      height: 180px;
+    }
     &:hover {
       transition: all 0.2s ease-in-out;
       // border: 1px solid $grey-md;
@@ -189,8 +193,8 @@
     .thumbnail-cover {
       text-align: center;
       .thumbnail-main {
-        margin: 15px auto;
-        max-width: 420px;
+        margin: 15px 5px;
+        width: 190px;
       }
     }
   }

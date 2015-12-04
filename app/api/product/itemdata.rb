@@ -23,8 +23,6 @@ module Product
       
       post do 
 
-        # img = ActionDispatch::Http::UploadedFile.new(params[:image])
-
         image = params[:image]
         attachment = {
           filename: image[:filename],

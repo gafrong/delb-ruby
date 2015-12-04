@@ -10,7 +10,7 @@
   }
   .headline-imgs {
     min-height: 100px;
-    max-height: 450px;
+    max-height: 380px;
     overflow-y: hidden;
   }
   .smallbox {
@@ -83,7 +83,6 @@
     }
     &:hover {
       transition: all 0.2s ease-in-out;
-      // border: 1px solid $grey-md;
       box-shadow: 0px 0px 7px $grey-md;
       -webkit-box-shadow: 0px 0px 7px $grey-md;
       -moz-box-shadow: 0px 0px 7px $grey-md;
@@ -92,7 +91,7 @@
       display: block;
       opacity: 1;
       transition: all 0.3s ease-in-out;
-      -webki-transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
     }
     &:hover > .caption > .title {
       margin-left: 82px;
@@ -108,7 +107,7 @@
       height: 280px;
       opacity: 1;
       filter: alpha(opacity=100);
-      -webkkit-transition: opacity 0.2s linear;
+      -webkit-transition: opacity 0.2s linear;
       &:hover {
         opacity: 0.91;
         filter: alpha(opacity=90);

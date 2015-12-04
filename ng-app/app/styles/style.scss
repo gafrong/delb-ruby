@@ -361,14 +361,14 @@ body {
       border-top: 1px solid $grey-dark;
       .search-li {
         .row {
-          .input-group {
+          .search-container {
+            padding-bottom: 6px;
             margin-left: 62px;
             .input-group-btn {
               background-color: $black;
             }
             .category-search-btn {
               vertical-align: top;
-              background-color: $grey-dark4;
             }
           }
         }

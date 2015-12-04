@@ -44,19 +44,23 @@
             <div ng-repeat="list in lists | filter:filters | filter:query">
               <div class="horizontal-item margin-none padding-none thumbnail-cover">
                 <div href="#" class="thumbnail-main">
-                  <a href="#/items/{{list.id}}" style="background: url({{list.image}}) no-repeat center center; background-size: cover;" class="img-thumbnail-custom"></a>
-                  <div class="caption">
+                  <a href=""><img src="{{list.image}}" style="width:180px;height:180px;"></a>
+                  <h5 class="">{{list.title | limitTo: 20}}{{list.title.length > 20 ? '...' : ''}}</h5>
+                  <p>${{list.price}}</p>
+                  <!-- <a href="#/items/{{list.id}}" style="background: url({{list.image}}) no-repeat center center; background-size: cover;" class="img-thumbnail-custom"></a> -->
+<!--                   <div class="caption">
                     <a href=""><p class="price">${{list.price}}</p></a>
                     <div class="section"></div> 
                     <div class="store">test</div>
-                    <h5 class="title">{{list.title | limitTo: 20}}{{list.title.length > 20 ? '...' : ''}}</h5>
+
+                    <div class="title">{{list.title | limitTo: 20}}{{list.title.length > 20 ? '...' : ''}}</div>
                     <p class="description">{{list.description}}</p>
-                  </div> 
+                  </div>  -->
                 </div> 
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
       

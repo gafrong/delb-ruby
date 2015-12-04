@@ -72,7 +72,8 @@
   }
   // thumbnail
   .thumbnail-main {
-    border: 1px solid $grey-lightest;
+    background-color: $white;
+    border: 1px solid $white;
     padding: 0px;
     margin: 15px 8px;
     height: 280px;
@@ -124,7 +125,7 @@
         display: none;
       }
       .store {
-        display: none;
+        // display: none;
         width: 65px;
         height: 65px;
         border-radius: 50%;
@@ -136,16 +137,17 @@
         position: absolute;
       }
       .title {
-        position: absolute;
+        // display:none;
         color: $white;
         margin-top: -37px;
         margin-left: 22px;
         z-index: 99;
         opacity: 1;
         text-shadow: 1px 1px 1px #000;
+        position: absolute;
       }
       .description {
-        display: none;
+        // display: none;
         color: $grey-light;
         position: absolute;
         margin-top: -57px;
@@ -164,6 +166,7 @@
         opacity: 0.9;
         padding: 5px;
         text-shadow: 1px 1px 1px #000;
+
       }
     }
   }

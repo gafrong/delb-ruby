@@ -1,11 +1,19 @@
 'use strict';
 
 angular.module('App')
-  .controller('ItemListCtrl', ['$scope', 'Items',
-    function ($scope, Items){
-
+  .controller('ItemListCtrl', ['$scope', 'Items', '$q',
+    function ($scope, Items, $q){
+      
       $scope.query = function (){
-        $scope.items = Items.query();
+        var defer = $q.defer();
+        $scope.items = Items.query()
+        .success(function(returnData) {
+          deferred.resolve(returnData);
+        }).error(function(returnData){
+          deferred.reject(returnData);
+        });
+        return deferred.promise;
+        
         $scope.orderProp = 'age';
       };
 

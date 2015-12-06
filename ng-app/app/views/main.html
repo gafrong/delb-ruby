@@ -44,7 +44,9 @@
             <div ng-repeat="list in lists | filter:filters | filter:query">
               <div class="horizontal-item margin-none padding-none thumbnail-cover">
                 <div href="#" class="thumbnail-main">
-                  <a href="#/items/{{list.id}}"><img src="" class="thumbnail-image" style="background: url({{list.image}}) no-repeat center center; background-size: cover;"></a>
+                  <a href="#/items/{{list.id}}">
+                    <div class="thumbnail-image" style="background: url({{list.image}}) no-repeat center center; background-size: cover;"></div>
+                  </a>
                   <h5 class="">{{list.title | limitTo: 20}}{{list.title.length > 20 ? '...' : ''}}</h5>
                   <p>${{list.price}}</p>
                   <p>{{list.description | limitTo: 20}}{{list.description.length > 20 ? '...' : ''}}</p>
@@ -74,7 +76,9 @@
             <div ng-repeat="list in lists | filter:filters | filter:query">
               <div class="horizontal-item margin-none padding-none thumbnail-cover">
                 <div href="#" class="thumbnail-main">
-                  <a href="#/items/{{list.id}}"><img src="" class="thumbnail-image" style="background: url({{list.image}}) no-repeat center center; background-size: cover;"></a>
+                  <a href="#/items/{{list.id}}">
+                    <div src="" class="thumbnail-image" style="background: url({{list.image}}) no-repeat center center; background-size: cover;"></div>
+                  </a>
                   <h5 class="">{{list.title | limitTo: 20}}{{list.title.length > 20 ? '...' : ''}}</h5>
                   <p>${{list.price}}</p>
                   <p>{{list.description | limitTo: 20}}{{list.description.length > 20 ? '...' : ''}}</p>
@@ -95,7 +99,9 @@
             <div ng-repeat="list in lists | filter:filters | filter:query">
               <div class="horizontal-item margin-none padding-none thumbnail-cover">
                 <div href="#" class="thumbnail-main">
-                  <a href="#/items/{{list.id}}"><img src="" class="thumbnail-image" style="background: url({{list.image}}) no-repeat center center; background-size: cover;"></a>
+                  <a href="#/items/{{list.id}}">
+                    <div src="" class="thumbnail-image" style="background: url({{list.image}}) no-repeat center center; background-size: cover;"></div>
+                  </a>
                   <h5 class="">{{list.title | limitTo: 20}}{{list.title.length > 20 ? '...' : ''}}</h5>
                   <p>${{list.price}}</p>
                   <p>{{list.description | limitTo: 20}}{{list.description.length > 20 ? '...' : ''}}</p>

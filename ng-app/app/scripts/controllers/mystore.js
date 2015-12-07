@@ -2,7 +2,7 @@
 
 angular.module('App')
 .controller('MystoreCtrl',['$scope', '$rootScope', '$timeout', 'Item', '$http', function ($scope, $rootScope, $timeout, Item, $http) {
-  console.log($rootScope.user.name);
+
   if ($rootScope.user.name === null){
     $scope.user = $rootScope.user.email
   } else if ($rootScope.user.name !== null) {
@@ -38,6 +38,10 @@ angular.module('App')
     })
 
     $scope.getLists();
+  }
+
+  $scope.random = function(list) {
+    return 0.5 - Math.random();
   }
 
   $scope.getLists();

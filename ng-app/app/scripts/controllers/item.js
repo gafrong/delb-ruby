@@ -74,6 +74,21 @@ angular.module('App')
         });
       };
 
+      $scope.uploadMenu = [
+        {name: 'Product Name', model: 'title', placeholder: 'title', id: 'itemTitle'}, 
+        {name: 'Price', model: 'price', placeholder: 'price', id: 'itemPrice'}, 
+        {name: 'Description', model: 'description', placeholder: 'description', id: 'itemDescription'}, 
+        {name: 'Category', model: 'category', placeholder: 'category', id: 'itemCategory'}, 
+        {name: 'Sale', model: 'sale', placeholder: 'sale', id: 'itemSale'},
+        {name: 'Gender', model: 'gender', placeholder: 'gender', id: 'itemGender'}, 
+        {name: 'Color', model: 'color', placeholder: 'color', id: 'itemColor'}, 
+        {name: 'Size', model: 'size', placeholder: 'size', id: 'itemSize'}, 
+        {name: 'Active', model: 'active', placeholder: 'active', id: 'itemActive'}, 
+        {name: 'Availability', model: 'availability', placeholder: 'availability', id: 'itemAvailability'}, 
+        {name: 'Brand', model: 'brand', placeholder: 'brand', id: 'itemBrand'}, 
+        {name: 'Keywords', model: 'keywords', placeholder: 'keywords', id: 'itemKeywords'}, 
+        {name: 'Quantity', model: 'quantity', placeholder: 'quantity', id: 'itemQuantity'}
+      ];
 
     // $scope.saveItem = function (){
 

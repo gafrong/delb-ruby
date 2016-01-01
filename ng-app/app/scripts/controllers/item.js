@@ -55,6 +55,7 @@ angular.module('App')
 
       $scope.upload = function(image) {
         $scope.item.user_id = $rootScope.user.id;
+        console.log($scope.item.user_id);
         Upload.upload({
           url: '/api/v1/item',
           data: {

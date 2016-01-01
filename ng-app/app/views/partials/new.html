@@ -15,9 +15,9 @@
       </span>
     <br>
     <div ng-repeat="item in uploadMenu"class="form-group col-md-6">  
-      <label for="{{item.id}}" class="col-sm-4 right">{{item.name}}: </label>
+      <label for="{{item.tag}}" class="col-sm-4 right">{{item.name}}: </label>
       <div class="col-sm-8">
-        <input type="text" ng-model="item.title" placeholder="{{item.placeholder}}" class="form-control" id="{{item.id}}"/>
+        <input type="text" ng-model="item.title" placeholder="{{item.placeholder}}" class="form-control" id="{{item.tag}}"/>
       </div>
     </div>
     <div class="col-xs-12 center">    

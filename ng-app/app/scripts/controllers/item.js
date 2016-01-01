@@ -89,9 +89,10 @@ angular.module('App')
       };
 
       $scope.submit = function() {
-        // if ($rootScope.user.id){
-        //   $scope.item.user_id = $rootScope.user.id;
-        // }
+        if ($rootScope.user.id){
+          $scope.item.user_id = $rootScope.user.id;
+        }
+        console.log($scope.item.user_id);
         // debugger;
         $scope.upload($scope.image);  
         $scope.item ='';  

@@ -37,11 +37,21 @@ angular.module('App')
   .controller('ItemAddCtrl', ['$scope', '$location', 'Item','$rootScope', 'Upload', 
     function ($scope, $location, Item, $rootScope, Upload){
 
-      $scope.submit = function() {
-        $scope.upload($scope.image);  
-        $scope.item ='';  
-        $location.path('/mystore')    
-      };
+      $scope.uploadMenu = [
+        {name: 'Product Name', model: 'title', placeholder: 'title', tag: 'itemTitle'}, 
+        {name: 'Price', model: 'price', placeholder: 'price', tag: 'itemPrice'}, 
+        {name: 'Description', model: 'description', placeholder: 'description', tag: 'itemDescription'}, 
+        {name: 'Category', model: 'category', placeholder: 'category', tag: 'itemCategory'}, 
+        {name: 'Sale', model: 'sale', placeholder: 'sale', tag: 'itemSale'},
+        {name: 'Gender', model: 'gender', placeholder: 'gender', tag: 'itemGender'}, 
+        {name: 'Color', model: 'color', placeholder: 'color', tag: 'itemColor'}, 
+        {name: 'Size', model: 'size', placeholder: 'size', tag: 'itemSize'}, 
+        {name: 'Active', model: 'active', placeholder: 'active', tag: 'itemActive'}, 
+        {name: 'Availability', model: 'availability', placeholder: 'availability', tag: 'itemAvailability'}, 
+        {name: 'Brand', model: 'brand', placeholder: 'brand', tag: 'itemBrand'}, 
+        {name: 'Keywords', model: 'keywords', placeholder: 'keywords', tag: 'itemKeywords'}, 
+        {name: 'Quantity', model: 'quantity', placeholder: 'quantity', tag: 'itemQuantity'}
+      ];
 
       $scope.upload = function(image) {
         $scope.item.user_id = $rootScope.user.id;
@@ -74,21 +84,11 @@ angular.module('App')
         });
       };
 
-      $scope.uploadMenu = [
-        {name: 'Product Name', model: 'title', placeholder: 'title', tag: 'itemTitle'}, 
-        {name: 'Price', model: 'price', placeholder: 'price', tag: 'itemPrice'}, 
-        {name: 'Description', model: 'description', placeholder: 'description', tag: 'itemDescription'}, 
-        {name: 'Category', model: 'category', placeholder: 'category', tag: 'itemCategory'}, 
-        {name: 'Sale', model: 'sale', placeholder: 'sale', tag: 'itemSale'},
-        {name: 'Gender', model: 'gender', placeholder: 'gender', tag: 'itemGender'}, 
-        {name: 'Color', model: 'color', placeholder: 'color', tag: 'itemColor'}, 
-        {name: 'Size', model: 'size', placeholder: 'size', tag: 'itemSize'}, 
-        {name: 'Active', model: 'active', placeholder: 'active', tag: 'itemActive'}, 
-        {name: 'Availability', model: 'availability', placeholder: 'availability', tag: 'itemAvailability'}, 
-        {name: 'Brand', model: 'brand', placeholder: 'brand', tag: 'itemBrand'}, 
-        {name: 'Keywords', model: 'keywords', placeholder: 'keywords', tag: 'itemKeywords'}, 
-        {name: 'Quantity', model: 'quantity', placeholder: 'quantity', tag: 'itemQuantity'}
-      ];
+      $scope.submit = function() {
+        $scope.upload($scope.image);  
+        $scope.item ='';  
+        $location.path('/mystore')    
+      };
 
     // $scope.saveItem = function (){
 

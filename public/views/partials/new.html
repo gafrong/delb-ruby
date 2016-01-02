@@ -1,84 +1,4 @@
-<div class="container"> <form name="form" class="form-horizontal"> <br> <h3 class="center top100">Add a new product</h3> <br> <!--     <h4>Upload on file select</h4> --> <div class="center"> <div class="add-image btn btn-lg btn-default center" ngf-select ng-model="image" name="image" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="10MB" ngf-min-height="150" style="height:175px; width: 185px"> <span ng-if="!image">Add Image</span> <img ngf-thumbnail="image" alt="" style="width:150px;height:150px"> </div> <div>(Maximum file size: 10MB)</div> </div> <br><br> <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}} <span class="progress" ng-show="f.progress >= 0"> <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div> </span> <br> <div class="form-group col-sm-12"> <label for="itemTitle" class="col-sm-2 right">Title: </label> <div class="col-sm-10"> <input type="text" ng-model="item.title" placeholder="product name" class="form-control" id="itemTitle"> </div> </div> <div class="form-group col-sm-12"> <label for="itemDescription" class="col-sm-2 right">Description: </label> <div class="col-sm-10"> <textarea type="textarea" ng-model="item.description" placeholder="description" class="form-control" id="itemDescription" rows="5">
-      </div>
-    </div>
-    <div class="form-group col-sm-6">
-      <label for="itemPrice" class="col-sm-4 right">Price: </label> 
-      <div class="col-sm-8"> 
-        <input type="text" ng-model="item.price" placeholder="price" class="form-control" id="itemPrice">
-      </div>
-    </div>  
-    <div class="form-group col-sm-6">  
-      <label for="itemCategory" class="col-sm-4 right">Category: </label>
-      <div class="col-sm-8">
-        <input type="text" ng-model="item.category" placeholder="category" class="form-control" id="itemCategory">
-      </div>
-    </div> 
-    <div class="form-group col-sm-6">
-      <label for="itemSaletype" class="col-sm-4 right">Sale: </label>  
-      <div class="col-sm-8">
-        <input type="text" ng-model="item.saletype" placeholder="saletype" class="form-control" id="itemSaletype">
-      </div>    
-    </div>  
-    <div class="form-group col-sm-6"> 
-      <label for="itemGender" class="col-sm-4 right">Gender: </label> 
-      <div class="col-sm-8">
-        <input type="text" ng-model="item.gender" placeholder="gender" class="form-control" id="itemGender">
-      </div>
-    </div>  
-    <div class="form-group col-sm-6"> 
-      <label for="itemColor" class="col-sm-4 right">Color: </label> 
-      <div class="col-sm-8">
-        <input type="text" ng-model="item.color" placeholder="color" class="form-control" id="itemColor">
-      </div>
-    </div>    
-    <div class="form-group col-sm-6"> 
-      <label for="itemQuantity" class="col-sm-4 right">Quantity</label> 
-      <div class="col-sm-8">
-        <input type="text" ng-model="item.quantity" placeholder="quantity" class="form-control">
-      </div>
-    </div> 
-    <div class="form-group col-sm-6"> 
-      <label for="itemSize" class="col-sm-4 right">Size: </label> 
-      <div class="col-sm-8">
-        <input type="text" ng-model="item.size" placeholder="size" class="form-control" id="itemSize">
-      </div>
-    </div> 
-    <div class="form-group col-sm-6"> 
-      <label for="itemActive" class="col-sm-4 right">Active: </label> 
-      <div class="col-sm-8">
-        <input type="text" ng-model="item.active" placeholder="active" class="form-control" id="itemActive">
-      </div>
-    </div>     
-    <div class="form-group col-sm-6">  
-      <label for="itemAvailability" class="col-sm-4 right">Availability: </label>
-      <div class="col-sm-8">
-        <input type="text" ng-model="item.availability" placeholder="availability" class="form-control">
-      </div>
-    </div> 
-    <div class="form-group col-sm-6">  
-      <label for="itemBrand" class="col-sm-4 right">Brand: </label>
-      <div class="col-sm-8">
-        <input type="text" ng-model="item.brand" placeholder="brand" class="form-control" id="itemBrand">
-      </div>
-    </div>   
-    <div class="form-group col-sm-6">  
-      <label for="itemKeywords" class="col-sm-4 right">Keywords: </label>
-      <div class="col-sm-8">
-        <input type="text" ng-model="item.keywords" placeholder="keywords" class="form-control" id="itemKeywords">
-      </div>
-    </div> 
-
-      <div class="col-xs-12 center">    
-        <button type="submit" ng-click="submit()" class="btn btn-lg btn-default">submit</button>
-      </div>
-    </div>
-  </form>
-
-</div>  
-
-
-<script>
-  $(function() {
+<div class="container"> <form name="form" class="form-horizontal"> <br> <h3 class="center top100">Add a new product</h3> <br> <!--     <h4>Upload on file select</h4> --> <div class="center"> <div class="add-image btn btn-lg btn-default center" ngf-select ng-model="image" name="image" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="10MB" ngf-min-height="150" style="height:175px; width: 185px"> <span ng-if="!image">Add Image</span> <img ngf-thumbnail="image" alt="" style="width:150px;height:150px"> </div> <div>(Maximum file size: 10MB)</div> </div> <br><br> <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}} <span class="progress" ng-show="f.progress >= 0"> <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div> </span> <br> <div class="form-group col-sm-12"> <label for="itemTitle" class="col-sm-2 right">Title: </label> <div class="col-sm-10"> <input type="text" ng-model="item.title" placeholder="product name" class="form-control" id="itemTitle"> </div> </div> <div class="form-group col-sm-12"> <label for="itemDescription" class="col-sm-2 right">Description: </label> <div class="col-sm-10"> <textarea type="textarea" ng-model="item.description" placeholder="description" class="form-control" id="itemDescription" rows="5"></textarea> </div> </div> <div class="form-group col-sm-6"> <label for="itemPrice" class="col-sm-4 right">Price: </label> <div class="col-sm-8"> <input type="text" ng-model="item.price" placeholder="price" class="form-control" id="itemPrice"> </div> </div> <div class="form-group col-sm-6"> <label for="itemCategory" class="col-sm-4 right">Category: </label> <div class="col-sm-8"> <input type="text" ng-model="item.category" placeholder="category" class="form-control" id="itemCategory"> </div> </div> <div class="form-group col-sm-6"> <label for="itemSaletype" class="col-sm-4 right">Sale: </label> <div class="col-sm-8"> <input type="text" ng-model="item.saletype" placeholder="saletype" class="form-control" id="itemSaletype"> </div> </div> <div class="form-group col-sm-6"> <label for="itemGender" class="col-sm-4 right">Gender: </label> <div class="col-sm-8"> <input type="text" ng-model="item.gender" placeholder="gender" class="form-control" id="itemGender"> </div> </div> <div class="form-group col-sm-6"> <label for="itemColor" class="col-sm-4 right">Color: </label> <div class="col-sm-8"> <input type="text" ng-model="item.color" placeholder="color" class="form-control" id="itemColor"> </div> </div> <div class="form-group col-sm-6"> <label for="itemQuantity" class="col-sm-4 right">Quantity</label> <div class="col-sm-8"> <input type="text" ng-model="item.quantity" placeholder="quantity" class="form-control"> </div> </div> <div class="form-group col-sm-6"> <label for="itemSize" class="col-sm-4 right">Size: </label> <div class="col-sm-8"> <input type="text" ng-model="item.size" placeholder="size" class="form-control" id="itemSize"> </div> </div> <div class="form-group col-sm-6"> <label for="itemActive" class="col-sm-4 right">Active: </label> <div class="col-sm-8"> <input type="text" ng-model="item.active" placeholder="active" class="form-control" id="itemActive"> </div> </div> <div class="form-group col-sm-6"> <label for="itemAvailability" class="col-sm-4 right">Availability: </label> <div class="col-sm-8"> <input type="text" ng-model="item.availability" placeholder="availability" class="form-control"> </div> </div> <div class="form-group col-sm-6"> <label for="itemBrand" class="col-sm-4 right">Brand: </label> <div class="col-sm-8"> <input type="text" ng-model="item.brand" placeholder="brand" class="form-control" id="itemBrand"> </div> </div> <div class="form-group col-sm-6"> <label for="itemKeywords" class="col-sm-4 right">Keywords: </label> <div class="col-sm-8"> <input type="text" ng-model="item.keywords" placeholder="keywords" class="form-control" id="itemKeywords"> </div> </div> <div class="col-xs-12 center"> <button type="submit" ng-click="submit()" class="btn btn-lg btn-default">submit</button> </div> </div> </form> </div> <script>$(function() {
     var upload = upload || {}
     $('#uploadForm').on('change', '#files', function(evt) {
       upload.file = evt.target.files;
@@ -109,5 +29,4 @@
      
         upload.xhr.send(formData); // files are sent using multipart/form-data. 
     };
-  });
-</script>
+  });</script>

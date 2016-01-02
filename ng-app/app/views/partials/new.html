@@ -3,14 +3,13 @@
     <br>
     <h3 class="center top100">Add a new product</h3>
     <br>
-<!--     <h4>Upload on file select</h4> -->
-    <div class="center">
+
       <div class="add-image btn btn-lg btn-default center" ngf-select ng-model="image" name="image" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="10MB" ngf-min-height="150" style="height:175px; width: 185px;">
         <span ng-if="!image">Add Image</span>
         <img ngf-thumbnail="image" alt="" style="width:150px;height:150px;">
       </div> 
       <div>(Maximum file size: 10MB)</div>
-    </div>
+
     <br><br>
     <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
       <span class="progress" ng-show="f.progress >= 0">

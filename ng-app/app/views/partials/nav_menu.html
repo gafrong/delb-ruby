@@ -39,10 +39,12 @@
     <div collapse="isCollapsed" class="navbar-collapse bs-js-navbar-collapse clearfix" id="navigation-bar">
       <nav>     
         <ul class="nav navbar-nav col-sm-12">
-          <li class="col-xs-12 col-sm-2 padding-none"><a ng-href="#/" class="menu-item hidden-xs width100"><i class="icon-delb logo white"></i> <span class="main-logo"> delb</span></a></li>
-          <li class="col-sm-1"></li>
+          <li class="col-xs-12 col-sm-2 padding-none">
+            <a ng-href="#/" class="menu-item hidden-xs width100"><i class="icon-delb logo white"></i> <span class="main-logo"> delb</span></a>
+          </li>
+        <!--   <li class="col-sm-1"></li> -->
           <li class="col-xs-10 col-sm-6 col-lg-6 center search-li">
-            <div class="row">
+    <!--         <div class="row">
               <span class="input-group search-container">
                 <div class="input-group-btn">
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></button>
@@ -51,15 +53,20 @@
                       <a href="{{item.link}}" class="category"><li class="width100 category-li">{{item.title}}</li></a>
                     </span>
                   </ul>
-                </div><!-- /btn-group -->
+                </div>
                 <input type="text" class="form-control" placeholder="Search for..." ng-model="global.search">
                 <span class="input-group-btn category-search-btn">
                   <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
                 </span>
-              </span><!-- /input-group -->
-            </div>
+              </span>
+            </div> -->
           </li>
-          <li class="col-sm-1"></li>
+          <li class="col-xs-12 col-sm-1 col-lg-1 padding-none">
+            <a ng-href="#/about" class="menu-item width100">About</a>
+          </li>
+          <li class="col-xs-12 col-sm-1 col-lg-1 padding-none">
+            <a ng-href="#/pricing" class="menu-item width100">Pricing</a>
+          </li>
 
           <!-- User desktop menu -->  
           <li class="col-xs-12 col-sm-2 col-lg-2 hidden-xs padding-none" ng-if="user.id"><a href class="menu-item width100 hiddden-xs" data-toggle="offcanvas" data-target="#offcanvasRight"><span class="glyphicon glyphicon-user font18" aria-hidden="true"></span></a></li>
@@ -67,7 +74,8 @@
           <li class="col-xs-12 col-sm-2 col-lg-2 visible-xs padding-none" ng-if="user.id"><a href ng-click='signOut()' class="menu-item width100">Log out</a></li>
         </ul>
       </nav>  
-    </div><!-- /.nav-collapse -->
+    </div>
+    <!-- /.nav-collapse -->
 
   <a href ng-if="!user.id" ng-click="showSignUp()" class="join-tag center col-xs-2">Join <span class="hidden-xs font18">FREE</span> </a>
 </nav>

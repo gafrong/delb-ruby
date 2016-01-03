@@ -79,6 +79,10 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/pricing', {
+        templateUrl: 'views/pricing.html',
+        controller: 'PricingCtrl'
+      })
       .when('/list', {
         templateUrl: 'views/list.html',
         controller: 'ListCtrl',

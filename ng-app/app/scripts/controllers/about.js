@@ -2,9 +2,8 @@
 
 angular.module('App')
   .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'Somthing',
-      'Second Stuf',
-      'Others'
-    ];
-  });
+
+  })
+  .controller('PricingCtrl', function($scope){
+    $scope.title = "Pricing";
+  })

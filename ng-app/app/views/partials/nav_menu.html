@@ -43,7 +43,7 @@
             <a ng-href="#/" class="menu-item hidden-xs width100"><i class="icon-delb logo white"></i> <span class="main-logo"> delb</span></a>
           </li>
         <!--   <li class="col-sm-1"></li> -->
-          <li class="col-xs-10 col-sm-7 col-lg-7 center search-li">
+          <li class="col-xs-10 col-sm-6 col-lg-6 center search-li">
     <!--         <div class="row">
               <span class="input-group search-container">
                 <div class="input-group-btn">
@@ -61,7 +61,9 @@
               </span>
             </div> -->
           </li>
-          <li></li>
+          <li class="col-xs-12 col-sm-1 col-lg-1 padding-none">
+            <a ng-href="#/items" class="menu-item width100" ng-click="isCollapsed = !isCollapsed; rotateBar = !rotateBar">Products</a>
+          </li>
           <li class="col-xs-12 col-sm-1 col-lg-1 padding-none">
             <a ng-href="#/about" class="menu-item width100" ng-click="isCollapsed = !isCollapsed; rotateBar = !rotateBar">About</a>
           </li>

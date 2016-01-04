@@ -395,6 +395,7 @@ body {
     }
     .navbar {
       .menu-item {
+        cursor: pointer;
         padding-left: 60px;
         padding-top: 15px;
         background-color: $grey-dark3;
@@ -409,6 +410,7 @@ body {
       position: absolute;
     }
     .login {
+      cursor: pointer;
       float: right;
       .icon {
         padding: 14px 25px;

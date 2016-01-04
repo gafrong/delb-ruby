@@ -4,7 +4,8 @@
     <a class="col-xs-3" ng-click="showTab(1)">First</a>
     <a class="col-xs-3" ng-click="showTab(2)">Second</a>
     <a class="col-xs-3" ng-click="showTab(3)">Third</a> 
-    <a class="col-xs-3" ng-click="showTab(4)">Fourth</a>    
+    <a class="col-xs-3" ng-click="showTab(4)">Fourth</a> 
+    <a class="col-xs-3" ng-click="showTab(5)">Five</a>   
   </div>
 
 <br>
@@ -22,9 +23,9 @@
     </ul>
 
   </div>
-  <div ng-if="currentTabIndex === 2">2</div>
-  <div ng-if="currentTabIndex === 3">3</div>
-  <div ng-if="currentTabIndex === 4">4</div>
+  <div ng-if="currentTabIndex === 2 || currentTabIndex == 5">2</div>
+  <div ng-if="currentTabIndex === 3 || currentTabIndex == 5">3</div>
+  <div ng-if="currentTabIndex === 4 || currentTabIndex == 5">4</div>
 </div>
 <p>{{successMsg}}</p>
 <p>{{errorMsg}}</p>

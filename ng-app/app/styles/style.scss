@@ -245,6 +245,13 @@ body {
     color: $orange;
   }
 }
+
+// about page
+.about {
+  .about-menu {
+    min-height: 1000px;
+  }
+}
 // pricing page
 .pricing {
   .pricing-detail {
@@ -253,7 +260,7 @@ body {
     border-radius: 10px;
     background-color: $grey-lightest;
     font-size: 17px;
-    padding: 28px 10px 10px 10px;
+    padding: 38px 10px 30px 10px;
     list-style: none;
     min-height: 80px;
   }

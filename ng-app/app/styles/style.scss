@@ -52,10 +52,11 @@ body {
   .navbar {
     margin: 0;
     min-height: 50px;
-    background-color: $grey-dark;
+    background-color: rgba(1,1,1,0);
     border: none;
     border-radius: 0;
     .menu-item {
+      text-shadow: 1px 1px 1px $grey-dark6;
       padding-top: 12px;
       height: 48px;
       &:hover {
@@ -63,7 +64,7 @@ body {
       }
       &:focus {
         color: $orange;
-        background-color: $grey-dark;
+        // background-color: $grey-dark;
       }
     }
   }
@@ -74,29 +75,29 @@ body {
   .menu-right-list {
     padding: 15px 15px 15px 20px;
     height: 52px;
-    background-color: $grey-dark3;
-    border-bottom: 1px solid $grey-dark4;
+    // background-color: $grey-dark3;
+    border-bottom: 1px solid $white;
     &:hover {
       color: $white;
     }
     &:focus {
-      background-color: $grey-dark;
+      // background-color: $grey-dark;
       color: $orange;
     }
   }
   .navmenu, .navbar-offcanvas {
     border: none;
-    background-color: $grey-dark3;
+    // background-color: $grey-dark3;
   } 
   .navmenu-inverse .navmenu-nav > li > a:hover,
   .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a:hover{
     color: $white;
-    background-color: $grey-dark2;
+    // background-color: $grey-dark2;
   }
   .navmenu-inverse .navmenu-nav > li > a:focus,
   .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a:focus {
     color: $orange;
-    background-color: $grey-dark;
+    // background-color: $grey-dark;
   }
   .navbar-nav {
     margin-top: 4px;
@@ -106,7 +107,7 @@ body {
         color: $grey-light;
         &:hover {
           color: $grey-md;
-          background-color: $grey-dark2;
+          // background-color: $grey-dark2;
         }
         &:focus {
           color: $orange;
@@ -126,21 +127,21 @@ body {
       .row {
         .input-group {
           .input-group-btn {
-            background-color: $grey-dark3;
-            border-color: $grey-dark3;
+            // background-color: $grey-dark3;
+            border-color: $white;
             .btn {
-              border-color: $grey-dark3;
-              background-color: $black;
+              border-color: $white;
+              // background-color: $black;
               color: $grey-light;
               &:hover, &:focus {
                 color: $white;
                 border-color: $grey-light8;
                 z-index: 99;
-                background-color: $grey-dark4;
+                // background-color: $grey-dark4;
               }
             }
             .dropdown-menu {
-              background-color: $grey-dark6;
+              // background-color: $grey-dark6;
               padding: 0;
               min-width: 97px;
             }
@@ -149,7 +150,7 @@ body {
             background-color: $grey-dark;
             height: 44px;
             padding: 13px;
-            border-bottom: 1px solid $grey-dark5;
+            border-bottom: 1px solid $white;
             list-style-type: none;
             text-decoration: none;
             &:hover, &:focus {
@@ -161,7 +162,7 @@ body {
           color: $grey-dark7;
         }
         .form-control {
-          border-color: $grey-dark2;
+          border-color: $white;
           background-color: $main-bg-color;
           transition-duration: 0.3s;
           color: $grey-dark2; 
@@ -177,7 +178,7 @@ body {
   }
   .navbar-toggle {
     margin-left: 15px;
-    margin-top: 10px;
+    padding-top: 10px;
     float: left;
   }
   .logo {
@@ -267,6 +268,7 @@ body {
 }
 // Landing Page Video 
 .landing-page {
+  margin-top: -52px;
   .full-screen {
       position: relative;
       top: 0;
@@ -275,7 +277,7 @@ body {
       left: 0;
       overflow: hidden;
       z-index: -100;  
-      max-height: 600px;
+      max-height: 650px;
       min-width: 100%;
   }
   .search-main {
@@ -290,6 +292,8 @@ body {
       .form-group {
         .form-control, .search-btn {
           height: 52px;
+          min-width: 200px;
+          border-radius: 0;
         }
         .category-prop {
           height: 52px;
@@ -326,6 +330,7 @@ body {
     .navbar-header {
       button.login {
         height: 42px;
+        background-color: rgba(1,1,1,0);
         .bar-close.bar-none {
           position: absolute;
           float: right;
@@ -371,7 +376,7 @@ body {
         }
       }
       button.login, button.login:hover, button.login:focus {
-        background-color: $grey-dark;
+        // background-color: $grey-dark;
         color: $orange;
         text-decoration: none;
         outline: none;
@@ -416,16 +421,17 @@ body {
     }
     .navbar-toggle, .navbar-default {
       border: none;
+      background-color: rgba(1,1,1,0);
     }
     .navbar-collapse {
-      border-top: 1px solid $grey-dark;
+      border-top: 1px solid $white;
       .search-li {
         .row {
           .search-container {
             padding-bottom: 6px;
             margin-left: 62px;
             .input-group-btn {
-              background-color: $black;
+              // background-color: $black;
             }
             .category-search-btn {
               vertical-align: top;
@@ -439,8 +445,8 @@ body {
         cursor: pointer;
         padding-left: 60px;
         padding-top: 15px;
-        background-color: $grey-dark3;
-        border-bottom: 1px solid $grey-dark4;
+        // background-color: $grey-dark3;
+        border-bottom: 1px solid $white;
       }
     }
     .logo {
@@ -466,12 +472,13 @@ body {
         height: 1px;
       }
       &:hover, &:focus, &:active{
-        background-color: $black;
+
+        // background-color: $black;
       }
     }
     button.navbar-toggle:hover {
       border: none;
-      background-color: $black;
+      background-color: rgba(1,1,1,0);
       .icon-bar {
         transition-duration: 1s;
         background-color: $orange;
@@ -482,7 +489,7 @@ body {
     }
      button.navbar-toggle:focus {
       border: none;
-      background-color: $black;
+      background-color: rgba(1,1,1,0);
     }
     button.navbar-toggle {
       .icon-bar.vertical-bar {

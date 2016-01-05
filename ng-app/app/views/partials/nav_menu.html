@@ -1,5 +1,14 @@
+<!-- offcanvas left inner menu items  -->
+<nav id="offcanvasLeft" class="navmenu navmenu-fixed-left offcanvas" role="navigation" ng-controller="MainCtrl">
+  <ul class="nav navmenu-nav">
+    <li><a href="#/products" class="menu-right-list"><span>Products</span></a></li>
+    <li><a href="#/about" class="menu-right-list"><span>About</span></a></li>
+  </ul>
+</nav>
+
+
 <!-- offcanvas right inner menu items -->
-<nav id="offcanvasRight" class="navmenu navmenu-inverse navmenu-fixed-right offcanvas" role="navigation" ng-controller="MainCtrl">
+<nav id="offcanvasRight" class="navmenu navmenu-fixed-right offcanvas" role="navigation" ng-controller="MainCtrl">
   <ul class="nav navmenu-nav">
     <li><a ng-href="#/mystore" class="menu-right-list"><span class="glyphicon glyphicon-home mg-right-12"></span> My STORE</a></li>
     <li><a ng-href="#/message" class="menu-right-list"><span class="glyphicon glyphicon-envelope mg-right-12"></span> Message</a></li>
@@ -13,11 +22,17 @@
 <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation" ng-controller="MainCtrl">
 
     <div class="navbar-header center">
-      <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed; rotateBar = !rotateBar" data-toggle="collapse">
+      <!-- offcanvasLeft menu trigger -->
+      <button href class="navbar-toggle" data-toggle="offcanvas" data-target="#offcanvasLeft" data-canvas="body" data-autohide="true"> 
+          <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar-top'"></span>
+          <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar'"></span>
+          <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar-bottom'"></span>  
+      </button>
+<!--       <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed; rotateBar = !rotateBar" data-toggle="collapse">
         <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar-top'"></span>
         <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar'"></span>
         <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar-bottom'"></span>
-      </button>
+      </button> -->
       <a class="brand white col-md-2 col-lg-2 visible-xs" href="#/"><i class="icon-delb logo white"></i></a>
 
       <!-- offcanvasRight menu trigger -->

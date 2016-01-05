@@ -13,6 +13,10 @@ angular.module('App')
     $scope.lists = [];
     $scope.selected = 0;  
     $scope.filters = { }; 
+    
+    if($scope.categoryProp == undefined){
+      $scope.categoryProp = "cake";
+    }
 
     $rootScope.global = {
       search: ''
@@ -109,4 +113,8 @@ angular.module('App')
       {title: 'Turtle Pralines', price: 49, description: 'Fresh Georgia pecans are covered in silky hand-stirred caramel and rich chocolate to make our favorite chocolate nutty treats. This gift box includes an assortment of milk, dark and white chocolate turtles. It’s crunchy, creamy and chocolatey all in one bite.', image: 'https://s3-ap-southeast-2.amazonaws.com/delbfiles/assets/dummy-sampler.jpg', subCategory: 'Auto', id:78},
       {title: 'Maine Lobster', price: 199, description: 'Best lobster you will ever eat!', image: 'https://s3-ap-southeast-2.amazonaws.com/delbfiles/assets/dummy-lobster.jpg', subCategory: 'featured', id:76}
     ]
+
+
+
   }]);
+

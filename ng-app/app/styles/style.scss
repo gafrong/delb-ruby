@@ -24,6 +24,7 @@ body {
   padding: 0; 
   border-bottom: none;
   a.brand.white {
+    text-shadow: 1px 1px 1px $grey-dark6;
     text-decoration: none;
   }
   .join-tag {
@@ -73,6 +74,7 @@ body {
     border: none;
   }
   .menu-right-list {
+    color: $orange;
     padding: 15px 15px 15px 20px;
     height: 52px;
     // background-color: $grey-dark3;

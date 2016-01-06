@@ -26,16 +26,19 @@
 
         <!-- offcanvasLeft menu trigger -->
         <button href class="navbar-toggle visible-xs" data-toggle="offcanvas" data-target="#offcanvasLeft" data-canvas="body" data-autohide="true" aria-hidden="true">
+          <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar-top'"></span>
+          <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar'"></span>
+          <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar-bottom'"></span> 
         </button>
 
         <a class="brand white col-md-2 col-lg-2 visible-xs" href="#/"><i class="icon-delb logo white"></i></a>
 
         <!-- offcanvasRight menu trigger -->
         <button href class="login visible-xs" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body" data-autohide="true" aria-hidden="true" ng-show="user.signedIn">
-          <!-- <span class="glyphicon glyphicon-user icon font18" aria-hidden="true" ng-class="rotateUser ? 'user-normal':'user-close'">
+          <span class="glyphicon glyphicon-user icon font18" aria-hidden="true" ng-class="rotateUser ? 'user-normal':'user-close'">
           </span>
           <span class="bar-close" ng-class="rotateUserBar ? 'bar-none' : 'bar-open'"></span>
-          <span class="bar-close" ng-class="rotateUserBar ? 'bar-none' : 'bar-open1'"></span>  -->      
+          <span class="bar-close" ng-class="rotateUserBar ? 'bar-none' : 'bar-open1'"></span>       
         </button>
        
         <!-- mobile login button -->

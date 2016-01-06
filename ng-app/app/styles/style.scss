@@ -462,6 +462,7 @@ body {
       cursor: pointer;
       float: right;
       .icon {
+        text-shadow: 1px 1px 1px $grey-dark6;
         padding: 14px 25px;
         transition-duration: 0.5s;
         color: $white;
@@ -470,6 +471,7 @@ body {
     button.navbar-toggle.collapsed {
       border: none;
       .icon-bar {
+        box-shadow: 1px 1px 1px $grey-dark6;
         background-color: $white;
         height: 1px;
       }
@@ -482,9 +484,11 @@ body {
       border: none;
       background-color: rgba(1,1,1,0);
       .icon-bar {
+        box-shadow: 1px 1px 1px $grey-dark6;
         transition-duration: 1s;
         background-color: $orange;
         &.horizontal-bar, &.vertical-bar, &.vertical-bar-bottom {
+          box-shadow: 1px 1px 1px $grey-dark6;
           background-color: $orange;
         }
       }
@@ -495,6 +499,7 @@ body {
     }
     button.navbar-toggle {
       .icon-bar.vertical-bar {
+          box-shadow: 1px 1px 1px $grey-dark6;
           transition-duration: 0.5s;
           transform: rotate(45deg);
           -ms-transform: rotate(45deg);
@@ -504,6 +509,7 @@ body {
           background-color: $white;
         }
       .icon-bar.vertical-bar-top {
+          box-shadow: 1px 1px 1px $grey-dark6;
           transition-duration: 1s;
           transform: rotate(45deg);
           -ms-transform: rotate(45deg);
@@ -513,6 +519,7 @@ body {
           display: none;
       }
       .icon-bar.vertical-bar-bottom {
+          box-shadow: 1px 1px 1px $grey-dark6;
           transition-duration: 0.5s;
           transform: rotate(135deg);
           -ms-transform: rotate(135deg);
@@ -522,6 +529,7 @@ body {
           background-color: $white;
       }
       .icon-bar.horizontal-bar {
+          box-shadow: 1px 1px 1px $grey-dark6;
           transition-duration: 0.5s;
           transform: rotate(0deg);
           -ms-transform: rotate(0deg);
@@ -533,6 +541,7 @@ body {
     button.navbar-toggle {
       padding-top: 8px;
       .icon-bar {
+        box-shadow: 1px 1px 1px $grey-dark6;
         margin-top: 3px;
         height: 1px;
         transition-duration: 1s;

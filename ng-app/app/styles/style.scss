@@ -74,13 +74,13 @@ body {
     border: none;
   }
   .menu-right-list {
-    color: $orange;
+    color: $white;
     padding: 15px 15px 15px 20px;
     height: 52px;
     // background-color: $grey-dark3;
     border-bottom: 1px solid $white;
     &:hover {
-      color: $white;
+      color: $orange;
     }
     &:focus {
       // background-color: $grey-dark;
@@ -89,17 +89,18 @@ body {
   }
   .navmenu, .navbar-offcanvas {
     border: none;
-    background-color: $white;
+    background-color: $grey-lighter;
+    color: $white;
   } 
   .navmenu-inverse .navmenu-nav > li > a:hover,
   .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a:hover{
-    color: $white;
-    // background-color: $grey-dark2;
+    color: $orange;
+    background-color: $grey-dark2;
   }
   .navmenu-inverse .navmenu-nav > li > a:focus,
   .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a:focus {
-    color: $orange;
-    background-color: $white;
+    color: $white;
+    background-color: $grey-light;
   }
   .navbar-nav {
     margin-top: 4px;

@@ -1,7 +1,7 @@
 <!-- offcanvas right inner menu items -->
 <nav id="offcanvasRight" class="navmenu navmenu-fixed-right offcanvas" role="navigation" ng-controller="MainCtrl">
   <ul class="nav navmenu-nav">
-    <li><a ng-href="#/mystore" class="menu-right-list"><span class="glyphicon glyphicon-home mg-right-12" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body" data-autohide="true" aria-hidden="true"></span> My STORE</a></li>
+    <li><a ng-href="#/mystore" class="menu-right-list"><span class="glyphicon glyphicon-home mg-right-12"></span> My STORE</a></li>
     <li><a ng-href="#/message" class="menu-right-list"><span class="glyphicon glyphicon-envelope mg-right-12"></span> Message</a></li>
     <li><a ng-href="#/favorites" class="menu-right-list"><span class="glyphicon glyphicon-heart mg-right-12"></span> Favorite</a></li>
     <li><a ng-href="#/history" class="menu-right-list"><span class="glyphicon glyphicon-list-alt mg-right-12"></span> History</a></li>
@@ -32,7 +32,7 @@
       <a class="brand white col-md-2 col-lg-2 visible-xs" href="#/"><i class="icon-delb logo white"></i></a>
 
       <!-- offcanvasRight menu trigger -->
-      <button href class="login visible-xs" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body" data-autohide="true" aria-hidden="true" ng-show="user.signedIn">
+      <button href class="navbar-toggle login visible-xs" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body" data-autohide="true" aria-hidden="true" ng-show="user.signedIn">
         <span class="glyphicon glyphicon-user icon font18" aria-hidden="true" ng-class="rotateUser ? 'user-normal':'user-close'">
         </span>
         <span class="bar-close" ng-class="rotateUserBar ? 'bar-none' : 'bar-open'"></span>
@@ -72,23 +72,16 @@
               </span>
             </div> -->
           </li>
-          <li class="col-xs-12 col-sm-1 col-lg-1 padding-none">
-            <a ng-href="#/items" class="menu-item width100">Products</a>
-          </li>
-          <li class="col-xs-12 col-sm-1 col-lg-1 padding-none">
-            <a ng-href="#/about" class="menu-item width100">About</a>
-          </li>
- <!--          <li class="col-xs-12 col-sm-1 col-lg-1 padding-none">
-            <a ng-href="#/pricing" class="menu-item width100" ng-click="isCollapsed = !isCollapsed; rotateBar = !rotateBar">Pricing</a>
-          </li> -->
+          <li class="col-xs-12 col-sm-1 col-lg-1 padding-none"><a ng-href="#/about" class="menu-item width100">About</a></li>
+          <li class="col-xs-12 col-sm-1 col-lg-1 padding-none"><a ng-href="#/items" class="menu-item width100">Products</a></li>
 
-          <!-- User desktop menu -->  
+<!-- User desktop menu -->  
           <li class="col-xs-12 col-sm-2 col-lg-2 hidden-xs padding-none" ng-if="user.id">
-            <a href class="menu-item width100 hiddden-xs" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body" data-autohide="true" aria-hidden="true"><span class="glyphicon glyphicon-user font18" aria-hidden="true"></span>
+            <a href class="menu-item width100 hiddden-xs" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body" data-autohide="true"><span class="glyphicon glyphicon-user font18" aria-hidden="true"></span>
             </a>
           </li>
           <li class="col-xs-12 col-sm-2 col-lg-2 hidden-xs padding-none" ng-if="!user.id"><a ng-click="showLogin()" class="menu-item width100"><span class="glyphicon glyphicon-off icon font18" aria-hidden="true"></span></a></li> 
-          <li class="col-xs-12 col-sm-2 col-lg-2 visible-xs padding-none" ng-if="user.id"><a href ng-click='signOut()' class="menu-item width100">Log out</a></li>
+          <li class="col-xs-12 col-sm-2 col-lg-2 visible-xs padding-none" ng-if="user.id"><a href ng-click='signOut()' class="menu-item width100" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body" data-autohide="true" aria-hidden="true">Log out</a></li>
         </ul>
       </nav>  
     </div>

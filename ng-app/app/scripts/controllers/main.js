@@ -79,27 +79,22 @@ angular.module('App')
       $scope.selected = tabIndex;
     };
 
-    $('#offcanvasRight').on('hide.bs.offcanvas', function(){
-        $scope.rotateUserBar = true;
-        $scope.rotateUser = true;
-        $scope.$apply();
-    });
+    // $('#offcanvasRight').on('hide.bs.offcanvas', function(){
 
-    $('#offcanvasRight > ul > li > a').click(function() {
-      $('.navmenu').offcanvas('hide');
-    });
+    // });
 
-    // $scope.getList = function(){
-    //   ListService.getListItems()
-    //   .success(function (returnData){
-    //     console.log(returnData);
-    //     $scope.lists = returnData;
-    //   }).error(function (){
-    //     $scope.errorMsg = "can't get the list"
-    //   });
-    // }; 
+    // $('#offcanvasRight > ul > li > a').click(function() {
+    //   $('.navmenu').offcanvas('hide');
+    // });
 
-    // $scope.getList();   
+    // $('#offcanvasLeft').on('hide.bs.offcanvas', function(){
+
+    // });
+
+    // $('#offcanvasLeft > ul > li > a').click(function() {
+    //   $('.navmenu').offcanvas('hide');
+    // });
+ 
 
     $scope.lists = [
       {title: 'Apple Pie', price: 89.99, description: 'Normally, this would be where we would tell you how incredible this apple pie is. How it is so stuffed with perfectly cooked, incredibly juicy apples, the crust positively bulges. How, being baked in a paper bag makes the top crust uniquely crunchy while keeping the bottom crust amazingly light and flakey, a hallmark of the best old-fashioned crust. How the delicate, golden brown crust and hearty sweet-tart apples combine to make a deliciously perfect pie. But don’t trust us. Trust the Wall Street Journal. Trust Gourmet. Trust the Food Network. They have all awarded the Elegant Farmer’s Apple Pie Baked in a Paper Bag the “best pie in America.” And we couldn’t agree more.', image: 'https://s3-ap-southeast-2.amazonaws.com/delbfiles/assets/dummy-applepie.jpg', subCategory: 'featured', id: 73},

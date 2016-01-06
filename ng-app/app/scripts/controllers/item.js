@@ -1,5 +1,6 @@
 'use strict';
 
+
 angular.module('App')
   .controller('ItemListCtrl', ['$scope', 'Items',
     function ($scope, Items){
@@ -14,7 +15,7 @@ angular.module('App')
   }])
   .controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item',
     function ($scope, $routeParams, Item){
-      console.log($routeParams.id);
+      
       $scope.loaderSource = 'images/default.gif';
       $scope.loading = true;
       Item.getItem({id: $routeParams.id})
@@ -22,7 +23,7 @@ angular.module('App')
         angular.forEach(returnData, function(item){
           if (item.id == $routeParams.id)
           $scope.item = item;
-        console.log(item);
+        
         });
       }).error(function(){
           $scope.errorMsg = 'Oops, there\'s no item';

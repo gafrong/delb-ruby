@@ -89,7 +89,7 @@ body {
   }
   .navmenu, .navbar-offcanvas {
     border: none;
-    // background-color: $grey-dark3;
+    background-color: $white;
   } 
   .navmenu-inverse .navmenu-nav > li > a:hover,
   .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a:hover{
@@ -99,7 +99,7 @@ body {
   .navmenu-inverse .navmenu-nav > li > a:focus,
   .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a:focus {
     color: $orange;
-    // background-color: $grey-dark;
+    background-color: $white;
   }
   .navbar-nav {
     margin-top: 4px;

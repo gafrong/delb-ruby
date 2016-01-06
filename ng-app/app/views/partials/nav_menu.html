@@ -1,12 +1,3 @@
-<!-- offcanvas left inner menu items  -->
-<nav id="offcanvasLeft" class="navmenu navmenu-fixed-left offcanvas" role="navigation" ng-controller="MainCtrl">
-  <ul class="nav navmenu-nav">
-    <li><a href="#/items" class="menu-right-list"><span>Products</span></a></li>
-    <li><a href="#/about" class="menu-right-list"><span>About</span></a></li>
-  </ul>
-</nav>
-
-
 <!-- offcanvas right inner menu items -->
 <nav id="offcanvasRight" class="navmenu navmenu-fixed-right offcanvas" role="navigation" ng-controller="MainCtrl">
   <ul class="nav navmenu-nav">
@@ -19,12 +10,20 @@
   </ul>
 </nav>
 
+<!-- offcanvas left inner menu items  -->
+<nav id="offcanvasLeft" class="navmenu navmenu-fixed-left offcanvas" role="navigation" ng-controller="MainCtrl">
+  <ul class="nav navmenu-nav">
+    <li><a href="#/items" data-toggle="offcanvas" data-target="#offcanvasLeft" data-canvas="body" data-autohide="true" aria-hidden="true" class="menu-right-list"><span>Products</span></a></li>
+    <li><a href="#/about" class="menu-right-list" data-toggle="offcanvas" data-target="#offcanvasLeft" data-canvas="body" data-autohide="true" aria-hidden="true"><span>About</span></a></li>
+  </ul>
+</nav>
+
 <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation" ng-controller="MainCtrl">
 
     <div class="navbar-header center">
 
       <!-- offcanvasLeft menu trigger -->
-      <button href class="navbar-toggle visible-xs" data-toggle="offcanvas" data-target="#offcanvasLeft" data-canvas="body" data-autohide="true"> 
+      <button href class="navbar-toggle visible-xs" data-toggle="offcanvas" data-target="#offcanvasLeft" data-canvas="body" data-autohide="true" aria-hidden="true"> 
           <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar-top'"></span>
           <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar'"></span>
           <span class="icon-bar" ng-class="rotateBar ? 'horizontal-bar' : 'vertical-bar-bottom'"></span>  
@@ -33,7 +32,7 @@
       <a class="brand white col-md-2 col-lg-2 visible-xs" href="#/"><i class="icon-delb logo white"></i></a>
 
       <!-- offcanvasRight menu trigger -->
-      <button href class="login visible-xs" data-toggle="offcanvas" data-target="#offcanvasRight" ng-show="user.signedIn" data-canvas="body" data-autohide="true">
+      <button href class="login visible-xs" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body" data-autohide="true" aria-hidden="true" ng-show="user.signedIn">
         <span class="glyphicon glyphicon-user icon font18" aria-hidden="true" ng-class="rotateUser ? 'user-normal':'user-close'">
         </span>
         <span class="bar-close" ng-class="rotateUserBar ? 'bar-none' : 'bar-open'"></span>

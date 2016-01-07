@@ -54,6 +54,7 @@ module Product
         item.merchant_url = params[:merchant_url]
         item.active = params[:active]
         item.id = params[:id]
+        item.location = params[:location]
         
         item.save
       end

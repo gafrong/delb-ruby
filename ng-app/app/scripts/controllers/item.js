@@ -67,7 +67,8 @@ angular.module('App')
             saletype: $scope.item.saletype,
             sku: $scope.item.sku,
             title: $scope.item.title, 
-            user_id: $scope.item.user_id
+            user_id: $scope.item.user_id,
+            location: $scope.item.location
           }
         }).success(function(){
           console.log('success');

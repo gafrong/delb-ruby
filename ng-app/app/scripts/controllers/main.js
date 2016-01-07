@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('App')
-  .controller('MainCtrl', ['$scope', 'ModalService', 'ListService', '$rootScope', function ($scope, ModalService, ListService, $rootScope) {
+  .controller('MainCtrl', ['$scope', 'ModalService', 'ListService', '$rootScope', '$location', 'Items', function ($scope, ModalService, ListService, $rootScope, $location, Items) {
 
     $scope.rotateBar = true;
     $scope.loggedIn = false;
@@ -79,6 +79,16 @@ angular.module('App')
       $scope.selected = tabIndex;
     };
 
+    $scope.filters = {location: ''};
+
+    $scope.update = function(){
+      Items.all($scope.filters).then(function(data){
+        $scope.items = data;
+        $location.path('/searched/products');
+      });
+
+    }
+
     // $('#offcanvasRight').on('hide.bs.offcanvas', function(){
 
     // });
@@ -109,7 +119,7 @@ angular.module('App')
       {title: 'Maine Lobster', price: 199, description: 'Best lobster you will ever eat!', image: 'https://s3-ap-southeast-2.amazonaws.com/delbfiles/assets/dummy-lobster.jpg', subCategory: 'featured', id:10, location: 'melbourne'}
     ]
 
-
+    $scope.update();
 
   }]);
 

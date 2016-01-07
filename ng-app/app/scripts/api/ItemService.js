@@ -30,14 +30,13 @@ angular.module('App')
           timeout: 80000
         });
       },
-      postItem: function(title, image, description, price, location){
+      postItem: function(title, image, description, price){
         return $http.post(endpoint.PostItem, {
           user_id: user_id,
           title: title,
           image: image,
           description: description,
-          price: price,
-          location: location
+          price: price
         });
       }
     };

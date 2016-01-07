@@ -35,6 +35,7 @@ angular.module('App')
         $scope.mainImageUrl = imageUrl;
       }; 
   }])
+  // add new item
   .controller('ItemAddCtrl', ['$scope', '$location', 'Item','$rootScope', 'Upload', 
     function ($scope, $location, Item, $rootScope, Upload){
 

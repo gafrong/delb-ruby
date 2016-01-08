@@ -81,14 +81,14 @@ angular.module('App')
 
     $scope.filters = {location: ''};
 
-    $scope.update = function(){
-      Items.query($scope.filters).then(function(data){
-        console.log(data);
-        $scope.items = data;
-        $location.path('/searched/products');
-      });
+    // $scope.update = function(){
+    //   Items.query($scope.filters).then(function(data){
+    //     console.log(data);
+    //     $scope.items = data;
+    //     $location.path('/searched/products');
+    //   });
 
-    }
+    // }
 
     // $('#offcanvasRight').on('hide.bs.offcanvas', function(){
 

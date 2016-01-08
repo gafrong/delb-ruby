@@ -82,7 +82,8 @@ angular.module('App')
     $scope.filters = {location: ''};
 
     $scope.update = function(){
-      Items.all($scope.filters).then(function(data){
+      Items.query($scope.filters).then(function(data){
+        console.log(data);
         $scope.items = data;
         $location.path('/searched/products');
       });

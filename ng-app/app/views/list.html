@@ -9,6 +9,13 @@
   </div>
 
 <br>
+<input type="text" ng-model="searchString">
+<br>
+<br>
+<tr ng-repeat="i in lists | searchFor:searchString">
+  <td>{{i.title}}</td>
+</tr>
+<br>
 
 <div class="center">
   <div ng-if="currentTabIndex === 1">

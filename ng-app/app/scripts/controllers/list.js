@@ -10,6 +10,8 @@ angular.module('App')
       $scope.currentTabIndex = 1;
       $scope.selectedCategory = "Select Category";
       
+
+
     $scope.getList = function(){
       ListService.getListItems()
       .success(function (returnData){
@@ -59,5 +61,20 @@ angular.module('App')
     ];
 
     $scope.getList();
-  }]);
+  }])
+.filter('searchFor', function(){
+  return function(arr, searchString){
+    if(!searchString){
+      return arr;
+    }
+    var result = [];
+    searchString = searchString.toLowerCase();
+    angular.forEach(arr, function(item){
+      if(item.title.toLowerCase().indexOf(searchString) !== -1){
+        result.push(item);
+      }
+    });
+    return result;
+  };
+});
 

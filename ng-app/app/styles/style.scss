@@ -45,7 +45,7 @@ body {
     }
   }
   .navbar-header.center > a:hover {
-    color: $white;
+    color: $orange;
   }
   .navbar-nav {
     text-align: center;
@@ -53,7 +53,11 @@ body {
   .navbar {
     margin: 0;
     min-height: 50px;
-    background-color: rgba(1,1,1,0);
+    background: rgba(1,1,1,0.1);
+    background: -webkit-linear-gradient(rgba(1,1,1,0.3), rgba(1,1,1,0.0));
+    background: -o-linear-gradient(rgba(1,1,1,0.3), rgba(1,1,1,0.0));
+    background: -moz-linear-gradient(rgba(1,1,1,0.3), rgba(1,1,1,0.0));
+    background: linear-gradient(rgba(1,1,1,0.3), rgba(1,1,1,0.0));
     border: none;
     border-radius: 0;
     .menu-item {
@@ -77,19 +81,17 @@ body {
     color: $white;
     padding: 15px 15px 15px 20px;
     height: 52px;
-    // background-color: $grey-dark3;
-    border-bottom: 1px solid $white;
+    border-bottom: 1px solid $grey-light;
     &:hover {
       color: $orange;
     }
     &:focus {
-      // background-color: $grey-dark;
       color: $orange;
     }
   }
   .navmenu, .navbar-offcanvas {
     border: none;
-    background-color: $grey-lighter;
+    background-color: $grey-md;
     color: $white;
   } 
   .navmenu-inverse .navmenu-nav > li > a:hover,
@@ -99,7 +101,7 @@ body {
   }
   .navmenu-inverse .navmenu-nav > li > a:focus,
   .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a:focus {
-    color: $white;
+    color: $orange;
     background-color: $grey-light;
   }
   .navbar-nav {
@@ -110,7 +112,6 @@ body {
         color: $grey-light;
         &:hover {
           color: $grey-md;
-          // background-color: $grey-dark2;
         }
         &:focus {
           color: $orange;
@@ -119,7 +120,7 @@ body {
     }
   }
   .brand:hover, .brand:focus {
-    .icon-delb, .logo {
+    .icon-delb, .logo, .main-logo {
       color: $orange;
     }
   }
@@ -130,21 +131,17 @@ body {
       .row {
         .input-group {
           .input-group-btn {
-            // background-color: $grey-dark3;
-            border-color: $white;
+            border-color: $grey-light;
             .btn {
               border-color: $white;
-              // background-color: $black;
               color: $grey-light;
               &:hover, &:focus {
-                color: $white;
+                color: $orange;
                 border-color: $grey-light8;
                 z-index: 99;
-                // background-color: $grey-dark4;
               }
             }
             .dropdown-menu {
-              // background-color: $grey-dark6;
               padding: 0;
               min-width: 97px;
             }
@@ -200,9 +197,6 @@ body {
   .main-logo {
     margin-left: 20px;
     font-size: 20px;
-    &:hover, &:focus {
-      color: $orange;
-    }
   }
   .hamburger {
     margin-top: 5px;
@@ -388,8 +382,7 @@ body {
         }
       }
       button.login, button.login:hover, button.login:focus {
-        // background-color: $grey-dark;
-        color: $orange;
+        color: $white;
         text-decoration: none;
         outline: none;
         border: none;
@@ -442,9 +435,6 @@ body {
           .search-container {
             padding-bottom: 6px;
             margin-left: 62px;
-            .input-group-btn {
-              // background-color: $black;
-            }
             .category-search-btn {
               vertical-align: top;
             }
@@ -457,15 +447,16 @@ body {
         cursor: pointer;
         padding-left: 60px;
         padding-top: 15px;
-        border-bottom: 1px solid $white;
       }
     }
     .logo {
+      color: $white;
       margin-left: -48px;
       transition-duration: 0.5s;
       font-size: 38px;
       margin-top: 4px;
       position: absolute;
+      text-shadow: 1px 1px 1px $grey-dark6;
     }
     .login {
       cursor: pointer;
@@ -484,10 +475,6 @@ body {
         background-color: $white;
         height: 1px;
       }
-      &:hover, &:focus, &:active{
-
-        // background-color: $black;
-      }
     }
     button.navbar-toggle:hover {
       border: none;
@@ -495,7 +482,7 @@ body {
       .icon-bar {
         box-shadow: 1px 1px 1px $grey-dark6;
         transition-duration: 1s;
-        background-color: $orange;
+        background-color: $white;
         &.horizontal-bar, &.vertical-bar, &.vertical-bar-bottom {
           box-shadow: 1px 1px 1px $grey-dark6;
           background-color: $orange;

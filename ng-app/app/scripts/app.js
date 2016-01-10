@@ -93,8 +93,8 @@ angular
         // }
       })
       .when('/list/:product', {
-        templateUrl: 'partials/product.html',
-        controller: 'StoreCtrl'
+        templateUrl: 'partials/list-detail.html',
+        controller: 'ListCtrl'
       })
       .when('/products', {
         templateUrl: 'views/products.html',

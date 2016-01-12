@@ -44,6 +44,14 @@ angular.module('App')
       // {title: "Other", icon:"glyphicon-cog", id: 6, link: '#/other'}
     ];
 
+    // $scope.filterLocation = [
+    //   {'title': 'Your location', 'option': '', id: 1}, 
+    //   {'title': 'Brisbane', 'option': 'brisbane', id: 2},
+    //   {'title': 'Melbourne', 'option': 'melbourne', id: 3},
+    //   {'title': 'Sydney', 'option': 'sydney', id: 4},
+    //   {'title': 'Perth', 'option': 'perth', id: 5}
+    // ];
+
     $scope.menuTabs = [
       {title: 'menu1'},
       {title: 'menu1'},
@@ -116,7 +124,7 @@ angular.module('App')
       console.log('nothing');
     })
     $scope.sharedData = ShareData.getData();
-
+    console.log($scope.sharedData);
     $scope.searchQuery = $scope.sharedData.slice(-1)[0];
     sessionStorage.clear();
   });

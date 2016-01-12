@@ -46,6 +46,7 @@ module Product
         item.saletype = params[:saletype]
         item.merchant_id = params[:merchant_id]
         item.category_id = params[:category_id]
+        item.category = params[:category]
         item.brand = params[:brand]
         item.color = params[:color]
         item.gender = params[:gender]

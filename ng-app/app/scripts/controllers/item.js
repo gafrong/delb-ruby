@@ -55,6 +55,7 @@ angular.module('App')
             availability: $scope.item.availability,
             brand: $scope.item.brand,
             category_id: $scope.item.category_id,
+            category: $scope.item.category,
             color: $scope.item.color,
             description: $scope.item.description,
             gender: $scope.item.gender,

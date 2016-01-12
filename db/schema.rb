@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160107204645) do
+ActiveRecord::Schema.define(version: 20160112230558) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "title"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20160107204645) do
     t.string   "image_path"
     t.string   "location"
     t.integer  "user_id"
+    t.string   "category"
   end
 
   add_index "items", ["user_id"], name: "index_items_on_user_id"

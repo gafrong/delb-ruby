@@ -24,8 +24,10 @@ angular.module('App')
 
     // main page search 
     $scope.dataToShare = [];
-    $scope.shareMyData = function(filterLocation){
-      $scope.dataToShare = filterLocation;
+    $scope.shareMyData = function(filterLocation, filterCategory){
+      console.log(filterCategory);
+      $scope.dataToShare.push(filterLocation, filterCategory);
+      console.log($scope.dataToShare);
       ShareData.addData($scope.dataToShare);
       window.location.href = "#/listtest";
     }
@@ -114,18 +116,22 @@ angular.module('App')
 
   }]);
 angular.module('App')
-  .controller('ListItemCtrl', function($scope, ShareData, $window, $rootScope, Item, $q, $timeout){
+  .controller('ListItemCtrl', function($scope, ShareData, $window, $rootScope, Item){
     
     Item.getItems()
     .success(function(returnData){
-      console.log('something');
+      console.log('data returned');
       $scope.items = returnData;
     }).error(function(){
-      console.log('nothing');
+      console.log('no data');
     })
     $scope.sharedData = ShareData.getData();
     console.log($scope.sharedData);
-    $scope.searchQuery = $scope.sharedData.slice(-1)[0];
+    $scope.searchQuery = $scope.sharedData.slice(-2)[0][0];
+    $scope.searchQueryCategory = $scope.sharedData.slice(-2)[0][1];
+    console.log($scope.searchQuery);
+    console.log($scope.searchQueryCategory);
+    
     sessionStorage.clear();
   });
 

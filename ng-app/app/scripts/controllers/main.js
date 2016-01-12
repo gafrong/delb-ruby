@@ -14,9 +14,13 @@ angular.module('App')
     $scope.selected = 0;  
     $scope.filters = { }; 
     
-    if($scope.filterCategory == undefined){
-      $scope.filterCategory = "cake";
+    if($scope.filterLocation == undefined){
+      $scope.filterLocation = "";
     }
+    if($scope.filterCategory == undefined){
+      $scope.filterCategory = "";
+    }
+
 
     // main page search 
     $scope.dataToShare = [];

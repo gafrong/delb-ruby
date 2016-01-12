@@ -10,9 +10,18 @@
   <div class="search-main center container">  
       <form class="form-inline">
         <div class="form-group search">
-          <input type="text" ng-model="filterLocation" class="form-control" id="locationFood" placeholder="Where are you located?">
+          <!-- <input type="text" ng-model="filterLocation" class="form-control" id="locationFood" placeholder="Where are you located?"> -->
+
+          <select class="category-prop center" ng-model="filterLocation">
+            <option value="">Your location</option>
+            <option value="brisbane">Brisbane</option>
+            <option value="melbourne">Melbourne</option>
+            <option value="sydney">Sydney</option>
+            <option value="perth">Perth</option>
+          </select>
           
           <select class="category-prop center" ng-model="filterCategory">
+            <option value="">choose a category</option>
             <option value="cake">Cake</option>
             <option value="chocolate">Chocolate</option>
             <option value="pie">Pie</option>

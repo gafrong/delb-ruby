@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('App')
-  .controller('ListCtrl', ['$http', '$scope', 'ListService', function ($http, $scope, ListService) {
+  .controller('ListCtrl', ['$http', '$scope', 'ListService','$location', 'ShareData', function ($http, $scope, ListService, $location, ShareData) {
   
       $scope.heading = 'List';
       $scope.lists = [];
@@ -9,8 +9,6 @@ angular.module('App')
       $scope.errorMsg = ""; 
       $scope.currentTabIndex = 1;
       $scope.selectedCategory = "Select Category";
-      
-
 
     $scope.getList = function(){
       ListService.getListItems()
@@ -61,20 +59,77 @@ angular.module('App')
     ];
 
     $scope.getList();
-  }])
-.filter('searchFor', function(){
-  return function(arr, searchString){
-    if(!searchString){
-      return arr;
-    }
-    var result = [];
-    searchString = searchString.toLowerCase();
-    angular.forEach(arr, function(item){
-      if(item.title.toLowerCase().indexOf(searchString) !== -1){
-        result.push(item);
+
+    // dummy data
+    $scope.lists = [
+      {title: 'product1', price: 1},
+      {title: 'product2', price: 2},
+      {title: 'product3', price: 3},
+      {title: 'product4', price: 4},
+      {title: 'product1', price: 5}
+    ];
+      
+    $scope.searchProduct = function(myValue){
+      $scope.searchQuery = angular.copy($scope.query);
+      $scope.listsToFilter = $scope.lists;
+      // $rootScope.listsToFilter = $scope.listsToFilter;
+      // $rootScope.searchQuery= $scope.searchQuery;
+      $scope.searchResult = true;
+      $location.path('/listtest');
+    };
+
+    $scope.dataToShare = [];
+    $scope.shareMyData = function(query){
+      $scope.dataToShare = query;
+      ShareData.addData($scope.dataToShare);
+
+      window.location.href = "#/listtest";
+    };
+  }]);
+
+angular.module('App')
+  .controller('ListDetailCtrl', function($scope, ShareData, $window, $rootScope){
+    // dummy data
+    $scope.lists = [
+      {title: 'product1', price: 1},
+      {title: 'product2', price: 2},
+      {title: 'product3', price: 3},
+      {title: 'product4', price: 4},
+      {title: 'product1', price: 5}
+    ];
+    console.log($scope.sharedData);
+    $scope.sharedData = ShareData.getData();
+    console.log($scope.sharedData);
+    $scope.searchQuery = $scope.sharedData.slice(-1)[0];
+    sessionStorage.clear();
+  })
+
+  .service('ShareData', function($window){
+    var KEY = 'App.SelectedValue';
+    var addData = function(newObj){
+      var mydata = $window.sessionStorage.getItem(KEY);
+      if (mydata){
+        mydata = JSON.parse(mydata);
+      } else {
+        mydata = [];
       }
-    });
-    return result;
-  };
-});
+      mydata.push(newObj);
+      $window.sessionStorage.setItem(KEY, JSON.stringify(mydata));
+    };
+
+    var getData = function($scope, $rootScope){
+      var mydata = $window.sessionStorage.getItem(KEY);
+      if (mydata){
+
+        mydata = JSON.parse(mydata);
+      }
+      return mydata || [];
+    };
+
+    return {
+      addData: addData,
+      getData: getData
+    };
+
+  });
 

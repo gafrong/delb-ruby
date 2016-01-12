@@ -85,12 +85,16 @@ angular
       })
       .when('/list', {
         templateUrl: 'views/list.html',
-        controller: 'ListCtrl',
+        controller: 'ListCtrl'
         // resolve: {
         //   auth: ['$auth', function($auth){
         //     return $auth.validateUser();
         //   }]
         // }
+      })
+      .when('/listtest', {
+        templateUrl: 'views/listtest.html',
+        controller: 'ListItemCtrl'
       })
       .when('/list/:product', {
         templateUrl: 'partials/list-detail.html',

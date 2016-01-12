@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('App')
-  .controller('MainCtrl', ['$scope', 'ModalService', 'ListService', '$rootScope', function ($scope, ModalService, ListService, $rootScope) {
+  .controller('MainCtrl', ['$scope', 'ModalService', 'ListService', '$rootScope', 'ShareData', function ($scope, ModalService, ListService, $rootScope, ShareData) {
 
     $scope.rotateBar = true;
     $scope.loggedIn = false;
@@ -14,8 +14,16 @@ angular.module('App')
     $scope.selected = 0;  
     $scope.filters = { }; 
     
-    if($scope.categoryProp == undefined){
-      $scope.categoryProp = "cake";
+    if($scope.filterCategory == undefined){
+      $scope.filterCategory = "cake";
+    }
+
+    // main page search 
+    $scope.dataToShare = [];
+    $scope.shareMyData = function(filterLocation){
+      $scope.dataToShare = filterLocation;
+      ShareData.addData($scope.dataToShare);
+      window.location.href = "#/listtest";
     }
 
     $rootScope.global = {
@@ -79,25 +87,6 @@ angular.module('App')
       $scope.selected = tabIndex;
     };
 
-
-
-    // $('#offcanvasRight').on('hide.bs.offcanvas', function(){
-
-    // });
-
-    // $('#offcanvasRight > ul > li > a').click(function() {
-    //   $('.navmenu').offcanvas('hide');
-    // });
-
-    // $('#offcanvasLeft').on('hide.bs.offcanvas', function(){
-
-    // });
-
-    // $('#offcanvasLeft > ul > li > a').click(function() {
-    //   $('.navmenu').offcanvas('hide');
-    // });
- 
-
     $scope.lists = [
       {title: 'Apple Pie', price: 89.99, description: 'Normally, this would be where we would tell you how incredible this apple pie is. How it is so stuffed with perfectly cooked, incredibly juicy apples, the crust positively bulges. How, being baked in a paper bag makes the top crust uniquely crunchy while keeping the bottom crust amazingly light and flakey, a hallmark of the best old-fashioned crust. How the delicate, golden brown crust and hearty sweet-tart apples combine to make a deliciously perfect pie. But don’t trust us. Trust the Wall Street Journal. Trust Gourmet. Trust the Food Network. They have all awarded the Elegant Farmer’s Apple Pie Baked in a Paper Bag the “best pie in America.” And we couldn’t agree more.', image: 'https://s3-ap-southeast-2.amazonaws.com/delbfiles/assets/dummy-applepie.jpg', subCategory: 'featured', id: 1, location: 'melbourne'},
       {title: 'Gourmet Buckeyes', price: 49.99, description: 'If there’s one thing Ohio State and Michigan fans can agree on, it’s that these creamy dark chocolate and peanut butter Buckeyes are handcrafted perfection. Forty of these chocolate peanut butter gems are individually wrapped and presented in Brownie Points’ 20 oz. canister tied with their signature polka dot ribbon.', image: 'https://s3-ap-southeast-2.amazonaws.com/delbfiles/assets/dummy-buckeyes.jpg', subCategory: 'featured', id: 2, location: 'sydney'},
@@ -111,7 +100,48 @@ angular.module('App')
       {title: 'Maine Lobster', price: 199, description: 'Best lobster you will ever eat!', image: 'https://s3-ap-southeast-2.amazonaws.com/delbfiles/assets/dummy-lobster.jpg', subCategory: 'featured', id:10, location: 'melbourne'}
     ]
 
-
-
   }]);
+angular.module('App')
+  .controller('ListItemCtrl', function($scope, ShareData, $window, $rootScope, Item, $q, $timeout){
+    
+    Item.getItems()
+    .success(function(returnData){
+      console.log('something');
+      $scope.items = returnData;
+    }).error(function(){
+      console.log('nothing');
+    })
+    $scope.sharedData = ShareData.getData();
 
+    $scope.searchQuery = $scope.sharedData.slice(-1)[0];
+    sessionStorage.clear();
+  });
+
+angular.module('App')
+  .service('ShareData', function($window){
+    var KEY = 'App.SelectedValue';
+    var addData = function(newObj){
+      var mydata = $window.sessionStorage.getItem(KEY);
+      if (mydata){
+        mydata = JSON.parse(mydata);
+      } else {
+        mydata = [];
+      }
+      mydata.push(newObj);
+      $window.sessionStorage.setItem(KEY, JSON.stringify(mydata));
+    };
+
+    var getData = function(){
+      var mydata = $window.sessionStorage.getItem(KEY);
+      if (mydata){
+        mydata = JSON.parse(mydata);
+      }
+      return mydata || [];
+    };
+
+    return {
+      addData: addData,
+      getData: getData
+    };
+
+  });

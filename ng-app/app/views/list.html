@@ -9,13 +9,19 @@
   </div>
 
 <br>
-<input type="text" ng-model="searchString">
-<br>
-<br>
-<tr ng-repeat="i in lists | searchFor:searchString">
-  <td>{{i.title}}</td>
-</tr>
-<br>
+<div class="search-box">
+  <input type="text" ng-model="query">
+  <div class="search-box-btn">
+    <span>
+      <button type="button" ng-click="shareMyData(query)">search</button>
+    </span>
+  </div>
+</div>
+<ul ng-show="searchResult && query">
+  <li ng-repeat="list in listsToFilter | filter:searchQuery | orderBy:type">
+    {{list.title}}
+  </li>  
+</ul>
 
 <div class="center">
   <div ng-if="currentTabIndex === 1">

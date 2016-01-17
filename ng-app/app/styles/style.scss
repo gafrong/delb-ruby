@@ -276,15 +276,15 @@ body {
 .landing-page {
   margin-top: -52px;
   .full-screen {
-      position: relative;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      overflow: hidden;
-      z-index: -100;  
-      max-height: 650px;
-      min-width: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;  
+    max-height: 650px;
+    min-width: 100%;
   }
   .search-main {
     background-color: rgba(0,0,0,0.3);
@@ -315,6 +315,16 @@ body {
   }
 } 
 
+// Product-List Page
+.product-list {
+  background-color: green;
+  .search-main {
+    padding-top: 20px;
+    .category-prop {
+      height: 54px;
+    }
+  }
+}
 
 // Media Queries
 

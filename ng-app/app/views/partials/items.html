@@ -1,12 +1,44 @@
+<div class="product-page">
+  <div class="search-product center container">  
+      <form class="form-inline">
+        <div class="form-group search">
+
+            <select class="category-prop center form-control" ng-model="filterLocation">
+              <option value="">Your location</option>
+              <option value="brisbane">Brisbane</option>
+              <option value="melbourne">Melbourne</option>
+              <option value="sydney">Sydney</option>
+              <option value="perth">Perth</option>
+            </select>
+            
+            <select class="category-prop center form-control" ng-model="filterCategory">
+              <option value="">All</option>
+              <option value="beverage">Beverage</option>
+              <option value="bread">Bread</option>
+              <option value="cheese">Cheese</option>
+              <option value="cake">Dessert</option>
+              <option value="pie">Pie</option>
+              <option value="pasta">Pasta</option>
+              <option value="sauce">Sauce</option>
+              <option value="snack">Snack</option>
+              <option value="vegan">Vegan</option>
+            </select>
+
+          <button type="submit" class="btn btn-default search-btn orange-bg white" ng-click="searchProduct(filterLocation, filterCategory)"><span class="glyphicon glyphicon-search"></span></button>
+        </div>
+      </form>
+  </div>
+</div>
+
 <div class="container-fluid products">
   <div class="row">
     <div class="col-md-2">
       <!-- Search: <input ng-model="global.search"> -->
-      Sort by:
+<!--       Sort by:
       <select ng-model="orderProp">
         <option value="title">Alphabetical</option>
         <option value="age">Newest</option>
-      </select>  
+      </select>   -->
     </div>
     <br>
     <div class="col-md-10">

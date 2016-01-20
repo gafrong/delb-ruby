@@ -273,7 +273,7 @@ body {
   }
 }
 // Landing Page Video 
-.landing-page {
+.landing-page, .product-page {
   margin-top: -52px;
   .full-screen {
     position: relative;
@@ -296,10 +296,15 @@ body {
     z-index: 99;
     .form-inline {
       .form-group {
-        .form-control, .search-btn {
+        .form-control{
           height: 52px;
           min-width: 200px;
           border-radius: 0;
+        }
+        .search-btn {
+          height: 52px;
+          min-width: 100px;
+          border-radius: 5px;  
         }
         .category-prop {
           height: 52px;
@@ -308,6 +313,34 @@ body {
         }
       }
     }
+  }
+  .search-product {
+    background-color: rgba(0,0,0,0.0);
+    padding: 10px 0;
+    color: $white;
+    float: left;
+    margin-top: 52px;
+    width: 100%;
+    z-index: 99;
+    .form-inline {
+      .form-group {
+        .form-control{
+          height: 40px;
+          min-width: 200px;
+          border-radius: 0;
+        }
+        .search-btn {
+          height: 40px;
+          min-width: 70px;
+          border-radius: 5px;  
+        }
+        .category-prop {
+          height: 40px;
+          background-color: $white;
+          color: $grey-dark;
+        }
+      }
+    } 
   }
   .fullscreen-video {
       width: 100%;

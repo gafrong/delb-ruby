@@ -12,6 +12,10 @@ angular.module('App')
 
       $scope.query();
 
+      $scope.searchProduct = function(filterLocation, filterCategory){
+        $scope.orderProp = filterLocation;
+      }
+
   }])
   .controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item',
     function ($scope, $routeParams, Item){

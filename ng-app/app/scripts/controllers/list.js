@@ -100,7 +100,11 @@ angular.module('App')
     console.log($scope.sharedData);
     $scope.sharedData = ShareData.getData();
     console.log($scope.sharedData);
-    $scope.searchQuery = $scope.sharedData.slice(-1)[0];
+    if($scope.sharedData !== undefined){
+      $scope.searchQuery = $scope.sharedData.slice(-1)[0];
+    } else {
+      $scope.searchQuery = "";
+    }
     sessionStorage.clear();
   })
 

@@ -127,7 +127,8 @@ angular.module('App')
     })
 
     $scope.sharedData = ShareData.getData();
-    if($scope.sharedData !== undefined){
+    console.log($scope.sharedData.length);
+    if($scope.sharedData.length > 0){
       console.log($scope.sharedData);
       $scope.searchQuery = $scope.sharedData.slice(-2)[0][0];
       $scope.searchQueryCategory = $scope.sharedData.slice(-2)[0][1];
@@ -136,8 +137,9 @@ angular.module('App')
     }
     sessionStorage.clear();
 
-  $scope.searchProduct = function(filterLocation, filterCategory){
+  $scope.searchProduct = function(filterLocation){
       $scope.orderProp = filterLocation;
+      console.log($scope.orderProp);
     }
   });
 

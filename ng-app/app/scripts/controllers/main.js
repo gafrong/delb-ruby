@@ -125,14 +125,20 @@ angular.module('App')
     }).error(function(){
       console.log('no data');
     })
+
     $scope.sharedData = ShareData.getData();
-    console.log($scope.sharedData);
-    $scope.searchQuery = $scope.sharedData.slice(-2)[0][0];
-    $scope.searchQueryCategory = $scope.sharedData.slice(-2)[0][1];
-    console.log($scope.searchQuery);
-    console.log($scope.searchQueryCategory);
-    
+    if($scope.sharedData !== undefined){
+      console.log($scope.sharedData);
+      $scope.searchQuery = $scope.sharedData.slice(-2)[0][0];
+      $scope.searchQueryCategory = $scope.sharedData.slice(-2)[0][1];
+      console.log($scope.searchQuery);
+      console.log($scope.searchQueryCategory);
+    }
     sessionStorage.clear();
+
+  $scope.searchProduct = function(filterLocation, filterCategory){
+      $scope.orderProp = filterLocation;
+    }
   });
 
 angular.module('App')

@@ -10,8 +10,16 @@
               <option value="sydney">Sydney</option>
               <option value="perth">Perth</option>
             </select>
+
+            <input-dropdown
+              selected-item="selectedDropdownItem"
+              default-dropdown-items="categoryItems"
+              class="category-prop"
+              ng-model="filterCategory"
+            >
+            </input-dropdown>
             
-            <select class="category-prop center form-control" ng-model="filterCategory">
+           <!--  <select class="category-prop center form-control" ng-model="filterCategory">
               <option value="">All</option>
               <option value="beverage">Beverage</option>
               <option value="bread">Bread</option>
@@ -22,12 +30,13 @@
               <option value="sauce">Sauce</option>
               <option value="snack">Snack</option>
               <option value="vegan">Vegan</option>
-            </select>
+            </select> -->
 
           <button type="submit" class="btn btn-default search-btn orange-bg white" ng-click="searchProduct(filterLocation, filterCategory)"><span class="glyphicon glyphicon-search"></span></button>
         </div>
       </form>
   </div>
+
 <!-- </div> -->
 
 <!-- <div class="container-fluid products"> -->

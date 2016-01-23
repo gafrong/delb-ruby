@@ -13,7 +13,8 @@ angular
     'ui.bootstrap',
     'ui.bootstrap.collapse',
     'naif.base64',
-    'ngFileUpload'
+    'ngFileUpload',
+    'inputDropdown'
   ])
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function(userInfo) {

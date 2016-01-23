@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('App')
-  .controller('MainCtrl', ['$scope', 'ModalService', 'ListService', '$rootScope', 'ShareData', function ($scope, ModalService, ListService, $rootScope, ShareData) {
+  .controller('MainCtrl', ['$scope', 'ModalService', 'ListService', '$rootScope', 'ShareData','$http', function ($scope, ModalService, ListService, $rootScope, ShareData, $http) {
 
     $scope.rotateBar = true;
     $scope.loggedIn = false;
@@ -20,14 +20,42 @@ angular.module('App')
     if($scope.filterCategory == undefined){
       $scope.filterCategory = "";
     }
+    $scope.selectedDropdownItem = "";
+    
+    $scope.categoryItems = [
+      {readableName: 'all'},
+      {readableName: 'beverage'},
+      {readableName: 'bread'},
+      {readableName: 'cake'},
+      {readableName: 'cheese'},
+      {readableName: 'dessert'},
+      {readableName: 'pie'},
+      {readableName: 'pasta'},
+      {readableName: 'sauce'},
+      {readableName: 'snack'}
+    ];  
 
+    var categoryInput;
+
+    $scope.filterDropdown = function(userInput){
+      console.log(userInput);
+      categoryInput = userInput;
+    }
 
     // main page search 
     $scope.dataToShare = [];
     $scope.shareMyData = function(filterLocation, filterCategory){
       console.log(filterCategory);
-      $scope.dataToShare.push(filterLocation, filterCategory);
+      if($scope.selectedDropdownItem !== null){
+        console.log($scope.selectedDropdownItem.readableName);
+        $scope.dataToShare.push(filterLocation, $scope.selectedDropdownItem.readableName);        
+      } else {
+        $scope.dataToShare.push(filterLocation);
+        $scope.dataToShare.push(categoryInput);
+      }
+      console.log(categoryInput);
       console.log($scope.dataToShare);
+      console.log($scope.selectedDropdownItem);
       ShareData.addData($scope.dataToShare);
       window.location.href = "#/listtest";
     }
@@ -35,35 +63,6 @@ angular.module('App')
     $rootScope.global = {
       search: ''
     };
-
-    $scope.categories = [
-      {title: "Item", icon:"glyphicon-th-large", id: 1, link:'#/items'}
-      // ,
-      // {title: "Top Seller", icon:"glyphicon-thumbs-up", id: 2, linke: '#/topseller'},
-      // {title: "Sale", icon:"glyphicon-tag", id: 3, link: '#/sale'},
-      // {title: "New", icon:"glyphicon-star", id: 4, link: '#/new'},
-      // {title: "Used", icon:"glyphicon-cog", id: 5, link: '#/used'},
-      // {title: "Other", icon:"glyphicon-cog", id: 6, link: '#/other'}
-    ];
-
-    // $scope.filterLocation = [
-    //   {'title': 'Your location', 'option': '', id: 1}, 
-    //   {'title': 'Brisbane', 'option': 'brisbane', id: 2},
-    //   {'title': 'Melbourne', 'option': 'melbourne', id: 3},
-    //   {'title': 'Sydney', 'option': 'sydney', id: 4},
-    //   {'title': 'Perth', 'option': 'perth', id: 5}
-    // ];
-
-    $scope.menuTabs = [
-      {title: 'menu1'},
-      {title: 'menu1'},
-      {title: 'menu1'},
-      {title: 'menu1'},
-      {title: 'menu1'},
-      {title: 'menu1'},
-      {title: 'menu1'},
-      {title: 'menu1'}
-    ];
 
     $scope.showLogin = function(){
       ModalService.showModal({
@@ -137,10 +136,20 @@ angular.module('App')
     }
     sessionStorage.clear();
 
-  $scope.searchProduct = function(filterLocation){
+    $scope.searchProduct = function(filterLocation){
       $scope.orderProp = filterLocation;
       console.log($scope.orderProp);
     }
+
+    $scope.selectedDropdownItem = null;
+    $scope.dropdownItems = ['drop 1', 'drop 2', 'drop 3'];
+    $scope.categoryItems = [
+      {readableName: 'All'},
+      {readableName: 'Beverage'},
+      {readableName: 'Bread'},
+      {readableName: 'Cake'},
+      {readableName: 'Cheese'}
+    ];
   });
 
 angular.module('App')

@@ -11,28 +11,17 @@
               <option value="perth">Perth</option>
             </select>
 
-            <input-dropdown
-              selected-item="selectedDropdownItem"
-              default-dropdown-items="categoryItems"
-              class="category-prop input-dropdown-sm"
-              ng-model="filterCategory"
-            >
-            </input-dropdown>
+          <input-dropdown
+            input-placeholder="What are you looking for?"
+            selected-item="selectedDropdownItem"
+            default-dropdown-items="categoryItems"
+            item-selected-method="itemSelected(item)"
+            filter-list-method="filterDropdown(userInput)"
+            class="category-prop input-dropdown-sm"
+          >
+          </input-dropdown>
             
-           <!--  <select class="category-prop center form-control" ng-model="filterCategory">
-              <option value="">All</option>
-              <option value="beverage">Beverage</option>
-              <option value="bread">Bread</option>
-              <option value="cheese">Cheese</option>
-              <option value="cake">Dessert</option>
-              <option value="pie">Pie</option>
-              <option value="pasta">Pasta</option>
-              <option value="sauce">Sauce</option>
-              <option value="snack">Snack</option>
-              <option value="vegan">Vegan</option>
-            </select> -->
-
-          <button type="submit" class="btn btn-default search-btn orange-bg white" ng-click="searchProduct(filterLocation, filterCategory)"><span class="glyphicon glyphicon-search"></span></button>
+          <button type="submit" class="btn btn-default search-btn orange-bg white" ng-click="searchQuery(filterLocation, filterCategory)"><span class="glyphicon glyphicon-search"></span></button>
         </div>
       </form>
   </div>
@@ -43,17 +32,17 @@
   <div class="col-xs-12">
     <div class="row">
       <div class="col-md-2">
-        <!-- Search: <input ng-model="global.search"> -->
+     <!--    Search: <input ng-model="global.search">
         Sort by:
         <select ng-model="orderProp">
           <option value="title">Alphabetical</option>
           <option value="age">Newest</option>
-        </select>  
+        </select>   -->
       </div>
       <br>
       <div class="col-md-10">
         <ul class="phone">
-          <li ng-repeat="item in items | filter:searchQuery | filter:searchQueryCategory | orderBy:orderProp | orderBy: '$index':true" class="thumbnail phone-listing thumbnail-item">
+          <li ng-repeat="item in items | filter:searchLocation | filter:searchCategory | orderBy:orderProp | orderBy: '$index':true" class="thumbnail phone-listing thumbnail-item">
             <a href="#/items/{{item.id}}" class="thumb">
               <img ng-src="https://s3-ap-southeast-2.amazonaws.com/delbfiles/items/{{item.image_file_name}}" style="max-height: 110px;">
             </a>

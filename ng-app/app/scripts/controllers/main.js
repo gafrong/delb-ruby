@@ -39,12 +39,12 @@ angular.module('App')
 
     $scope.itemSelected = function(item){
       categoryInput = item;
-      // console.log(categoryInput);
+      console.log(categoryInput);
     }
 
     var newCategoryItems = [];
     $scope.filterDropdown = function(userInput){
-      // console.log(userInput);
+      console.log(userInput);
       if(userInput !== ""){
         categoryInput = userInput;
       }
@@ -53,11 +53,11 @@ angular.module('App')
       var filteredArray = $scope.categoryItems.filter(function(menu){
         return menu.toLowerCase().indexOf(normalisedInput) === 0;
       });
-      // console.log(userInput);
-      // console.log($scope.inputValue);
+      console.log(userInput);
+      console.log($scope.inputValue);
       filter.resolve(filteredArray);
-      // console.log(filteredArray);
-      // console.log(userInput);
+      console.log(filteredArray);
+      console.log(userInput);
 
       return filter.promise;
     
@@ -68,16 +68,16 @@ angular.module('App')
     $scope.shareMyData = function(filterLocation, filterCategory){
      
       if($scope.selectedDropdownItem !== null){
-        // console.log($scope.selectedDropdownItem);
+        console.log($scope.selectedDropdownItem);
         $scope.dataToShare = [];
         $scope.dataToShare.push(filterLocation, $scope.selectedDropdownItem);        
       } else {
         $scope.dataToShare.push(filterLocation);
         $scope.dataToShare.push(categoryInput);
       }
-      // console.log(categoryInput);
-      // console.log($scope.dataToShare);
-      // console.log($scope.selectedDropdownItem);
+      console.log(categoryInput);
+      console.log($scope.dataToShare);
+      console.log($scope.selectedDropdownItem);
       ShareData.addData($scope.dataToShare);
       window.location.href = "#/listtest";
     }
@@ -168,8 +168,23 @@ angular.module('App')
       console.log('no data');
     })
 
-    $scope.selectedDropdownItem = "";
-    
+    $scope.sharedData = ShareData.getData();
+    console.log($scope.sharedData.length);
+    if($scope.sharedData.length > 0){
+      console.log($scope.sharedData);
+      $scope.searchLocation = $scope.sharedData.slice(-2)[0][0];
+      $scope.searchCategory = $scope.sharedData.slice(-2)[0][1];
+      console.log($scope.searchLocation);
+      console.log($scope.searchCategory);
+    }
+    sessionStorage.clear();
+
+    $scope.searchProduct = function(filterLocation){
+      $scope.orderProp = filterLocation;
+      // console.log($scope.orderProp);
+    }
+
+    $scope.selectedDropdownItem = null;
     $scope.categoryItems = [
       'all',
       'beverage',
@@ -191,34 +206,46 @@ angular.module('App')
     }
 
     var newCategoryItems = [];
-    $scope.filterDropdown = function(userInput){
-      console.log(userInput);
-      if(userInput !== ""){
-        categoryInput = userInput;
-      }
-      var filter = $q.defer();
-      var normalisedInput = userInput.toLowerCase();
-      var filteredArray = $scope.categoryItems.filter(function(menu){
-        return menu.toLowerCase().indexOf(normalisedInput) === 0;
-      });
+    $scope.searchQueryProduct= function(filterLocation, filterCategory){
       // console.log(userInput);
+      // if(userInput !== ""){
+      //   categoryInput = userInput;
+      // }
+      var filter = $q.defer();
+      // var normalisedInput = userInput.toLowerCase();
+      // var filteredArray = $scope.categoryItems.filter(function(menu){
+      //   return menu.toLowerCase().indexOf(normalisedInput) === 0;
+      // });
+      console.log(filterLocation);
+      console.log(filterCategory);
       // console.log($scope.inputValue);
-      filter.resolve(filteredArray);
+      // filter.resolve(filteredArray);
       // console.log(filteredArray);
       // console.log(userInput);
-
-      return filter.promise;
-    
-    }
-
-    // main page search 
-    $scope.dataToShare = [];
-    $scope.searchQuery = function(filterLocation, filterCategory){
-     
-      $scope.searchLocation = filterLocation;
-      $scope.searchCategory = categoryInput;
+      if(filterLocation !== undefined && categoryInput !== undefined){
+        $scope.searchLocation = filterLocation;
+        $scope.searchCategory = categoryInput;
+        if (categoryInput === 'all'){
+          $scope.searchCategory = '';
+        };
+      } else if (filterLocation !== undefined && categoryInput === undefined){
+        $scope.searchLocation = filterLocation;
+        $scope.searchCategory = '';
+      } else if (filterLocation === undefined && categoryInput !== undefined){
+        $scope.searchLocation = '';
+        $scope.searchCategory = categoryInput;
+        if (categoryInput === 'all'){
+          $scope.searchCategory = '';
+        };
+      } else {
+        $scope.searchLocation = '';
+        $scope.searchCategory = '';
+      }
       console.log('searchLocation', $scope.searchLocation);
       console.log('searchCategory', $scope.searchCategory);
+
+      return filter.promise;
+     
     }
   });
 
@@ -259,9 +286,9 @@ angular.module('App')
         $scope.dataToShare.push(filterLocation);
         $scope.dataToShare.push(categoryInput);
       }
-      // console.log(categoryInput);
-      // console.log($scope.dataToShare);
-      // console.log($scope.selectedDropdownItem);
+      console.log(categoryInput);
+      console.log($scope.dataToShare);
+      console.log($scope.selectedDropdownItem);
       ShareData.addData($scope.dataToShare);
     }    
 

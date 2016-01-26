@@ -88,12 +88,6 @@ angular.module('App')
 
     $scope.categories = [
       {title: "Item", icon:"glyphicon-th-large", id: 1, link:'#/items'}
-      // ,
-      // {title: "Top Seller", icon:"glyphicon-thumbs-up", id: 2, linke: '#/topseller'},
-      // {title: "Sale", icon:"glyphicon-tag", id: 3, link: '#/sale'},
-      // {title: "New", icon:"glyphicon-star", id: 4, link: '#/new'},
-      // {title: "Used", icon:"glyphicon-cog", id: 5, link: '#/used'},
-      // {title: "Other", icon:"glyphicon-cog", id: 6, link: '#/other'}
     ];
 
     $scope.menuTabs = [
@@ -169,9 +163,9 @@ angular.module('App')
     })
 
     $scope.sharedData = ShareData.getData();
-    console.log($scope.sharedData.length);
+    
     if($scope.sharedData.length > 0){
-      console.log($scope.sharedData);
+      
       $scope.searchLocation = $scope.sharedData.slice(-2)[0][0];
       $scope.searchCategory = $scope.sharedData.slice(-2)[0][1];
       console.log($scope.searchLocation);
@@ -181,7 +175,6 @@ angular.module('App')
 
     $scope.searchProduct = function(filterLocation){
       $scope.orderProp = filterLocation;
-      // console.log($scope.orderProp);
     }
 
     $scope.selectedDropdownItem = null;
@@ -198,49 +191,62 @@ angular.module('App')
       'snack'
     ] 
 
-    var categoryInput;
+    var selectedInput;
 
     $scope.itemSelected = function(item){
-      categoryInput = item;
-      console.log(categoryInput);
+      selectedInput = item;
+      // console.log('selectedInput',selectedInput);
     }
-
+    var searchInput;
+    $scope.filterDropdown = function(userInput){
+      // console.log('userInput',userInput); 
+      searchInput = userInput;
+      // console.log('searchInput', searchInput);
+    }
     var newCategoryItems = [];
     $scope.searchQueryProduct= function(filterLocation, filterCategory){
-      // console.log(userInput);
-      // if(userInput !== ""){
-      //   categoryInput = userInput;
-      // }
+
+      console.log('searchInput', searchInput);
+      console.log('searchInput === ""', searchInput === '');
+      console.log('searchInput === undefined?',searchInput === undefined);
+      console.log('searchInput === null?', searchInput === null);
+      if(searchInput){
+        selectedInput = undefined;
+      }
       var filter = $q.defer();
-      // var normalisedInput = userInput.toLowerCase();
-      // var filteredArray = $scope.categoryItems.filter(function(menu){
-      //   return menu.toLowerCase().indexOf(normalisedInput) === 0;
-      // });
-      console.log(filterLocation);
-      console.log(filterCategory);
-      // console.log($scope.inputValue);
-      // filter.resolve(filteredArray);
-      // console.log(filteredArray);
-      // console.log(userInput);
-      if(filterLocation !== undefined && categoryInput !== undefined){
+
+      if(selectedInput === 'all'){
+        selectedInput = '';
+        filterCategory = '';
+      }
+
+      if(filterLocation !== undefined && selectedInput !== undefined){
         $scope.searchLocation = filterLocation;
-        $scope.searchCategory = categoryInput;
-        if (categoryInput === 'all'){
-          $scope.searchCategory = '';
-        };
-      } else if (filterLocation !== undefined && categoryInput === undefined){
-        $scope.searchLocation = filterLocation;
-        $scope.searchCategory = '';
-      } else if (filterLocation === undefined && categoryInput !== undefined){
+        $scope.searchCategory = selectedInput;
+      } else if(filterLocation === undefined && selectedInput !== undefined){
         $scope.searchLocation = '';
-        $scope.searchCategory = categoryInput;
-        if (categoryInput === 'all'){
+        $scope.searchCategory = selectedInput;
+      } else if(selectedInput === undefined){
+        if(filterLocation){
+          $scope.searchLocation = filterLocation;
+        } else {
+          $scope.searchLocation = '';
+        }
+        if(searchInput){
+          $scope.searchCategory = searchInput;
+        } else {
           $scope.searchCategory = '';
-        };
+        }
       } else {
         $scope.searchLocation = '';
         $scope.searchCategory = '';
       }
+      if (searchInput === null){
+        $scope.searchCategory = '';
+      }
+      console.log('filterLocation', filterLocation);
+      console.log('selectedInput',selectedInput);
+   
       console.log('searchLocation', $scope.searchLocation);
       console.log('searchCategory', $scope.searchCategory);
 

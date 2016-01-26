@@ -88,6 +88,7 @@ angular.module('inputDropdown', []).directive('inputDropdown', [function() {
         showDropdown();
 
         if (!scope.inputValue) {
+          scope.filterListMethod({userInput: null});
           scope.dropdownItems = scope.defaultDropdownItems || [];
           return;
         }
@@ -131,12 +132,11 @@ angular.module('inputDropdown', []).directive('inputDropdown', [function() {
 
         if (scope.filterListMethod) {
           var promise = scope.filterListMethod({userInput: scope.inputValue});
-          // console.log(scope.inputValue.length);
+        
           if(scope.inputValue.length >= 0){
             scope.inputValue = item;
           }
-          // console.log(item);
-          // console.log(scope.inputValue);
+     
           if (promise) {
             promise.then(function(dropdownItems) {
               scope.dropdownItems = dropdownItems;

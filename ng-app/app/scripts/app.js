@@ -93,18 +93,18 @@ angular
         //   }]
         // }
       })
-      .when('/listtest', {
-        templateUrl: 'views/listtest.html',
+      .when('/products', {
+        templateUrl: 'views/products.html',
         controller: 'ListItemCtrl'
       })
       .when('/list/:product', {
         templateUrl: 'partials/list-detail.html',
         controller: 'ListCtrl'
       })
-      .when('/products', {
-        templateUrl: 'views/products.html',
-        controller: 'ProductCtrl'
-      })
+      // .when('/products', {
+      //   templateUrl: 'views/products.html',
+      //   controller: 'ProductCtrl'
+      // })
       .when('/searched/products', {
         templateUrl: 'views/products.html',
         controller: 'MainCtrl'

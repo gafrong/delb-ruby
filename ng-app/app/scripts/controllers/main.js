@@ -79,7 +79,7 @@ angular.module('App')
       console.log($scope.dataToShare);
       console.log($scope.selectedDropdownItem);
       ShareData.addData($scope.dataToShare);
-      window.location.href = "#/listtest";
+      window.location.href = "#/products";
     }
 
     $rootScope.global = {

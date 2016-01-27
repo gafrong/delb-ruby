@@ -75,7 +75,7 @@ angular.module('App')
       // $rootScope.listsToFilter = $scope.listsToFilter;
       // $rootScope.searchQuery= $scope.searchQuery;
       $scope.searchResult = true;
-      $location.path('/listtest');
+      $location.path('/products');
     };
 
     $scope.dataToShare = [];
@@ -83,7 +83,7 @@ angular.module('App')
       $scope.dataToShare = query;
       ShareData.addData($scope.dataToShare);
 
-      window.location.href = "#/listtest";
+      window.location.href = "#/products";
     };
   }]);
 

@@ -52,17 +52,11 @@ angular.module('App')
       if(userInput){
         var normalisedInput = userInput.toLowerCase();
         var filteredArray = $scope.categoryItems.filter(function(menu){
-          // if(menu){
             return menu.toLowerCase().indexOf(normalisedInput) === 0;
-          // };
         });
 
       }
-      // console.log(userInput);
-      // console.log($scope.inputValue);
       filter.resolve(filteredArray);
-      // console.log(filteredArray);
-      // console.log(userInput);
       return filter.promise;
     }
 
@@ -71,16 +65,12 @@ angular.module('App')
     $scope.shareMyData = function(filterLocation, filterCategory){
      
       if($scope.selectedDropdownItem !== null){
-        console.log($scope.selectedDropdownItem);
         $scope.dataToShare = [];
         $scope.dataToShare.push(filterLocation, $scope.selectedDropdownItem);        
       } else {
         $scope.dataToShare.push(filterLocation);
         $scope.dataToShare.push(categoryInput);
       }
-      console.log(categoryInput);
-      console.log($scope.dataToShare);
-      console.log($scope.selectedDropdownItem);
       ShareData.addData($scope.dataToShare);
       window.location.href = "#/products";
     }
@@ -111,7 +101,6 @@ angular.module('App')
       }).then(function(modal){
         modal.element.modal();
         modal.close.then(function(result){
-          console.log('!!!');
         });
       })
     };
@@ -123,7 +112,6 @@ angular.module('App')
       }).then(function(modal){
         modal.element.modal();
         modal.close.then(function(result){
-          console.log('registration modal');
         });
       });
     };
@@ -159,7 +147,6 @@ angular.module('App')
     
     Item.getItems()
     .success(function(returnData){
-      console.log('data returned');
       $scope.items = returnData;
     }).error(function(){
       console.log('no data');
@@ -171,8 +158,6 @@ angular.module('App')
       
       $scope.searchLocation = $scope.sharedData.slice(-2)[0][0];
       $scope.searchCategory = $scope.sharedData.slice(-2)[0][1];
-      console.log($scope.searchLocation);
-      console.log($scope.searchCategory);
     }
     sessionStorage.clear();
 
@@ -198,32 +183,24 @@ angular.module('App')
 
     $scope.itemSelected = function(item){
       selectedInput = item;
-      // console.log('selectedInput',selectedInput);
     }
 
     var searchInput;
     $scope.filterDropdown = function(userInput){
-      console.log('userInput',userInput); 
       searchInput = userInput;
-            var filter = $q.defer();
+      var filter = $q.defer();
       if(userInput){
         var normalisedInput = userInput.toLowerCase();
         var filteredArray = $scope.categoryItems.filter(function(menu){
           return menu.toLowerCase().indexOf(normalisedInput) === 0;
         });
-
-      }
+      };
       filter.resolve(filteredArray);
       return filter.promise;
-
     }
     var newCategoryItems = [];
     $scope.searchQueryProduct= function(filterLocation, filterCategory){
 
-      console.log('searchInput', searchInput);
-      console.log('searchInput === ""', searchInput === '');
-      console.log('searchInput === undefined?',searchInput === undefined);
-      console.log('searchInput === null?', searchInput === null);
       if(searchInput){
         selectedInput = undefined;
       }
@@ -258,14 +235,8 @@ angular.module('App')
       if (searchInput === null || searchInput === ''){
         $scope.searchCategory = '';
       }
-      console.log('filterLocation', filterLocation);
-      console.log('selectedInput',selectedInput);
-   
-      console.log('searchLocation', $scope.searchLocation);
-      console.log('searchCategory', $scope.searchCategory);
 
-      return filter.promise;
-     
+      return filter.promise;     
     }
   });
 
@@ -299,16 +270,12 @@ angular.module('App')
     $scope.shareMyData = function(filterLocation, filterCategory){
      
       if($scope.selectedDropdownItem !== null){
-        console.log($scope.selectedDropdownItem);
         $scope.dataToShare = [];
         $scope.dataToShare.push(filterLocation, $scope.selectedDropdownItem);        
       } else {
         $scope.dataToShare.push(filterLocation);
         $scope.dataToShare.push(categoryInput);
       }
-      console.log(categoryInput);
-      console.log($scope.dataToShare);
-      console.log($scope.selectedDropdownItem);
       ShareData.addData($scope.dataToShare);
     }    
 

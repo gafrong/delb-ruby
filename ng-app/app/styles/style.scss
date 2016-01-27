@@ -616,7 +616,21 @@ body {
       width: 100%;
       margin-bottom: 6px;
     }
-  }  
+  } 
+  .product-page {
+    .search-product {
+      padding: 0 20px;
+      .form-inline {
+        .search-btn {
+          width: 100%;
+        }
+      }
+      .input-dropdown {
+        width: 100%;
+        margin: 8px 0;
+      }    
+    }
+  } 
 }
 
 // Laptop Screen

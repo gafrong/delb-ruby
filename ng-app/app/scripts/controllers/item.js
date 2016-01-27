@@ -98,20 +98,6 @@ angular.module('App')
         {name: 'Quantity', model: 'quantity', placeholder: 'quantity', tag: 'itemQuantity'}
       ];
 
-    // $scope.saveItem = function (){
-
-    //   $scope.item.user_id = $rootScope.user.id;
-    //   $scope.item.image_url50 = $scope.image.base64;
-    //   Item.postItem($scope.item.user_id, $scope.item.title, $scope.item.image_url50, $scope.item.description, $scope.item.price)
-    //   .success(function(){
-    //     console.log('successful');
-    //   }).error(function(){
-    //     console.log('wrong!!');
-    //   });
- 
-    //   $scope.item ='';  
-    //   $location.path('/mystore')
-    // };
 
   }])
   .controller('ItemUpdateCtrl', ['$scope', '$resource', 'Item', '$location', '$routeParams', function($scope, $resource, Item, $location, $routeParams){

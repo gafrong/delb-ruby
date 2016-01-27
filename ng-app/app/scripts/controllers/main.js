@@ -241,7 +241,7 @@ angular.module('App')
         $scope.searchLocation = '';
         $scope.searchCategory = '';
       }
-      if (searchInput === null){
+      if (searchInput === null || searchInput === ''){
         $scope.searchCategory = '';
       }
       console.log('filterLocation', filterLocation);

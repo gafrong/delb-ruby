@@ -49,18 +49,21 @@ angular.module('App')
         categoryInput = userInput;
       }
       var filter = $q.defer();
-      var normalisedInput = userInput.toLowerCase();
-      var filteredArray = $scope.categoryItems.filter(function(menu){
-        return menu.toLowerCase().indexOf(normalisedInput) === 0;
-      });
-      console.log(userInput);
-      console.log($scope.inputValue);
-      filter.resolve(filteredArray);
-      console.log(filteredArray);
-      console.log(userInput);
+      if(userInput){
+        var normalisedInput = userInput.toLowerCase();
+        var filteredArray = $scope.categoryItems.filter(function(menu){
+          // if(menu){
+            return menu.toLowerCase().indexOf(normalisedInput) === 0;
+          // };
+        });
 
+      }
+      // console.log(userInput);
+      // console.log($scope.inputValue);
+      filter.resolve(filteredArray);
+      // console.log(filteredArray);
+      // console.log(userInput);
       return filter.promise;
-    
     }
 
     // main page search 
@@ -197,11 +200,22 @@ angular.module('App')
       selectedInput = item;
       // console.log('selectedInput',selectedInput);
     }
+
     var searchInput;
     $scope.filterDropdown = function(userInput){
-      // console.log('userInput',userInput); 
+      console.log('userInput',userInput); 
       searchInput = userInput;
-      // console.log('searchInput', searchInput);
+            var filter = $q.defer();
+      if(userInput){
+        var normalisedInput = userInput.toLowerCase();
+        var filteredArray = $scope.categoryItems.filter(function(menu){
+          return menu.toLowerCase().indexOf(normalisedInput) === 0;
+        });
+
+      }
+      filter.resolve(filteredArray);
+      return filter.promise;
+
     }
     var newCategoryItems = [];
     $scope.searchQueryProduct= function(filterLocation, filterCategory){

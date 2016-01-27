@@ -19,11 +19,14 @@ body, header {
   padding: 0;
   margin: 0;
 }
-.products {
+.products, .product-page {
   padding: 20px;
   .thumbnail-item {
     min-height: 120px;
     padding: 10px;
+    .image-margin {
+      margin: 5px 10px 20px 5px;
+    }
   }
 }
 

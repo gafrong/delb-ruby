@@ -105,10 +105,10 @@ angular
       //   templateUrl: 'views/products.html',
       //   controller: 'ProductCtrl'
       // })
-      .when('/searched/products', {
-        templateUrl: 'views/products.html',
-        controller: 'MainCtrl'
-      })
+      // .when('/searched/products', {
+      //   templateUrl: 'views/products.html',
+      //   controller: 'MainCtrl'
+      // })
       .when('/products/:id', {
         templateUrl: 'views/partials/product.html',
         controller: 'ProductListCtrl'

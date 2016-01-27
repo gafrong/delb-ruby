@@ -20,12 +20,12 @@ body, header {
   margin: 0;
 }
 .products, .product-page {
-  padding: 20px;
+  // padding: 20px;
   .thumbnail-item {
     min-height: 120px;
     padding: 10px;
     .image-margin {
-      margin: 5px 10px 20px 5px;
+      margin: 10px 10px 20px 5px;
     }
   }
 }

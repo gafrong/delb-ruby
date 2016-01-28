@@ -23,16 +23,16 @@
 
 
   <div class="row">
-    <div class="col-md-2">
+    <!-- <div class="col-md-2"> -->
       <!-- Search: <input ng-model="global.search"> -->
 <!--       Sort by:
       <select ng-model="orderProp">
         <option value="title">Alphabetical</option>
         <option value="age">Newest</option>
       </select>   -->
-    </div>
-    <br>
-    <div class="col-md-10">
+    <!-- </div> -->
+    <!-- <br> -->
+    <div class="col-md-12">
       <ul class="phone">
         <li ng-repeat="item in items | filter:global.search | orderBy:orderProp | orderBy: '$index':true" class="thumbnail phone-listing thumbnail-item">
           <a href="#/items/{{item.id}}" class="thumb">

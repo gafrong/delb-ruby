@@ -13,7 +13,7 @@
   .horizontal-list{
     padding:0px;
     // border:dotted 1px;
-    background-color: $grey-lightest;
+    background-color: $grey-light;
     white-space:nowrap;
     height: 310px;
     width: 100%;
@@ -26,7 +26,7 @@
     -webkit-justify-content: space-between;
     -webkit-overflow-scrolling: touch !important;
     .horizontal-frame {
-      min-width: 197px;
+      min-width: 195px;
       .horizontal-item{
         position: relative;
         box-sizing: border-box;

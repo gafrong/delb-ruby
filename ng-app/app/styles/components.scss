@@ -10,17 +10,17 @@
   }
 }
 .scroll{
-  overflow-x: hidden;
   .horizontal-list{
       padding:0px;
       // border:dotted 1px;
       background-color: $grey-lightest;
       white-space:nowrap;
-      overflow-x:overlay;   
+      overflow-x:scroll;
       height: 310px;
       width: 100%;
       display: inline-flex;
-
+      position: relative;
+      -webkit-overflow-scrolling: touch;
   }
 
   .horizontal-item{

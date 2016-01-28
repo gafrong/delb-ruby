@@ -275,6 +275,9 @@ body {
 // Landing Page Video 
 .landing-page, .product-page {
   margin-top: -52px;
+  .product-items {
+    padding: 0 15px;
+  }
   .full-screen {
     position: relative;
     top: 0;
@@ -617,7 +620,7 @@ body {
         }
         .category-prop-drop {
           .input-dropdown {
-            width: 58%;
+            width: 57%;
             margin-bottom: 9px;
 
             input {

@@ -15,9 +15,9 @@
     // border:dotted 1px;
     background-color: $grey-lightest;
     white-space:nowrap;
-    overflow-x:auto;
+    overflow-x:auto !important;
     height: 310px;
-    width: 100%;
+    max-width: 1000px;
     display: inline-flex;
     position: relative;
     -webkit-overflow-scrolling: touch;

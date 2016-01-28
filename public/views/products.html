@@ -1,6 +1,61 @@
-<div class="product-page"> <div class="search-product center container-fluid products"> <form class="form-inline"> <div class="form-group search"> <select class="category-prop center form-control" ng-model="filterLocation"> <option value="">Your location <option value="brisbane">Brisbane <option value="melbourne">Melbourne <option value="sydney">Sydney <option value="perth">Perth </select> <input-dropdown input-placeholder="What are you looking for?" selected-item="selectedDropdownItem" default-dropdown-items="categoryItems" item-selected-method="itemSelected(item)" filter-list-method="filterDropdown(userInput)" class="category-prop input-dropdown-sm"> </input-dropdown> <button type="submit" class="btn btn-default search-btn orange-bg white" ng-click="searchQueryProduct(filterLocation, filterCategory, inputValue)"><span class="glyphicon glyphicon-search"></span></button> </div> </form> </div> <!-- </div> --> <!-- <div class="container-fluid products"> --> <div class="col-xs-12"> <div class="row"> <div class="col-md-2"> <!--    Search: <input ng-model="global.search">
+<div class="product-page ">
+  <div class="search-product center container-fluid products">  
+      <form class="form-inline">
+        <div class="form-group search">
+
+            <select class="category-prop center form-control" ng-model="filterLocation">
+              <option value="">Your location</option>
+              <option value="brisbane">Brisbane</option>
+              <option value="melbourne">Melbourne</option>
+              <option value="sydney">Sydney</option>
+              <option value="perth">Perth</option>
+            </select>
+
+          <input-dropdown
+            input-placeholder="What are you looking for?"
+            selected-item="selectedDropdownItem"
+            default-dropdown-items="categoryItems"
+            item-selected-method="itemSelected(item)"
+            filter-list-method="filterDropdown(userInput)"
+            class="category-prop input-dropdown-sm"
+          >
+          </input-dropdown>
+            
+          <button type="submit" class="btn btn-default search-btn orange-bg white" ng-click="searchQueryProduct(filterLocation, filterCategory, inputValue)"><span class="glyphicon glyphicon-search"></span></button>
+        </div>
+      </form>
+  </div>
+
+<!-- </div> -->
+
+<!-- <div class="container-fluid products"> -->
+  <div class="col-xs-12">
+    <div class="row">
+      <div class="col-md-2">
+     <!--    Search: <input ng-model="global.search">
         Sort by:
         <select ng-model="orderProp">
           <option value="title">Alphabetical</option>
           <option value="age">Newest</option>
-        </select>   --> </div> <br> <div class="col-md-10"> <ul class="phone"> <li ng-repeat="item in items | filter:searchLocation | filter:searchCategory | orderBy:orderProp | orderBy: '$index':true" class="thumbnail phone-listing thumbnail-item"> <a href="#/items/{{item.id}}" class="thumb image-margin"> <img ng-src="https://s3-ap-southeast-2.amazonaws.com/delbfiles/items/{{item.image_file_name}}" style="max-height: 110px"> </a> <a href="#/items/{{item.id}}">{{item.title}}</a> <p>{{item.description}}</p> <p>{{item.location}}</p> <p>{{item.category}}</p> <p>{{item.updated_at}}</p> </li> </ul> </div> </div> </div> </div>
+        </select>   -->
+      </div>
+      <br>
+      <div class="col-md-10">
+        <ul class="phone">
+          <li ng-repeat="item in items | filter:searchLocation | filter:searchCategory | orderBy:orderProp | orderBy: '$index':true" class="thumbnail phone-listing thumbnail-item">
+            <a href="#/items/{{item.id}}" class="thumb image-margin">
+              <img ng-src="https://s3-ap-southeast-2.amazonaws.com/delbfiles/items/{{item.image_file_name}}" style="max-height: 110px;">
+            </a>
+            <a href="#/items/{{item.id}}">{{item.title}}</a>
+            <p>{{item.description}}</p>
+            <p>{{item.location}}</p>
+            <p>{{item.category}}</p>
+            <p>{{item.updated_at}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>  
+</div>
+
+

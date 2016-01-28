@@ -15,22 +15,29 @@
     // border:dotted 1px;
     background-color: $grey-lightest;
     white-space:nowrap;
-    overflow-x:scroll !important;
     height: 310px;
     width: 100%;
     float: left;
     display: inline-flex;
     display: -webkit-inline-flex;
     position: relative;
+    overflow-x:scroll;
+    overflow-scrolling: auto;
+    -webkit-justify-content: space-between;
     -webkit-overflow-scrolling: touch !important;
     .horizontal-frame {
       width: 500px;
       .horizontal-item{
-          float: left;
-          width:400px;
-          height:200px;
-          margin:0;
-          display:inline-block;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        float: left;
+        width:400px;
+        height:200px;
+        margin:0;
+        display:inline-block;
       }
     }
   }

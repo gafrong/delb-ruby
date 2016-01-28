@@ -13,6 +13,14 @@
   height: 100%;
   margin: -15px;
 }
+.product-images {
+  background-color: white;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
 // Mobile Screen
 @media (max-width: 767px) {
   .products {
@@ -23,5 +31,8 @@
   }
   .product-main-img {
     max-width: 320px;
+  }
+  .product-images {
+    max-width: 330px;
   }
 }

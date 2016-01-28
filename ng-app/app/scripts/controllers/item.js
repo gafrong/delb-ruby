@@ -20,7 +20,7 @@ angular.module('App')
   .controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item',
     function ($scope, $routeParams, Item){
       
-      $scope.loaderSource = 'images/default.gif';
+      $scope.loaderSource = 'https://s3-ap-southeast-2.amazonaws.com/delbfiles/assets/default.gif';
       $scope.loading = true;
       Item.getItem({id: $routeParams.id})
       .success(function(returnData){

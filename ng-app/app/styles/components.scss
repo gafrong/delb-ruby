@@ -26,9 +26,9 @@
     -webkit-justify-content: space-between;
     -webkit-overflow-scrolling: touch !important;
     .horizontal-frame {
-      
+      min-width: 197px;
       .horizontal-item{
-        position: absolute;
+        position: relative;
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;

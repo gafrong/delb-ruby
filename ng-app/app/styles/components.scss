@@ -24,10 +24,10 @@
     position: relative;
     -webkit-overflow-scrolling: touch !important;
     .horizontal-frame {
-      width: auto;
+      width: 500px;
       .horizontal-item{
           float: left;
-          width:200px;
+          width:400px;
           height:200px;
           margin:0;
           display:inline-block;

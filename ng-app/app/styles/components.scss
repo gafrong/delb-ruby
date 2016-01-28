@@ -17,10 +17,10 @@
     white-space:nowrap;
     overflow-x:auto !important;
     height: 310px;
-    max-width: 1000px;
+    width: 100%;
     display: inline-flex;
     position: relative;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch !important;
     .horizontal-item{
         float: left;
         width:200px;

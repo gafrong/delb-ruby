@@ -298,7 +298,7 @@ body {
       .form-group {
         .form-control{
           height: 52px;
-          min-width: 150px;
+          min-width: 145px;
           border-radius: 0;
         }
         .search-btn {
@@ -306,7 +306,7 @@ body {
           min-width: 100px;
           border-radius: 5px;  
         }
-        .category-prop {
+        .category-prop, .category-prop-drop {
           height: 52px;
           background-color: $white;
           color: $grey-dark;
@@ -334,7 +334,7 @@ body {
           min-width: 70px;
           border-radius: 5px;  
         }
-        .category-prop {
+        .category-prop, .category-prop-drop {
           height: 40px;
           background-color: $white;
           color: $grey-dark;
@@ -353,7 +353,7 @@ body {
   background-color: green;
   .search-main {
     padding-top: 20px;
-    .category-prop {
+    .category-prop, .category-prop-drop {
       height: 54px;
     }
   }
@@ -592,9 +592,11 @@ body {
   }
   .landing-page {
     .search-main {
+      padding: 15px 5px 0 5px;
       margin-top: -5px;
       position: relative;
       color: $grey-dark2;
+      background-color: $grey-dark3;
       .form-inline {
         .search {
           padding:5px 10px;
@@ -602,20 +604,36 @@ body {
         .form-control, .search-btn {
           height: 42px;
         }
-        .category-prop {
+        .category-prop, .category-prop-drop {
           height: 42px;
-          width: 100%;
-          margin: 5px 0;
+          // width: 50%;
+          // margin: 5px 0;
+        }
+        .category-prop {
+          width: 39%;
+          float: left;
+          margin-right: 2px;
+          margin-left: 5px;
+        }
+        .category-prop-drop {
+          .input-dropdown {
+            width: 58%;
+            margin-bottom: 9px;
+
+            input {
+              margin-top: 1px;
+            }
+          }
         }
         .search-btn {
-          width: 100%;
+          width: 98%;
         }
       }
     }
-    .input-dropdown {
-      width: 100%;
-      margin-bottom: 6px;
-    }
+    // .input-dropdown {
+    //   width: 60%;
+    //   margin-bottom: 6px;
+    // }
   } 
   .product-page {
     .search-product {
@@ -631,6 +649,9 @@ body {
       }    
     }
   } 
+  .header-featured {
+    float: left;
+  }
 }
 
 // Laptop Screen

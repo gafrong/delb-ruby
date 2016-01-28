@@ -15,18 +15,21 @@
     // border:dotted 1px;
     background-color: $grey-lightest;
     white-space:nowrap;
-    overflow-x:auto !important;
+    overflow-x:scroll !important;
     height: 310px;
     width: 100%;
     display: inline-flex;
     position: relative;
     -webkit-overflow-scrolling: touch !important;
-    .horizontal-item{
-        float: left;
-        width:200px;
-        height:200px;
-        margin:0;
-        display:inline-block;
+    .horizontal-frame {
+      width: 200px;
+      .horizontal-item{
+          float: left;
+          width:200px;
+          height:200px;
+          margin:0;
+          display:inline-block;
+      }
     }
   }
 

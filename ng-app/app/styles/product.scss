@@ -21,6 +21,14 @@
   position: relative;
   float: left;
 }
+.thumb {
+  float: left;
+  overflow: hidden;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+  height: 140px;
+  width: 140px;
+}
 // Mobile Screen
 @media (max-width: 767px) {
   .products {

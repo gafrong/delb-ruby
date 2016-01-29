@@ -307,7 +307,7 @@ body {
         .search-btn {
           height: 52px;
           min-width: 100px;
-          border-radius: 5px;  
+          border-radius: 0px;  
         }
         .category-prop, .category-prop-drop {
           height: 52px;
@@ -335,7 +335,7 @@ body {
         .search-btn {
           height: 40px;
           min-width: 70px;
-          border-radius: 5px;  
+          border-radius: 0px;  
         }
         .category-prop, .category-prop-drop {
           height: 40px;
@@ -658,9 +658,9 @@ body {
 }
 
 // Tiny Mobile Screen
-@media (max-width: 400px) {
+@media (max-width: 399px) {
   .input-dropdown {
-    max-width: 190px;
+    max-width: 188px;
   }
 }
 // Laptop Screen

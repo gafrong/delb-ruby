@@ -304,7 +304,8 @@ body {
           position: absolute;
           width: 2em;
           color: $grey-md;
-          margin: 16px 0px 0px 107px;
+          margin: 18px 0px 0px 110px;
+          font-size: 12px;
         }
         .select-style {
           .category-prop {
@@ -620,7 +621,7 @@ body {
         .search {
           padding:5px 10px;
           .select-style:before {
-            margin: 16px 0px 0px -40px;
+            margin: 18px 0px 0px -40px;
           }
           .select-style {
             margin-right: -8px;

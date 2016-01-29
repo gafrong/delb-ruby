@@ -613,14 +613,14 @@ body {
           // margin: 5px 0;
         }
         .category-prop {
-          width: 38%;
+          width: 39%;
           float: left;
           margin-right: 2px;
           margin-left: 5px;
         }
         .category-prop-drop {
           .input-dropdown {
-            width: 56%;
+            width: 58%;
             margin-bottom: 9px;
 
             input {
@@ -658,9 +658,9 @@ body {
 }
 
 // Tiny Mobile Screen
-@media (max-width: 440px) {
+@media (max-width: 400px) {
   .input-dropdown {
-    // max-width: 160px;
+    max-width: 160px;
   }
 }
 // Laptop Screen

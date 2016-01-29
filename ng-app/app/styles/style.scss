@@ -303,7 +303,7 @@ body {
           content: '\25bc';
           position: absolute;
           width: 2em;
-          color: $grey-md;
+          color: $grey-light9;
           margin: 18px 0px 0px 110px;
           font-size: 12px;
         }
@@ -312,6 +312,7 @@ body {
             -webkit-appearance: none;
             margin-right: -4px;
             border-right: 1px solid $grey-light;
+            color: $grey-light8;
           }
         }
         .form-control{

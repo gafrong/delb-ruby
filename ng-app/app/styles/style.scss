@@ -291,14 +291,17 @@ body {
   }
   .search-main {
     background-color: rgba(0,0,0,0.3);
-    padding: 20px 0;
+    padding: 10px 0;
     color: $white;
     float: left;
-    margin-top: -92px;
+    margin-top: -72px;
     width: 100%;
     z-index: 99;
     .form-inline {
       .form-group {
+        .select-style {
+          // margin-right: -9px;
+        }
         .form-control{
           height: 52px;
           min-width: 145px;
@@ -308,11 +311,13 @@ body {
           height: 52px;
           min-width: 100px;
           border-radius: 0px;  
+          margin-left: -4px;
         }
         .category-prop, .category-prop-drop {
           height: 52px;
           background-color: $white;
           color: $grey-dark;
+          border: none;
         }
       }
     }
@@ -620,7 +625,7 @@ body {
         }
         .category-prop-drop {
           .input-dropdown {
-            width: 58%;
+            width: 57%;
             margin-bottom: 9px;
 
             input {
@@ -669,7 +674,7 @@ body {
     .full-screen {
     }
     .search-main {
-      margin-top: -96px; 
+      margin-top: -77px; 
     }
   }
 }

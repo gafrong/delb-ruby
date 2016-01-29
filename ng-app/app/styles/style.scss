@@ -655,11 +655,14 @@ body {
   .header-featured {
     float: left;
   }
+}
+
+// Tiny Mobile Screen
+@media (max-width: 440px) {
   .input-dropdown {
     max-width: 160px;
   }
 }
-
 // Laptop Screen
 @media (max-width: 1156px) and (min-width: 768px) {
   .landing-page {

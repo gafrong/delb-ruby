@@ -81,7 +81,7 @@ body {
     color: $white;
     padding: 15px 15px 15px 20px;
     height: 52px;
-    border-bottom: 1px solid $grey-light;
+    border-bottom: 1px solid $grey-md;
     &:hover {
       color: $orange;
     }
@@ -299,8 +299,19 @@ body {
     z-index: 99;
     .form-inline {
       .form-group {
+        .select-style:before {
+          content: '\25bc';
+          position: absolute;
+          width: 2em;
+          color: $grey-md;
+          margin: 16px 0px 0px 107px;
+        }
         .select-style {
-          // margin-right: -9px;
+          .category-prop {
+            -webkit-appearance: none;
+            margin-right: -4px;
+            border-right: 1px solid $grey-light;
+          }
         }
         .form-control{
           height: 52px;
@@ -608,6 +619,15 @@ body {
       .form-inline {
         .search {
           padding:5px 10px;
+          .select-style:before {
+            margin: 16px 0px 0px -40px;
+          }
+          .select-style {
+            margin-right: -8px;
+            .category-prop {
+              margin-left: 6px;
+            }
+          }
         }
         .form-control, .search-btn {
           height: 42px;
@@ -618,16 +638,16 @@ body {
           // margin: 5px 0;
         }
         .category-prop {
-          width: 39%;
+          width: 40%;
           float: left;
-          margin-right: 5px;
-          margin-left: 5px;
+          margin-right: 0px;
+          // margin-left: 5px;
         }
         .category-prop-drop {
           .input-dropdown {
-            width: 57%;
+            width: 58%;
             margin-bottom: 9px;
-
+            border-left: 1px solid $grey-md;
             input {
               margin-top: 0px;
             }

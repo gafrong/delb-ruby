@@ -56,25 +56,26 @@
               <a ng-href="#/" class="menu-item hidden-xs width100"><i class="icon-delb logo"></i> <span class="main-logo"> delb</span></a>
             </li>
 
-            <li class="col-xs-10 col-sm-6 col-lg-6 center search-li">
+            <li class="col-xs-10 col-sm-5 col-lg-5 center search-li">
 
             </li>
             <li class="col-xs-12 col-sm-1 col-lg-1 padding-none"><a ng-href="#/about" class="menu-item width100">About</a></li>
             <li class="col-xs-12 col-sm-1 col-lg-1 padding-none"><a ng-href="#/products" class="menu-item width100">Products</a></li>
+            <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a href ng-if="!user.id" ng-click="showSignUp()" class="menu-item width100">Sign Up</a></li>
 
   <!-- User desktop menu -->  
             <li class="col-xs-12 col-sm-2 col-lg-2 hidden-xs padding-none" ng-if="user.id">
               <a href class="menu-item width100" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body" data-autohide="true" aria-hidden="true"><span class="glyphicon glyphicon-user font18" aria-hidden="true"></span>
               </a>
             </li>
-            <li class="col-xs-12 col-sm-2 col-lg-2 hidden-xs padding-none" ng-if="!user.id"><a ng-click="showLogin()" class="menu-item width100"><span class="glyphicon glyphicon-off icon font18" aria-hidden="true"></span></a></li> 
+            <li class="col-xs-12 col-sm-1 col-lg-1 hidden-xs padding-none" ng-if="!user.id"><a ng-click="showLogin()" class="menu-item width100"><span class="glyphicon glyphicon-off icon font18" aria-hidden="true"></span></a></li> 
             <li class="col-xs-12 col-sm-2 col-lg-2 visible-xs padding-none" ng-if="user.id"><a ng-href="#/" ng-click='signOut()' class="menu-item width100" data-toggle="offcanvas" data-target="#offcanvasRight" data-canvas="body" data-autohide="true" aria-hidden="true">Log out</a></li>
           </ul>
         </nav>  
       </div>
       <!-- /.nav-collapse -->
 
-    <a href ng-if="!user.id" ng-click="showSignUp()" class="join-tag center col-xs-2">Join <span class="hidden-xs font18">FREE</span> </a>
+    <!-- <a href ng-if="!user.id" ng-click="showSignUp()" class="join-tag center col-xs-2">Join <span class="hidden-xs font18">FREE</span> </a> -->
   </nav>
 
   <a class="upload-menu" ng-href="#/item/new" ng-if="user.id">

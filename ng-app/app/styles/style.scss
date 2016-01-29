@@ -345,15 +345,32 @@ body {
     z-index: 999;
     .form-inline {
       .form-group {
+        .select-style:before {
+          content: '\25bc';
+          position: absolute;
+          width: 2em;
+          color: $grey-light9;
+          margin: 13px 0px 0px 111px;
+          font-size: 12px;
+        }
+        .select-style {
+          .category-prop {
+            -webkit-appearance: none;
+            margin-right: -4px;
+            border-right: 1px solid $grey-light;
+            color: $grey-light8;
+          }
+        }        
         .form-control{
           height: 40px;
-          min-width: 200px;
+          width: 140px;
           border-radius: 0;
         }
         .search-btn {
           height: 40px;
           min-width: 70px;
-          border-radius: 0px;  
+          border-radius: 0px;
+          margin-left: -4px;  
         }
         .category-prop, .category-prop-drop {
           height: 40px;
@@ -649,7 +666,7 @@ body {
           .input-dropdown {
             width: 58%;
             margin-bottom: 9px;
-            border-left: 1px solid $grey-md;
+            border-left: 1px solid $grey-light;
             input {
               margin-top: 0px;
             }
@@ -669,13 +686,28 @@ body {
     .search-product {
       padding: 0 20px;
       .form-inline {
-        .search-btn {
-          width: 100%;
+        .form-group {
+          .search-btn {
+            width: 100%;
+            margin-left: 0;
+          }
+          .select-style:before {
+            z-index: 999;
+            margin: 12px 0 0 0;
+            left: 124px;
+          }
+          .select-style {
+            .category-prop {
+              width: 35%;
+              float: left;
+              margin-right: 0;
+            }
+          }
         }
       }
       .input-dropdown {
-        width: 100%;
-        margin: 8px 0;
+        width: 65%;
+        margin: 0;
       }    
     }
   } 

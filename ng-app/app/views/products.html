@@ -2,15 +2,15 @@
   <div class="search-product center container-fluid products">  
       <form class="form-inline">
         <div class="form-group search">
-
-            <select class="category-prop center form-control" ng-model="filterLocation">
-              <option value=""><span class="glyphicon glyphicon-map-marker">Your location</span></option>
-              <option value="brisbane">Brisbane</option>
-              <option value="melbourne">Melbourne</option>
-              <option value="sydney">Sydney</option>
-              <option value="perth">Perth</option>
-            </select>
-
+            <span class="select-style">
+              <select class="category-prop center form-control" ng-model="filterLocation">
+                <option value=""><span class="glyphicon glyphicon-map-marker">Your location</span></option>
+                <option value="brisbane">Brisbane</option>
+                <option value="melbourne">Melbourne</option>
+                <option value="sydney">Sydney</option>
+                <option value="perth">Perth</option>
+              </select>
+            </span>
           <input-dropdown
             input-placeholder="What are you looking for?"
             selected-item="selectedDropdownItem"

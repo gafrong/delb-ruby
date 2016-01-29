@@ -9,8 +9,8 @@ angular.module('inputDropdown', []).directive('inputDropdown', [function() {
            'ng-change="inputChange()"' +
            'ng-focus="inputFocus()"' +
            'ng-blur="inputBlur($event)"' +
-           'input-dropdown-validator>' + 
            'class="input-dropdown-style"' +
+           'input-dropdown-validator>' + 
      '<ul ng-show="dropdownVisible">' +
       '<li ng-repeat="item in dropdownItems"' +
           'ng-click="selectItem(item)"' +

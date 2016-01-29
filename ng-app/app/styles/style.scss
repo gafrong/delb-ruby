@@ -7,7 +7,7 @@
 @import "product.scss";
 
 body {
-  background-color: $white;
+  background-color: $main-bg-color;
 }
 .dropdown-backdrop{
   position: static;
@@ -368,7 +368,7 @@ body {
         }
         .search-btn {
           height: 40px;
-          min-width: 70px;
+          width: 70px;
           border-radius: 0px;
           margin-left: -4px;  
         }
@@ -644,7 +644,7 @@ body {
           .select-style {
             margin-right: -8px;
             .category-prop {
-              margin-left: 6px;
+              margin-left: 4px;
             }
           }
         }
@@ -664,7 +664,7 @@ body {
         }
         .category-prop-drop {
           .input-dropdown {
-            width: 58%;
+            width: 59%;
             margin-bottom: 9px;
             border-left: 1px solid $grey-light;
             input {
@@ -688,8 +688,10 @@ body {
       .form-inline {
         .form-group {
           .search-btn {
-            width: 100%;
+            width: 5%;
             margin-left: 0;
+            float: left;
+            min-width: 46px;
           }
           .select-style:before {
             z-index: 999;
@@ -706,8 +708,9 @@ body {
         }
       }
       .input-dropdown {
-        width: 65%;
+        width: 50%;
         margin: 0;
+        float: left;
       }    
     }
   } 

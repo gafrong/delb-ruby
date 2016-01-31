@@ -59,6 +59,8 @@
             <li class="col-xs-10 col-sm-5 col-lg-5 center search-li">
 
             </li>
+             <li class="col-xs-12 col-sm-1 col-lg-1 center search-li" ng-if="user.id" class="hidden-xs">
+            </li>
             <li class="col-xs-12 col-sm-1 col-lg-1 padding-none"><a ng-href="#/about" class="menu-item width100">About</a></li>
             <li class="col-xs-12 col-sm-1 col-lg-1 padding-none"><a ng-href="#/products" class="menu-item width100">Products</a></li>
             <li class="col-xs-12 col-sm-2 col-lg-2 padding-none"><a href ng-if="!user.id" ng-click="showSignUp()" class="menu-item width100">Sign Up</a></li>

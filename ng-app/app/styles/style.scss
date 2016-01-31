@@ -687,12 +687,6 @@ body {
       padding: 0 20px;
       .form-inline {
         .form-group {
-          .search-btn {
-            width: 5%;
-            margin-left: 0;
-            float: left;
-            min-width: 46px;
-          }
           .select-style:before {
             z-index: 999;
             margin: 12px 0 0 0;
@@ -706,10 +700,16 @@ body {
               margin-left: 5px;
             }
           }
+          .search-btn {
+            width: 5%;
+            margin-left: 0;
+            float: left;
+            min-width: 46px;
+          }
         }
       }
       .input-dropdown {
-        width: 50%;
+        width: 49%;
         margin: 0;
         float: left;
       }    

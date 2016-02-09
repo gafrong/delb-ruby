@@ -21,6 +21,3 @@
 
 # Ignore files uploaded on localhost 
 /public/system
-
-# Ignore yml files
-/config/secrets.yml

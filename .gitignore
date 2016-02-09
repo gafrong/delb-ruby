@@ -24,3 +24,4 @@
 
 # Ignore yml files
 /confing/application.yml
+/config/secrets.yml
